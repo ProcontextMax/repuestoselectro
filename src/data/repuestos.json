@@ -313,5 +313,136 @@
     "enlaceAfiliado": "https://www.amazon.com/dp/B074HLRXMP?tag=qqo-20",
     "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/619ejfPUKbL._AC_SY300_SX300_QL70_FMwebp_.jpg",
     "asin": "B074HLRXMP"
+  },
+  {
+    "categoria": "filtro-agua",
+    "categoriaNombre": "Filtros de agua para nevera",
+    "marca": "ge",
+    "marcaNombre": "GE",
+    "slug": "xwfe",
+    "titulo": "Filtro GE XWFE — Original con chip",
+    "tituloSeo": "Filtro de agua GE original — El chip que evita el error de tu nevera",
+    "numeroPieza": "XWFE",
+    "alias": ["XWF"],
+    "esOriginal": true,
+    "fabricante": "GE",
+    "tipoFiltro": "Cilíndrico con chip RFID",
+    "modelosCompatibles": [
+      "GBE21", "GDE21", "GDE25", "GFE24", "GFE26",
+      "GNE21", "GNE25", "GNE27", "GWE19", "GYE18",
+      "QNE27", "GSE25", "GSS23", "GSS25", "GZS22",
+      "PSE25", "CZS22"
+    ],
+    "compatibilidad": {
+      "familias": [
+        { "nombre": "GE French Door y Side-by-Side (serie G)", "modelos": ["GBE21", "GDE21", "GDE25", "GFE24", "GFE26", "GNE21", "GNE25", "GNE27", "GWE19", "GYE18", "GSE25", "GSS23", "GSS25", "GZS22"] },
+        { "nombre": "GE Profile y Café (serie P/Q/C)", "modelos": ["PSE25", "QNE27", "CZS22"] }
+      ]
+    },
+    "contraindicaciones": [
+      "No compatible con neveras GE que usan el filtro RPWFE (sin chip). Verifica el número de pieza de tu filtro actual.",
+      "No compatible con modelos que no aparecen en la tabla de compatibilidad.",
+      "Los filtros de terceros sin chip no funcionan: la nevera muestra un error y bloquea el dispensador."
+    ],
+    "sintomas": [
+      "La nevera muestra un error de filtro y no dispensa agua.",
+      "El agua sale más lenta de lo normal.",
+      "El hielo tiene sabor u olor extraño.",
+      "La luz de cambio de filtro está encendida."
+    ],
+    "comoSaberModelo": "Mira la etiqueta dentro de la nevera, en la pared lateral derecha o detrás de los cajones. El modelo empieza por G (French Door/Side-by-Side), P (Profile), Q (QNE) o C (Café). También puedes buscarlo en el manual o en la app SmartHQ.",
+    "guiaCambio": [
+      "Localiza el alojamiento del filtro. En la mayoría de modelos GE está en la esquina superior derecha del compartimento fresco, o en la puerta izquierda.",
+      "Retira el filtro viejo. Gíralo hacia la izquierda (sentido antihorario) y tira de él hacia ti.",
+      "Prepara el filtro nuevo. Quita la tapa protectora.",
+      "Inserta el filtro nuevo. Alinéalo y gíralo hacia la derecha hasta que encaje. No necesita herramientas.",
+      "Purga el sistema. Deja correr agua por el dispensador durante unos 2 galones (5 minutos). Es normal que salga agua negra o gris al principio por el carbón suelto y el aire atrapado. Si no purgas, el agua sabrá mal.",
+      "Reinicia la luz. En la mayoría de modelos con pantalla, el reset es automático. Si no, mantén pulsado el botón 'Water' o 'Filter' durante 3 segundos."
+    ],
+    "guiaReset": [
+      "Modelos con pantalla LCD: el reset es automático al detectar el filtro nuevo. Si no se apaga, ve a 'Settings' → 'Water Filter' → 'Reset'.",
+      "Modelos con panel de botones: mantén pulsado el botón 'Water' o 'Filter' durante 3 segundos hasta que la luz se apague.",
+      "Si la luz no se apaga, repite el proceso tras 10 segundos."
+    ],
+    "guiaProblemas": [
+      {
+        "pregunta": "¿Por qué mi nevera no reconoce el filtro nuevo?",
+        "respuesta": "Casi siempre es porque el filtro no tiene chip o el chip está defectuoso. El XWFE original tiene un chip RFID que la nevera lee. Los genéricos sin chip no funcionan: la nevera muestra un error y bloquea el dispensador. Si compraste un original y no lo reconoce, el chip puede estar dañado: devuélvelo."
+      },
+      {
+        "pregunta": "¿Por qué sale agua negra al instalar el filtro?",
+        "respuesta": "Es normal durante los primeros segundos. El carbón activado suelta partículas al principio. Deja correr agua 2 galones (5 minutos) hasta que salga clara. Si después de 10 minutos sigue negra, el filtro puede estar defectuoso."
+      },
+      {
+        "pregunta": "¿Qué pasa si uso un filtro de terceros?",
+        "respuesta": "GE diseñó el XWFE con chip para que la nevera solo acepte filtros originales. Los genéricos sin chip no funcionan: la nevera muestra un error y no dispensa agua. Los genéricos con chip (como Glacier Fresh) pueden funcionar, pero el riesgo de que el chip falle es mayor. Este es el original de GE, vendido por Amazon."
+      }
+    ],
+    "guiaOriginal": {
+      "intro": "GE no usa un QR como Samsung. La forma de saber si un XWFE es original es más simple, pero el chip es la clave. Estas son las señales.",
+      "pasos": [
+        "Mira el chip. El XWFE original tiene un chip RFID pegado en el lateral del filtro. Si no lo tiene, no es original.",
+        "Mira el empaque. El original viene en caja de cartón con el logo de GE y el número de pieza XWFE.",
+        "Comprueba el vendedor. El original lo vende Amazon o GE directamente. Si el vendedor es un tercero sin reputación, el riesgo de réplica es alto.",
+        "Verifica el precio. Un original ronda los $50. Si lo compras por $20, probablemente sea réplica o genérico sin chip."
+      ],
+      "senales": [
+        "La nevera muestra un error de filtro. Si el filtro es original y el error persiste, el chip puede estar dañado.",
+        "El filtro no encaja a la primera. El original entra con un giro suave.",
+        "El vendedor no es Amazon ni GE. Ahí es donde más réplicas circulan."
+      ],
+      "queHacer": "Si la nevera no reconoce el filtro o el chip está dañado, devuélvelo. Los filtros sin chip no funcionan y los genéricos con chip pueden fallar. GE no cubre daños causados por filtros no originales."
+    },
+    "guiaNoEncaja": {
+      "intro": "Si compraste el XWFE y no entra o la nevera no lo reconoce, no fuerces. Hay dos causas principales.",
+      "causas": [
+        {
+          "titulo": "Causa 1: es el filtro equivocado (XWFE vs RPWFE)",
+          "texto": "GE tiene dos filtros principales: XWFE (con chip) y RPWFE (sin chip). No son intercambiables. El XWFE no encaja en neveras que usan RPWFE, y viceversa. Antes de comprar, mira el filtro viejo: si no tiene chip, es RPWFE. Si tiene chip, es XWFE."
+        },
+        {
+          "titulo": "Causa 2: el chip está defectuoso o el filtro es una réplica",
+          "texto": "Si el filtro es original y no lo reconoce, el chip puede estar dañado. Si es un genérico sin chip, la nevera no lo aceptará. Si es un genérico con chip, el chip puede fallar. Devuélvelo y compra el original de Amazon o GE."
+        }
+      ],
+      "gotea": "Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa que el filtro esté girado hasta el tope. Si la junta está doblada, no la fuerces: devuelve el filtro."
+    },
+    "guiaVsGenerico": {
+      "intro": "El original de GE cuesta $50, pero el genérico tiene un problema que los demás no tienen: el chip. Sin chip, la nevera no funciona.",
+      "originalNoPerfecto": "El original de GE tiene certificación NSF 42, 53, 372 y 401, y el chip RFID que la nevera necesita para dispensar agua. No es perfecto: hay reseñas de chips defectuosos y de filtros que duran menos de 6 meses. Pero es el único que garantiza que la nevera no muestre error.",
+      "riesgosGenerico": [
+        "Sin chip, la nevera no funciona. Los genéricos sin chip muestran un error y bloquean el dispensador.",
+        "Con chip, puede fallar. Los genéricos con chip (como Glacier Fresh) funcionan en algunos modelos, pero hay reseñas de chips que dejan de funcionar a los 2 meses.",
+        "La garantía. GE no cubre daños causados por filtros no originales."
+      ],
+      "tabla": [
+        { "opcion": "GE XWFE original (1 ud.)", "precio": "~$49.98", "certificacion": "NSF 42, 53, 372, 401" },
+        { "opcion": "Glacier Fresh XWFE con chip (1 ud.)", "precio": "~$35.99", "certificacion": "NSF 42" },
+        { "opcion": "Genérico sin chip", "precio": "~$15-20", "certificacion": "Variable" }
+      ],
+      "recomendacion": [
+        "Si tu nevera está en garantía: original. El riesgo de que el chip falle y la nevera no dispense agua no compensa el ahorro.",
+        "Si tu nevera es vieja y ya no tiene garantía: un genérico con chip (Glacier Fresh) es una opción, pero verifica que el chip funcione al instalarlo.",
+        "Si quieres cero riesgo de error: original. Es el único que garantiza que la nevera lo reconoce."
+      ]
+    },
+    "textoOriginal": "El filtro GE XWFE es el cartucho con chip RFID que GE usa en sus neveras French Door, Side-by-Side y integradas. El chip es lo que hace que la nevera reconozca el filtro y permita dispensar agua. Sin chip, la nevera muestra un error y bloquea el dispensador. Es un bloque de carbón activado que reduce más de 70 impurezas, incluyendo plomo, microplásticos y PFOA/PFOS, con una capacidad de 170 galones o seis meses de uso. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras GE usan el filtro RPWFE (sin chip), y el XWFE no encaja en esas. Antes de comprar, mira el filtro viejo: si no tiene chip, es RPWFE. Si tiene chip, es XWFE. Después de instalar, deja correr 2 galones de agua hasta que salga clara: es normal que salga negra al principio por el carbón suelto. Cambiarlo cada seis meses evita que el carbón se sature y que el chip falle.",
+    "faqs": [
+      {
+        "q": "¿Es compatible el filtro XWFE con mi GE?",
+        "a": "Sí, siempre que tu modelo esté en la tabla de compatibilidad de esta página. Verifica el número de pieza de tu filtro actual. Si no tiene chip, es RPWFE y este no encaja."
+      },
+      {
+        "q": "¿Cada cuánto se cambia el filtro XWFE?",
+        "a": "Cada 6 meses o 170 galones, lo que ocurra primero. La señal no es solo la luz: si el agua sale más lenta o el hielo huele raro, cámbialo."
+      },
+      {
+        "q": "¿Puedo usar un filtro genérico con chip?",
+        "a": "Puedes, pero el chip puede fallar. Los genéricos sin chip no funcionan: la nevera muestra un error. Los genéricos con chip (como Glacier Fresh) funcionan en algunos modelos, pero hay reseñas de chips que dejan de funcionar. Este es el original de GE, el único que garantiza que la nevera lo reconoce."
+      }
+    ],
+    "enlaceAfiliado": "https://www.amazon.com/dp/B0882ZJ48W?tag=qqo-20",
+    "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71Z4DYovOvL._AC_SX679_.jpg",
+    "asin": "B0882ZJ48W"
   }
 ]
