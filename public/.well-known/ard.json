@@ -1,0 +1,21 @@
+﻿{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "repuestoselectro",
+    "identifier": "did:web:repuestoselectro.lat"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:repuestoselectro.lat:knowledge:llms-txt",
+      "displayName": "Mapa del sitio para agentes de IA",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://repuestoselectro.lat/llms.txt",
+      "description": "Índice de las páginas principales del sitio: filtros de agua, guías de compatibilidad y páginas legales.",
+      "representativeQueries": [
+        "filtro de agua original para nevera Samsung",
+        "qué filtro lleva mi nevera Samsung",
+        "cómo saber si mi filtro Samsung es original"
+      ]
+    }
+  ]
+}
