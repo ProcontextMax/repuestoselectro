@@ -34,7 +34,7 @@ const marcas = Object.entries(porMarca).map(([slug, data]) => ({
       <optgroup label={m.nombre}>
         {m.items.flatMap(item =>
           item.modelosCompatibles.map(modelo => (
-            <option value={`/filtro-agua/${item.marca}/modelo/${modelo.toLowerCase()}/`}>
+            <option value={`/filtro-agua/${item.marca}/${item.slug}/`}>
               {modelo}
             </option>
           ))
