@@ -1,4 +1,4 @@
----
+﻿---
 import repuestos from '../../../../data/repuestos.json';
 import Header from '../../../../components/Header.astro';
 import MigasPan from '../../../../components/MigasPan.astro';
@@ -75,7 +75,7 @@ const { filtros, modelo, marcaNombre } = Astro.props;
               <span style="display: block; font-size: 0.85rem; color: #555; margin-bottom: 0.5rem;">
                 Nº pieza: <code>{f.numeroPieza}</code>
               </span>
-              <span style="display: block; font-size: 0.8rem; color: #777;">
+              <span style="display: block; font-size: 0.8rem; color: #595959;">
                 {f.esOriginal ? `✓ Original ${f.fabricante}` : 'Compatible'}
               </span>
             </a>
@@ -83,11 +83,11 @@ const { filtros, modelo, marcaNombre } = Astro.props;
         ))}
       </ul>
 
-      <p style="margin-top: 2rem; font-size: 0.85rem; color: #777;">
+      <p style="margin-top: 2rem; font-size: 0.85rem; color: #595959;">
         ¿No encuentras tu modelo? <a href={`/filtro-agua/${filtros[0].marca}/`} style="color: #1d4ed8;">Ver todos los filtros {marcaNombre}</a>.
       </p>
 
-      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #777;">
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #595959;">
         <p style="margin: 0 0 0.5rem;">
           <a href="/afiliados" style="color: #1d4ed8; text-decoration: none;">Aviso de afiliados</a>
           <span> · </span>
