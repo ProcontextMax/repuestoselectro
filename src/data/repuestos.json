@@ -444,5 +444,137 @@
     "enlaceAfiliado": "https://www.amazon.com/dp/B0882ZJ48W?tag=qqo-20",
     "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/71Z4DYovOvL._AC_SX679_.jpg",
     "asin": "B0882ZJ48W"
+  },
+  {
+    "categoria": "filtro-agua",
+    "categoriaNombre": "Filtros de agua para nevera",
+    "marca": "bosch",
+    "marcaNombre": "Bosch",
+    "slug": "ultraclarity-pro",
+    "titulo": "Filtro Bosch UltraClarity Pro — Original",
+    "tituloSeo": "Filtro de agua Bosch original — Compatibilidad y cómo evitar réplicas",
+    "numeroPieza": "BORPLFTR55",
+    "alias": ["11032531", "BORPLFTR50", "RA450022", "REPLFLTR55"],
+    "esOriginal": true,
+    "fabricante": "Bosch",
+    "tipoFiltro": "Cilíndrico (bloque de carbón)",
+    "modelosCompatibles": [
+      "B18IF905SP", "B20CS30SNS", "B26FT50SNS", "B30BB935SS", "B30IB905SP", "B30IR900SP",
+      "B36BT935NS", "B36CD50SNB", "B36CD50SNS", "B36CL80ENS", "B36CL80SNS", "B36CL81ENG",
+      "B36CT80SNB", "B36CT80SNS", "B36CT81SNS", "B36FD50SNS", "B36IT905NP"
+    ],
+    "compatibilidad": {
+      "familias": [
+        { "nombre": "Bosch Benchmark (serie B18/B30)", "modelos": ["B18IF905SP", "B30BB935SS", "B30IB905SP", "B30IR900SP"] },
+        { "nombre": "Bosch 800 Series (serie B36)", "modelos": ["B36BT935NS", "B36CD50SNB", "B36CD50SNS", "B36CL80ENS", "B36CL80SNS", "B36CL81ENG", "B36CT80SNB", "B36CT80SNS", "B36CT81SNS", "B36FD50SNS", "B36IT905NP"] },
+        { "nombre": "Bosch 300 Series / Counter-Depth", "modelos": ["B20CS30SNS", "B26FT50SNS"] }
+      ]
+    },
+    "contraindicaciones": [
+      "No compatible con neveras Bosch que usan el filtro UltraClarity (sin 'Pro'). Verifica el número de pieza de tu filtro actual.",
+      "No compatible con modelos que no aparecen en la tabla de compatibilidad.",
+      "Si el cabezal del filtro fue reemplazado durante una reparación, puede que necesites un filtro diferente. Consulta con Bosch."
+    ],
+    "sintomas": [
+      "El dispensador de agua sale más lento de lo normal.",
+      "El agua tiene sabor u olor extraño.",
+      "La luz de cambio de filtro está encendida.",
+      "El agua sale turbia o con partículas visibles."
+    ],
+    "comoSaberModelo": "Mira la etiqueta dentro de la nevera, en la pared lateral derecha o detrás de los cajones. El modelo empieza por B (Benchmark, 800 Series, 300 Series). También puedes buscarlo en el manual o en la app Home Connect.",
+    "guiaCambio": [
+      "Localiza el alojamiento del filtro. En la mayoría de modelos Bosch está en el interior del compartimento fresco, en la esquina superior derecha o en la puerta.",
+      "Retira el filtro viejo. Gíralo hacia la izquierda (sentido antihorario) y tira de él hacia ti.",
+      "Prepara el filtro nuevo. Quita la tapa protectora.",
+      "Inserta el filtro nuevo. Alinéalo y gíralo hacia la derecha hasta que encaje. No necesita herramientas.",
+      "Purga el sistema. Deja correr agua por el dispensador durante unos 5 minutos. Es normal que salga agua turbia o con burbujas al principio por el carbón suelto y el aire atrapado.",
+      "Reinicia la luz. En la mayoría de modelos con pantalla, el reset es automático. Si no, mantén pulsado el botón 'Water Filter' o 'Reset' durante 3 segundos."
+    ],
+    "guiaReset": [
+      "Modelos con pantalla LCD: el reset es automático al detectar el filtro nuevo. Si no se apaga, ve a 'Settings' → 'Water Filter' → 'Reset'.",
+      "Modelos con panel de botones: mantén pulsado el botón 'Water Filter' o 'Reset' durante 3 segundos hasta que la luz se apague.",
+      "Si la luz no se apaga, repite el proceso tras 10 segundos."
+    ],
+    "guiaProblemas": [
+      {
+        "pregunta": "¿Por qué el agua sabe mal después del cambio?",
+        "respuesta": "Casi siempre es porque no se purgó suficiente. Deja correr agua 5 minutos más. Si el sabor persiste, el filtro puede ser una réplica o una unidad defectuosa: hay reseñas de usuarios que reportan sabor a plástico con filtros nuevos. Devuélvelo y compra el original de Amazon o Bosch."
+      },
+      {
+        "pregunta": "¿Por qué mi nevera no reconoce el filtro nuevo?",
+        "respuesta": "El UltraClarity Pro no tiene chip, así que la nevera no lo 'reconoce' como tal. Si la luz no se apaga, es porque no se ha reseteado. Si el agua no sale, revisa que el filtro esté girado hasta el tope."
+      },
+      {
+        "pregunta": "¿Qué pasa si uso un filtro de terceros?",
+        "respuesta": "Bosch advierte que los filtros no originales pueden no sellar bien y causar fugas. Hay reseñas de genéricos (ICEPURE) que reportan que 'rompió el cabezal del filtro' o 'arruinó la máquina de hielo'. Este es el original de Bosch, con certificación NSF 42, 53 y 401."
+      }
+    ],
+    "guiaOriginal": {
+      "intro": "Bosch no usa un QR como Samsung. La forma de saber si un UltraClarity Pro es original es más simple, pero hay que fijarse en el empaque y el vendedor.",
+      "pasos": [
+        "Mira el empaque. El original de Bosch viene en caja de cartón con el logo de Bosch y el número de pieza 11032531.",
+        "Revisa el filtro. El original tiene el logo de Bosch grabado en el plástico.",
+        "Comprueba el número de pieza. El original dice 11032531 o BORPLFTR55 en el lateral.",
+        "Verifica el vendedor. El original lo vende Amazon o Bosch directamente. Si el vendedor es un tercero sin reputación, el riesgo de réplica es alto."
+      ],
+      "senales": [
+        "El precio es sospechosamente bajo. Un original de 1 unidad ronda los 45 USD. Si lo compras por 15 USD, probablemente sea réplica.",
+        "El agua sabe a plástico después de 5 minutos de purgado. El original no deja sabor si se purga bien.",
+        "El filtro no encaja a la primera. El original entra con un giro suave.",
+        "El vendedor no es Amazon ni Bosch. Ahí es donde más réplicas circulan."
+      ],
+      "queHacer": "Si el filtro no encaja o el agua sabe mal después de purgar, devuélvelo. Los filtros de terceros pueden no sellar bien y causar fugas. Bosch no cubre daños causados por filtros no originales."
+    },
+    "guiaNoEncaja": {
+      "intro": "Si compraste el UltraClarity Pro y no entra o no encaja, no fuerces. Hay dos causas principales.",
+      "causas": [
+        {
+          "titulo": "Causa 1: es el filtro equivocado (UltraClarity vs UltraClarity Pro)",
+          "texto": "Bosch tiene dos filtros: UltraClarity (sin 'Pro') y UltraClarity Pro. No son intercambiables. El UltraClarity Pro (11032531) no encaja en neveras que usan el UltraClarity antiguo. Antes de comprar, mira el filtro viejo: si el número de pieza no es 11032531 o BORPLFTR55, este no es tu filtro."
+        },
+        {
+          "titulo": "Causa 2: el cabezal del filtro fue reemplazado",
+          "texto": "Si el cabezal del filtro se reemplazó durante una reparación, puede que necesites un filtro diferente. Bosch lo advierte en su web: 'If your filter head was replaced during a repair, you may need to buy a different filter'. Consulta con Bosch antes de comprar."
+        }
+      ],
+      "gotea": "Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa que el filtro esté girado hasta el tope. Si la junta está doblada, no la fuerces: devuelve el filtro."
+    },
+    "guiaVsGenerico": {
+      "intro": "El original de Bosch cuesta $45, pero los genéricos tienen riesgos documentados. Esta comparativa te ayuda a decidir.",
+      "originalNoPerfecto": "El original de Bosch tiene certificación NSF 42, 53 y 401, y está diseñado para encajar a la primera. No es perfecto: hay reseñas de sabor a plástico con unidades defectuosas, y de usuarios que sospechan que recibieron una réplica. Pero es el único que garantiza la filtración que Bosch promete.",
+      "riesgosGenerico": [
+        "Puede dañar la nevera. Hay reseñas de genéricos (ICEPURE) que reportan que 'rompió el cabezal del filtro' o 'arruinó la máquina de hielo'.",
+        "La filtración es inferior. Los genéricos baratos a veces no tienen certificación NSF, lo que significa que no filtran lo que prometen.",
+        "La garantía. Bosch no cubre daños causados por filtros no originales."
+      ],
+      "tabla": [
+        { "opcion": "Bosch UltraClarity Pro original (1 ud.)", "precio": "~$45.07", "certificacion": "NSF 42, 53, 401" },
+        { "opcion": "ICEPURE RWF6100A (3 uds.)", "precio": "~$25-30", "certificacion": "NSF 42, 372" },
+        { "opcion": "Glacier Fresh (1 ud.)", "precio": "~$25.59", "certificacion": "NSF 42 (parcial)" }
+      ],
+      "recomendacion": [
+        "Si tu nevera está en garantía: original. El riesgo de dañar el cabezal del filtro o la máquina de hielo no compensa el ahorro.",
+        "Si tu nevera es vieja y ya no tiene garantía: un genérico de marca conocida (ICEPURE, Glacier Fresh) es una opción, pero verifica que tenga certificación NSF.",
+        "Si quieres cero riesgo de fugas o daños: original. Es el único que tiene la certificación completa y el respaldo de Bosch."
+      ]
+    },
+    "textoOriginal": "El filtro Bosch UltraClarity Pro (11032531) es el cartucho cilíndrico que Bosch usa en sus neveras Benchmark, 800 Series y 300 Series, y que también es compatible con modelos de Thermador (REPLFLTR55) y Gaggenau (RA450022). Es un bloque de carbón activado que reduce cloro, cloraminas, plomo, sedimentos y productos farmacéuticos, con una capacidad de 250 galones o seis meses de uso. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras Bosch usan el filtro UltraClarity (sin 'Pro'), y el UltraClarity Pro no encaja en esas. Antes de comprar, mira el filtro viejo: si el número de pieza no es 11032531 o BORPLFTR55, este no es tu filtro. Después de instalar, deja correr 5 minutos de agua hasta que salga clara. Cambiarlo cada seis meses evita que el carbón se sature y que el agua empiece a saber mal.",
+    "faqs": [
+      {
+        "q": "¿Es compatible el filtro UltraClarity Pro con mi Bosch?",
+        "a": "Sí, siempre que tu modelo esté en la tabla de compatibilidad de esta página. Verifica el número de pieza de tu filtro actual. Si no es 11032531 o BORPLFTR55, este puede no encajar."
+      },
+      {
+        "q": "¿Cada cuánto se cambia el filtro UltraClarity Pro?",
+        "a": "Cada 6 meses o 250 galones, lo que ocurra primero. La señal no es solo la luz: si el agua sale más lenta o huele raro, cámbialo."
+      },
+      {
+        "q": "¿Puedo usar un filtro genérico en lugar del original?",
+        "a": "Puedes, pero hay riesgos. Algunos genéricos (ICEPURE) tienen reseñas de que 'rompió el cabezal del filtro' o 'arruinó la máquina de hielo'. Este es el original de Bosch, con certificación NSF 42, 53 y 401."
+      }
+    ],
+    "enlaceAfiliado": "https://www.amazon.com/dp/B0973NDZTN?tag=qqo-20",
+    "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/41e5RpUaC8L._AC_SX679_.jpg",
+    "asin": "B0973NDZTN"
   }
 ]
