@@ -1,0 +1,30 @@
+---
+interface Props {
+  niveles: { nombre: string; href?: string }[];
+}
+
+const { niveles } = Astro.props;
+---
+
+<nav
+  aria-label="Ruta de navegación"
+  style="font-size: 0.85rem; color: #777; margin-bottom: 1rem; line-height: 1.5;"
+>
+  <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.25rem; align-items: center;">
+    <li>
+      <a href="/" style="color: #1d4ed8; text-decoration: none;">Inicio</a>
+    </li>
+    {niveles.map((nivel, i) => (
+      <li style="display: flex; align-items: center; gap: 0.25rem;">
+        <span aria-hidden="true" style="color: #ccc;">/</span>
+        {nivel.href && i < niveles.length - 1 ? (
+          <a href={nivel.href} style="color: #1d4ed8; text-decoration: none;">
+            {nivel.nombre}
+          </a>
+        ) : (
+          <span style="color: #555;">{nivel.nombre}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

@@ -1,0 +1,31 @@
+---
+const categorias = [
+  { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+];
+---
+
+<header style="border-bottom: 1px solid #e5e7eb; background: #fff;">
+  <div style="max-width: 960px; margin: 0 auto; padding: 0.75rem 1rem;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+      <a href="/" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; color: #111;">
+        <span style="display: inline-block; width: 32px; height: 32px; background: #ea580c; border-radius: 6px; color: #fff; font-weight: 700; font-size: 1.1rem; line-height: 32px; text-align: center; flex-shrink: 0;">
+          R
+        </span>
+        <span style="font-size: 1.05rem; font-weight: 600; white-space: nowrap;">
+          repuestoselectro
+        </span>
+      </a>
+
+      <nav style="display: flex; gap: 1.25rem; font-size: 0.9rem; flex-wrap: wrap;">
+        <a href="/" style="color: #1d4ed8; text-decoration: none; padding: 0.25rem 0;">
+          Inicio
+        </a>
+        {categorias.map(c => (
+          <a href={c.href} style="color: #1d4ed8; text-decoration: none; padding: 0.25rem 0;">
+            {c.nombre}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>

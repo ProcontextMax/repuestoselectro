@@ -1,0 +1,83 @@
+---
+import repuestos from '../data/repuestos.json';
+
+const porMarca = repuestos.reduce((acc, r) => {
+  if (!acc[r.marca]) {
+    acc[r.marca] = { nombre: r.marcaNombre, items: [] };
+  }
+  acc[r.marca].items.push(r);
+  return acc;
+}, {} as Record<string, { nombre: string; items: typeof repuestos }>);
+
+const marcas = Object.entries(porMarca).map(([slug, data]) => ({
+  slug,
+  nombre: data.nombre,
+  items: data.items,
+}));
+---
+
+<div class="selector-nevera" style="margin-bottom: 1.5rem;">
+  <label
+    for="selector-modelo"
+    style="display: block; font-size: 0.9rem; font-weight: 600; color: #333; margin-bottom: 0.4rem;"
+  >
+    Busca el filtro para tu nevera
+  </label>
+
+  <select
+    id="selector-modelo"
+    style="width: 100%; padding: 0.65rem 0.75rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background: #fff; color: #111; cursor: pointer;"
+  >
+    <option value="">Selecciona tu marca y modelo</option>
+
+    {marcas.map(m => (
+      <optgroup label={m.nombre}>
+        {m.items.flatMap(item =>
+          item.modelosCompatibles.map(modelo => (
+            <option value={`/filtro-agua/${item.marca}/modelo/${modelo.toLowerCase()}/`}>
+              {modelo}
+            </option>
+          ))
+        )}
+      </optgroup>
+    ))}
+
+    <option value="__ayuda__">No sé mi modelo</option>
+  </select>
+
+  <details
+    id="ayuda-modelo"
+    style="margin-top: 0.75rem; font-size: 0.85rem; color: #555; border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.75rem; background: #fafafa;"
+  >
+    <summary style="cursor: pointer; font-weight: 600; color: #1d4ed8;">
+      ¿Cómo saber el modelo de mi nevera?
+    </summary>
+    <p style="margin: 0.5rem 0 0; line-height: 1.5;">
+      Mira la etiqueta dentro de la nevera, en la pared lateral derecha del compartimento fresco.
+      El modelo empieza por <strong>RF</strong> (French Door), <strong>RS</strong> (Side-by-Side)
+      o <strong>BRF</strong> (Bespoke). También puedes buscarlo en el manual o en la app SmartThings.
+    </p>
+  </details>
+</div>
+
+<script>
+  const selector = document.getElementById('selector-modelo') as HTMLSelectElement | null;
+  const ayuda = document.getElementById('ayuda-modelo') as HTMLDetailsElement | null;
+
+  if (selector) {
+    selector.addEventListener('change', () => {
+      const value = selector.value;
+      if (value === '__ayuda__') {
+        if (ayuda) {
+          ayuda.open = true;
+          ayuda.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        selector.value = '';
+        return;
+      }
+      if (value) {
+        window.location.href = value;
+      }
+    });
+  }
+</script>

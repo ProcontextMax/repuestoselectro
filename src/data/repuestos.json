@@ -1,0 +1,109 @@
+[
+  {
+    "categoria": "filtro-agua",
+    "categoriaNombre": "Filtros de agua para nevera",
+    "marca": "samsung",
+    "marcaNombre": "Samsung",
+    "slug": "da97-17376b",
+    "titulo": "Filtro Samsung DA97-17376B — Original",
+    "tituloSeo": "Filtro de agua Samsung original — Sin fugas y con guía de cambio",
+    "numeroPieza": "DA97-17376B",
+    "alias": ["HAF-QIN", "HAF-QIN/EXP"],
+    "esOriginal": true,
+    "fabricante": "Samsung",
+    "tipoFiltro": "Cuadrado (bloque de carbón)",
+    "modelosCompatibles": [
+      "BRF425200AP", "RF18A5101SR", "RF20A5101SR", "RF23A9071SG", "RF23A9071SR",
+      "RF23A9671SG", "RF23A9671SR", "RF23A967541", "RF23A9771SG", "RF23A9771SR",
+      "RF23BB8200AP", "RF23BB86004M", "RF23BB8600AP", "RF23BB8900AC", "RF23M8090SG",
+      "RF23M8570SR", "RF23M8960S4", "RF23R6201SR", "RF23R6301SR", "RF24BB6200AP",
+      "RF24BB69006M", "RF24BB6900AC", "RF24BB6900AW", "RF25C5551SR", "RF28R6241SR",
+      "RF28R6301SG", "RF28R7351SG", "RF28R7551SG", "RF28T5101SR", "RF28T5101WW",
+      "RF28T5F01SR", "RF29A9671SG", "RF29A9675AP", "RF29A9675MT", "RF29BB820012",
+      "RF29BB8200AP", "RF29BB8600AP", "RF29BB8900AC", "RF30BB620012", "RF30BB6600QL",
+      "RF30BB6602QL", "RF31CG7200SR", "RF32CG5400MT", "RF32CG5900SR", "RS22T5561SG",
+      "RS27T5200SR", "RS27T5200WW", "RS27T5201SR", "RS28A5F61SG", "RS28CB760012"
+    ],
+    "compatibilidad": {
+      "familias": [
+        {
+          "nombre": "Samsung French Door (serie RF)",
+          "modelos": [
+            "RF18A5101SR", "RF20A5101SR", "RF23A9071SG", "RF23A9071SR", "RF23A9671SG",
+            "RF23A9671SR", "RF23A967541", "RF23A9771SG", "RF23A9771SR", "RF23BB8200AP",
+            "RF23BB86004M", "RF23BB8600AP", "RF23BB8900AC", "RF23M8090SG", "RF23M8570SR",
+            "RF23M8960S4", "RF23R6201SR", "RF23R6301SR", "RF24BB6200AP", "RF24BB69006M",
+            "RF24BB6900AC", "RF24BB6900AW", "RF25C5551SR", "RF28R6241SR", "RF28R6301SG",
+            "RF28R7351SG", "RF28R7551SG", "RF28T5101SR", "RF28T5101WW", "RF28T5F01SR",
+            "RF29A9671SG", "RF29A9675AP", "RF29A9675MT", "RF29BB820012", "RF29BB8200AP",
+            "RF29BB8600AP", "RF29BB8900AC", "RF30BB620012", "RF30BB6600QL", "RF30BB6602QL",
+            "RF31CG7200SR", "RF32CG5400MT", "RF32CG5900SR"
+          ]
+        },
+        {
+          "nombre": "Samsung Side-by-Side (serie RS)",
+          "modelos": ["RS22T5561SG", "RS27T5200SR", "RS27T5200WW", "RS27T5201SR", "RS28A5F61SG", "RS28CB760012"]
+        },
+        {
+          "nombre": "Samsung Bespoke (serie BRF)",
+          "modelos": ["BRF425200AP"]
+        }
+      ]
+    },
+    "contraindicaciones": [
+      "No compatible con filtros redondos (DA29-00020B / HAF-CIN). Solo encaja en el alojamiento cuadrado.",
+      "No compatible con neveras Samsung que usan el sistema Family Hub con filtro redondo o de otro formato.",
+      "No compatible con modelos que no aparecen en la tabla de compatibilidad."
+    ],
+    "sintomas": [
+      "El dispensador de agua sale más lento de lo normal.",
+      "El hielo tiene sabor u olor extraño.",
+      "La luz de cambio de filtro está encendida (parpadea en rojo o ámbar).",
+      "El agua sale turbia o con partículas visibles."
+    ],
+    "comoSaberModelo": "Mira la etiqueta dentro de la nevera, en la pared lateral derecha del compartimento fresco. El modelo empieza por RF (French Door), RS (Side-by-Side) o BRF (Bespoke). También puedes buscarlo en el manual o en la app SmartThings.",
+    "guiaCambio": [
+      "Cierra la llave de paso que alimenta la nevera. Evita que el agua a presión salga al retirar el cartucho viejo.",
+      "Encuentra el alojamiento del filtro. En la mayoría de modelos Samsung French Door está entre los cajones de verdura, en el centro. En algunos Side-by-Side queda en la esquina inferior. Si tu nevera tiene una tapa de plástico delante, ábrela.",
+      "Saca el filtro usado. Gíralo hacia la izquierda entre un cuarto y medio giro (90° a 180°) hasta que se desbloquee, y tira de él hacia ti. Si cuesta, no forces: vuelve a girar y prueba otra vez.",
+      "Coloca el filtro nuevo. Quita la tapa de protección que trae el cartucho. Alinéalo con la marca vertical del alojamiento, empújalo hacia dentro y gíralo a la derecha hasta que oigas un clic o veas que la flecha coincide con el candado cerrado.",
+      "Purga el aire y el carbón suelto. Abre la llave de paso y deja correr agua por el dispensador entre 5 y 6 minutos (unos 3 a 5 galones). Es normal que el agua salga gris o con burbujas al principio: son restos del filtro nuevo y aire en la tubería."
+    ],
+    "guiaReset": [
+      "Modelos con panel estándar: mantén presionado el botón 'Ice Type' o 'Filter Change' durante 3 segundos hasta que la luz se apague o cambie de color.",
+      "Modelos Family Hub: abre la app SmartThings o el panel de la nevera, entra en 'Fridge Manager' → 'Fridge Settings' → 'Water Filter', y pulsa 'Reset'.",
+      "Modelos con menú de flechas: navega hasta 'More Options' o 'Settings', busca 'Filter Reset' y confirma con el botón central."
+    ],
+    "guiaProblemas": [
+      {
+        "pregunta": "¿Por qué gotea el filtro al instalarlo?",
+        "respuesta": "Es normal durante los primeros segundos. El aire atrapado en la tubería empuja el agua y hace que gotee por la junta. Si sigue goteando después de 5 minutos, revisa que el cartucho esté girado hasta el tope y que la junta de goma no esté doblada."
+      },
+      {
+        "pregunta": "¿Por qué el agua sabe mal después del cambio?",
+        "respuesta": "Casi siempre es porque no se purgó suficiente. Deja correr agua 5–6 minutos más. Si el sabor persiste, el filtro puede ser una réplica sin carbón activado real: los genéricos baratos no filtran igual y a veces liberan partículas."
+      },
+      {
+        "pregunta": "¿Qué pasa si uso un filtro de terceros?",
+        "respuesta": "Samsung advierte que los filtros no originales pueden no sellar bien y causar fugas que dañan la nevera. Además, no están cubiertos por la garantía del fabricante. Este es el original de Samsung, con etiqueta de autenticación."
+      }
+    ],
+    "textoOriginal": "El filtro DA97-17376B es el cartucho cuadrado que Samsung usa en la mayoría de sus neveras French Door y Side-by-Side desde 2017. Es un bloque de carbón activado que reduce cloro, sedimentos y más de 70 contaminantes, con una capacidad de 300 galones o seis meses de uso. La señal para cambiarlo no es solo la luz del panel: si notas que el agua sale más despacio, o que el hielo huele raro, el filtro ya está saturado aunque la luz no se haya encendido. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras Samsung usan un filtro redondo (DA29-00020B), y este cuadrado no encaja. Antes de comprar, mira el cartucho viejo: si es redondo, este no es tu filtro. Si es cuadrado, este es el original de Samsung, con la etiqueta de autenticación que confirma que no es una réplica. Cambiarlo cada seis meses evita que el carbón se sature y empiece a liberar sabores extraños.",
+    "faqs": [
+      {
+        "q": "¿Es compatible el filtro DA97-17376B con mi Samsung RF23?",
+        "a": "Sí, siempre que tu modelo esté en la tabla de compatibilidad de esta página. El RF23 es French Door y usa el filtro cuadrado. Verifica el número exacto en la etiqueta de tu nevera."
+      },
+      {
+        "q": "¿Cada cuánto se cambia el filtro DA97-17376B?",
+        "a": "Cada 6 meses o 300 galones, lo que ocurra primero. Con agua dura o mucho uso, puede ser antes. La señal no es solo la luz: si el agua sale más lenta o huele raro, cámbialo."
+      },
+      {
+        "q": "¿Puedo usar un filtro genérico en lugar del original?",
+        "a": "Puedes, pero el encaje y la filtración varían. Los genéricos baratos a veces no sellan bien y dejan pasar sedimentos. Este es el original de Samsung, con certificación NSF 42, 53 y 401."
+      }
+    ],
+    "enlaceAfiliado": "https://www.amazon.com/dp/B071NFVVNG?tag=qqo-20",
+    "asin": "B071NFVVNG"
+  }
+]

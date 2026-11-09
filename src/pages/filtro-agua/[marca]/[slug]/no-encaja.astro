@@ -1,0 +1,130 @@
+---
+import repuestos from '../../../../data/repuestos.json';
+import Header from '../../../../components/Header.astro';
+import MigasPan from '../../../../components/MigasPan.astro';
+
+export function getStaticPaths() {
+  return repuestos.map(r => ({
+    params: { marca: r.marca, slug: r.slug },
+    props: { filtro: r },
+  }));
+}
+
+const { filtro } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>¿Por qué mi filtro Samsung no encaja? (3 causas y solución)</title>
+    <meta
+      name="description"
+      content="Si tu filtro Samsung DA97-17376B no entra o no encaja, aquí están las 3 causas reales: filtro equivocado, bloqueo a medio abrir o réplica. Con el truco oficial de Samsung."
+    />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+
+    <main style="max-width: 720px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: filtro.marcaNombre, href: `/filtro-agua/${filtro.marca}/` },
+        { nombre: filtro.numeroPieza, href: `/filtro-agua/${filtro.marca}/${filtro.slug}/` },
+        { nombre: 'No encaja' }
+      ]} />
+
+      <h1 style="font-size: 1.7rem; margin: 0 0 0.5rem; line-height: 1.25;">
+        ¿Por qué mi filtro Samsung no encaja?
+      </h1>
+      <p style="color: #555; margin: 0 0 2rem; font-size: 1rem;">
+        Si compraste el DA97-17376B y no entra hasta el fondo, no fuerces. Hay tres causas posibles, y una tiene solución oficial de Samsung que casi nadie conoce.
+      </p>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Causa 1: es el filtro equivocado (cuadrado vs redondo)</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Es la causa más común. El DA97-17376B (también llamado HAF-QIN) es <strong>cuadrado</strong>. El DA29-00020B (HAF-CIN) es <strong>redondo</strong>. No son intercambiables: si tu nevera usa el redondo, el cuadrado no entra por mucho que fuerces.
+        </p>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          <strong>Cómo saber cuál tienes:</strong> mira el filtro viejo. Si es cuadrado, es el DA97-17376B. Si es redondo, es el DA29-00020B. También puedes consultar la etiqueta dentro de la nevera (empieza por RF, RS o BRF) y buscarla en la <a href={`/filtro-agua/${filtro.marca}/`} style="color: #1d4ed8;">lista de compatibilidad de Samsung</a>.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Causa 2: el bloqueo está a medio abrir (el truco de Samsung)</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Esta es la causa que casi nadie conoce. Cuando cambias de un filtro antiguo de <strong>2 pestañas</strong> a un filtro nuevo de <strong>3 pestañas</strong>, el mecanismo de bloqueo del alojamiento puede quedarse a medio abrir. El filtro viejo solo abre el bloqueo lo justo para salir, pero no lo suficiente para que entre el nuevo.
+        </p>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          <strong>La solución oficial de Samsung:</strong>
+        </p>
+        <ol style="padding-left: 1.25rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.5rem;">Vuelve a insertar el filtro viejo en el alojamiento.</li>
+          <li style="margin-bottom: 0.5rem;">Gíralo hacia la izquierda <strong>hasta el tope</strong> (más allá de donde saldría normalmente).</li>
+          <li style="margin-bottom: 0.5rem;">Sácalo en esa posición. Eso abre el mecanismo por completo.</li>
+          <li style="margin-bottom: 0.5rem;">Ahora inserta el filtro nuevo. Debería entrar hasta el fondo y girar hasta el clic.</li>
+        </ol>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Causa 3: el filtro es una réplica o un lote defectuoso</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Hay reseñas de usuarios que compraron el "original" y no encaja: el plástico es más grueso, no llega al fondo, o no da la sensación de original. También hay casos de filtros que gotean y han causado inundaciones.
+        </p>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          <strong>Cómo verificarlo:</strong> usa el <a href={`/filtro-agua/${filtro.marca}/${filtro.slug}/como-saber-si-es-original/`} style="color: #1d4ed8;">método del código QR</a>. Si el contador de escaneos es alto, es una réplica. Si es 1, es original, y si aun así no encaja, puede ser un lote defectuoso: devuélvelo.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Si el filtro gotea después de instalarlo</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa que el cartucho esté girado hasta el tope y que la junta de goma no esté doblada. Si la junta está doblada, no la fuerces: devuelve el filtro.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El filtro original, en Amazon</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Si ya verificaste que tu filtro es el DA97-17376B (cuadrado) y quieres comprar el original con etiqueta de autenticación:
+        </p>
+        <a
+          href={filtro.enlaceAfiliado}
+          rel="sponsored nofollow noopener noreferrer"
+          target="_blank"
+          style="display: inline-block; background: #ea580c; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none;"
+        >
+          Ver filtro original Samsung en Amazon
+        </a>
+        <p style="font-size: 0.75rem; color: #777; margin: 0.75rem 0 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </section>
+
+      <p style="margin: 2rem 0 0; font-size: 0.9rem;">
+        <a href={`/filtro-agua/${filtro.marca}/${filtro.slug}/`} style="color: #1d4ed8; text-decoration: none;">
+          ← Volver a la ficha del {filtro.numeroPieza}
+        </a>
+      </p>
+
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #777;">
+        <p style="margin: 0 0 0.5rem;">
+          <a href="/afiliados" style="color: #1d4ed8; text-decoration: none;">Aviso de afiliados</a>
+          <span> · </span>
+          <a href="/privacidad" style="color: #1d4ed8; text-decoration: none;">Privacidad</a>
+          <span> · </span>
+          <a href="/aviso-legal" style="color: #1d4ed8; text-decoration: none;">Aviso legal</a>
+        </p>
+        <p style="margin: 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

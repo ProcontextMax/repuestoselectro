@@ -1,0 +1,159 @@
+---
+import repuestos from '../../../../data/repuestos.json';
+import Header from '../../../../components/Header.astro';
+import MigasPan from '../../../../components/MigasPan.astro';
+
+export function getStaticPaths() {
+  return repuestos.map(r => ({
+    params: { marca: r.marca, slug: r.slug },
+    props: { filtro: r },
+  }));
+}
+
+const { filtro } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filtro Samsung original vs genérico: ¿cuál conviene?</title>
+    <meta
+      name="description"
+      content="Comparativa honesta entre el filtro Samsung DA97-17376B original y los genéricos Waterdrop, AQUA CREST y PUREPLUS. Precios, riesgos de fugas y garantía."
+    />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+
+    <main style="max-width: 720px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: filtro.marcaNombre, href: `/filtro-agua/${filtro.marca}/` },
+        { nombre: filtro.numeroPieza, href: `/filtro-agua/${filtro.marca}/${filtro.slug}/` },
+        { nombre: 'Original vs genérico' }
+      ]} />
+
+      <h1 style="font-size: 1.7rem; margin: 0 0 0.5rem; line-height: 1.25;">
+        Filtro Samsung original vs genérico: ¿cuál conviene?
+      </h1>
+      <p style="color: #555; margin: 0 0 2rem; font-size: 1rem;">
+        El original cuesta el triple, pero el genérico tiene sus propios riesgos. Esta comparativa te ayuda a decidir según el estado de tu nevera y tu tolerancia al riesgo.
+      </p>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El original no es perfecto</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Hay reseñas de usuarios que reportan fugas con el filtro original de Samsung, incluso con el filtro bien instalado. Algunos casos han causado daños en la cocina y el sótano. Samsung responde siempre con la misma recomendación: revisar que el filtro esté bien asentado. No es un problema aislado, pero tampoco es la norma: la mayoría de los usuarios no reporta fugas.
+        </p>
+        <p style="line-height: 1.65; margin: 0;">
+          Lo que sí ofrece el original es la etiqueta de autenticación y la certificación NSF 42, 53 y 401. Eso no garantiza que no gotee, pero sí que el carbón activado es real y filtra lo que dice filtrar.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El genérico tiene dos riesgos reales</h2>
+        <ul style="padding-left: 1.25rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Puede anular la garantía.</strong> No es una amenaza legal, pero es lo que los técnicos de Samsung dicen en la práctica: si usas un filtro no original y la nevera falla, la garantía puede no cubrirlo.
+          </li>
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Puede no encajar o no apagar la luz.</strong> Hay reseñas de genéricos que encajan perfecto, pero también de usuarios que reportan que la luz de cambio de filtro no se apaga o que el filtro no llega al fondo.
+          </li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Comparativa de precios</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: #f3f4f6;">
+              <th style="border: 1px solid #ddd; padding: 0.5rem; text-align: left;">Opción</th>
+              <th style="border: 1px solid #ddd; padding: 0.5rem; text-align: left;">Precio por filtro</th>
+              <th style="border: 1px solid #ddd; padding: 0.5rem; text-align: left;">Certificación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">Samsung original (1 ud.)</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$35.49</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 53, 401</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">Waterdrop WD-F45 (3 uds.)</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$14</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 372</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">AQUA CREST (3 uds.)</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$11.66</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 372</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">PUREPLUS (3 uds.)</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$10.66</td>
+              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 372</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 0.8rem; color: #777; margin: 0.75rem 0 0;">
+          Precios indicativos consultados en el momento de publicar esta guía. El precio final se muestra en Amazon y puede variar con el tiempo.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">¿Cuál te conviene?</h2>
+        <ul style="padding-left: 1.25rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Si tu nevera está en garantía:</strong> original. El riesgo de anular la garantía no compensa el ahorro.
+          </li>
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Si tu nevera es vieja y ya no tiene garantía:</strong> un genérico de marca conocida (Waterdrop, AQUA CREST, PUREPLUS) es una opción razonable. Ahorras 2–3x, y el riesgo de fuga es bajo si la marca tiene certificación NSF.
+          </li>
+          <li style="margin-bottom: 0.5rem;">
+            <strong>Si quieres cero riesgo de fugas:</strong> original. No es perfecto, pero es el que tiene la etiqueta de autenticación y el respaldo de Samsung.
+          </li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El original, en Amazon</h2>
+        <a
+          href={filtro.enlaceAfiliado}
+          rel="sponsored nofollow noopener noreferrer"
+          target="_blank"
+          style="display: inline-block; background: #ea580c; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; margin-bottom: 0.75rem;"
+        >
+          Ver filtro original Samsung en Amazon
+        </a>
+        <p style="font-size: 0.75rem; color: #777; margin: 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </section>
+
+      <p style="margin: 2rem 0 0; font-size: 0.9rem;">
+        <a href={`/filtro-agua/${filtro.marca}/${filtro.slug}/`} style="color: #1d4ed8; text-decoration: none;">
+          ← Volver a la ficha del {filtro.numeroPieza}
+        </a>
+      </p>
+
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #777;">
+        <p style="margin: 0 0 0.5rem;">
+          <a href="/afiliados" style="color: #1d4ed8; text-decoration: none;">Aviso de afiliados</a>
+          <span> · </span>
+          <a href="/privacidad" style="color: #1d4ed8; text-decoration: none;">Privacidad</a>
+          <span> · </span>
+          <a href="/aviso-legal" style="color: #1d4ed8; text-decoration: none;">Aviso legal</a>
+        </p>
+        <p style="margin: 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

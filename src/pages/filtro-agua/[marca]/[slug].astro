@@ -1,0 +1,291 @@
+---
+import repuestos from '../../../data/repuestos.json';
+import Header from '../../../components/Header.astro';
+import MigasPan from '../../../components/MigasPan.astro';
+import SelectorNevera from '../../../components/SelectorNevera.astro';
+
+export function getStaticPaths() {
+  return repuestos.map(r => ({
+    params: { marca: r.marca, slug: r.slug },
+    props: { filtro: r },
+  }));
+}
+
+const { filtro } = Astro.props;
+
+const parrafos = filtro.textoOriginal
+  .split(/(?<=\.)\s+/)
+  .reduce((acc: string[][], frase: string, i: number) => {
+    const grupo = Math.floor(i / 3);
+    acc[grupo] = acc[grupo] || [];
+    acc[grupo].push(frase);
+    return acc;
+  }, [])
+  .map((grupo: string[]) => grupo.join(' '));
+
+const productoJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: filtro.titulo,
+  description: filtro.textoOriginal.slice(0, 160),
+  sku: filtro.numeroPieza,
+  brand: { '@type': 'Brand', name: filtro.fabricante },
+  offers: {
+    '@type': 'Offer',
+    url: filtro.enlaceAfiliado,
+    priceCurrency: 'USD',
+    price: '0',
+    availability: 'https://schema.org/InStock',
+  },
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: filtro.faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{filtro.tituloSeo}</title>
+    <meta
+      name="description"
+      content={`${filtro.titulo}. Tabla de compatibilidad exacta, número de pieza ${filtro.numeroPieza}, síntomas de desgaste y contraindicaciones.`}
+    />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+    <script type="application/ld+json" set:html={JSON.stringify(productoJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+
+    <main style="max-width: 960px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: filtro.marcaNombre, href: `/filtro-agua/${filtro.marca}/` },
+        { nombre: filtro.numeroPieza }
+      ]} />
+
+      <h1 style="font-size: 1.7rem; margin: 0 0 0.5rem; line-height: 1.25;">
+        {filtro.titulo}
+      </h1>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.5rem; font-size: 0.85rem;">
+        <span style="background: #dcfce7; color: #166534; padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 600;">
+          ✓ Original {filtro.fabricante}
+        </span>
+        <span style="background: #f3f4f6; color: #374151; padding: 0.25rem 0.6rem; border-radius: 6px;">
+          Nº pieza: <code>{filtro.numeroPieza}</code>
+        </span>
+        {filtro.alias && filtro.alias.map(a => (
+          <span style="background: #f3f4f6; color: #374151; padding: 0.25rem 0.6rem; border-radius: 6px;">
+            {a}
+          </span>
+        ))}
+      </div>
+
+      <SelectorNevera />
+
+      <div style="margin: 0 0 2rem;">
+        <a
+          href={filtro.enlaceAfiliado}
+          rel="sponsored nofollow noopener noreferrer"
+          target="_blank"
+          style="color: #ea580c; text-decoration: underline; font-size: 0.9rem;"
+        >
+          Ver precio y disponibilidad en Amazon →
+        </a>
+        <span style="display: block; font-size: 0.75rem; color: #777; margin-top: 0.25rem;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </span>
+      </div>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Compatibilidad exacta</h2>
+        {filtro.compatibilidad.familias.map(familia => (
+          <div style="margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1rem; margin: 0 0 0.5rem; color: #333;">{familia.nombre}</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              {familia.modelos.map(m => (
+                <li>
+                  <a
+                    href={`/filtro-agua/${filtro.marca}/modelo/${m.toLowerCase()}/`}
+                    style="display: inline-block; background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; padding: 0.25rem 0.55rem; font-size: 0.8rem; color: #1d4ed8; text-decoration: none;"
+                  >
+                    {m}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Síntomas de que toca cambiarlo</h2>
+        <ul style="padding-left: 1.25rem; line-height: 1.7;">
+          {filtro.sintomas.map(s => <li>{s}</li>)}
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Contraindicaciones</h2>
+        <ul style="padding-left: 1.25rem; color: #991b1b; line-height: 1.7;">
+          {filtro.contraindicaciones.map(c => <li>{c}</li>)}
+        </ul>
+      </section>
+
+      <details style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 1rem; background: #fff; margin-bottom: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #1d4ed8;">
+          Cómo cambiar el filtro (paso a paso)
+        </summary>
+        <ol style="padding-left: 1.25rem; margin: 0.75rem 0 0; font-size: 0.9rem; color: #444; line-height: 1.65;">
+          {filtro.guiaCambio.map(paso => (
+            <li style="margin-bottom: 0.5rem;">{paso}</li>
+          ))}
+        </ol>
+      </details>
+
+      <details style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 1rem; background: #fff; margin-bottom: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #1d4ed8;">
+          Cómo reiniciar la luz del filtro
+        </summary>
+        <ul style="padding-left: 1.25rem; margin: 0.75rem 0 0; font-size: 0.9rem; color: #444; line-height: 1.65;">
+          {filtro.guiaReset.map(metodo => (
+            <li style="margin-bottom: 0.5rem;">{metodo}</li>
+          ))}
+        </ul>
+      </details>
+
+      <details style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 1rem; background: #fff; margin-bottom: 1rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #1d4ed8;">
+          Problemas comunes (fugas, sabor, genéricos)
+        </summary>
+        <div style="margin: 0.75rem 0 0; font-size: 0.9rem; color: #444; line-height: 1.65;">
+          {filtro.guiaProblemas.map(p => (
+            <div style="margin-bottom: 0.75rem;">
+              <strong style="display: block; margin-bottom: 0.25rem;">{p.pregunta}</strong>
+              <p style="margin: 0;">{p.respuesta}</p>
+            </div>
+          ))}
+        </div>
+      </details>
+
+      <details style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 1rem; background: #fff; margin-bottom: 2rem;">
+        <summary style="cursor: pointer; font-weight: 600; color: #1d4ed8;">¿Cómo saber el modelo de mi nevera?</summary>
+        <p style="margin: 0.5rem 0 0; line-height: 1.6; font-size: 0.9rem; color: #444;">
+          {filtro.comoSaberModelo}
+        </p>
+      </details>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Lo que debes saber antes de comprar</h2>
+        {parrafos.map(p => (
+          <p style="margin: 0 0 1rem; line-height: 1.65;">{p}</p>
+        ))}
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Preguntas frecuentes</h2>
+        {filtro.faqs.map(f => (
+          <details style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem; background: #fff;">
+            <summary style="cursor: pointer; font-weight: 600;">{f.q}</summary>
+            <p style="margin: 0.5rem 0 0; font-size: 0.9rem; color: #444; line-height: 1.6;">{f.a}</p>
+          </details>
+        ))}
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Guías sobre este filtro</h2>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
+          <li>
+            <a
+              href={`/filtro-agua/${filtro.marca}/${filtro.slug}/como-saber-si-es-original/`}
+              style="display: block; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; background: #fff;"
+            >
+              <strong style="display: block; font-size: 0.95rem; color: #1d4ed8; margin-bottom: 0.3rem;">
+                ¿Es original o una réplica?
+              </strong>
+              <span style="font-size: 0.85rem; color: #555;">
+                Verifica con el código QR y el contador de escaneos.
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/filtro-agua/${filtro.marca}/${filtro.slug}/no-encaja/`}
+              style="display: block; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; background: #fff;"
+            >
+              <strong style="display: block; font-size: 0.95rem; color: #1d4ed8; margin-bottom: 0.3rem;">
+                ¿No encaja o gotea?
+              </strong>
+              <span style="font-size: 0.85rem; color: #555;">
+                Las 3 causas reales y el truco de Samsung para abrir el bloqueo.
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/filtro-agua/${filtro.marca}/${filtro.slug}/original-vs-generico/`}
+              style="display: block; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; background: #fff;"
+            >
+              <strong style="display: block; font-size: 0.95rem; color: #1d4ed8; margin-bottom: 0.3rem;">
+                Original vs genérico
+              </strong>
+              <span style="font-size: 0.85rem; color: #555;">
+                Comparativa de precios, riesgos y garantía.
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <div style="border: 2px solid #ea580c; border-radius: 10px; padding: 1.5rem; margin: 2rem 0; text-align: center; background: #fff7ed;">
+        <p style="font-size: 1rem; margin: 0 0 1rem; color: #333;">
+          ¿Ya verificaste que es compatible con tu modelo?
+        </p>
+        <a
+          href={filtro.enlaceAfiliado}
+          rel="sponsored nofollow noopener noreferrer"
+          target="_blank"
+          style="display: inline-block; background: #ea580c; color: #fff; padding: 0.85rem 1.75rem; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none;"
+        >
+          Ver en Amazon
+        </a>
+        <p style="font-size: 0.75rem; color: #777; margin: 0.75rem 0 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </div>
+
+      <p style="margin: 2rem 0 0; font-size: 0.9rem;">
+        <a href={`/filtro-agua/${filtro.marca}/`} style="color: #1d4ed8; text-decoration: none;">
+          ← Ver todos los filtros {filtro.marcaNombre}
+        </a>
+      </p>
+
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #777;">
+        <p style="margin: 0 0 0.5rem;">
+          <a href="/afiliados" style="color: #1d4ed8; text-decoration: none;">Aviso de afiliados</a>
+          <span> · </span>
+          <a href="/privacidad" style="color: #1d4ed8; text-decoration: none;">Privacidad</a>
+          <span> · </span>
+          <a href="/aviso-legal" style="color: #1d4ed8; text-decoration: none;">Aviso legal</a>
+        </p>
+        <p style="margin: 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

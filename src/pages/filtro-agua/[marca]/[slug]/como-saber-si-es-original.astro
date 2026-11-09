@@ -1,0 +1,117 @@
+---
+import repuestos from '../../../../data/repuestos.json';
+import Header from '../../../../components/Header.astro';
+import MigasPan from '../../../../components/MigasPan.astro';
+
+export function getStaticPaths() {
+  return repuestos.map(r => ({
+    params: { marca: r.marca, slug: r.slug },
+    props: { filtro: r },
+  }));
+}
+
+const { filtro } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cómo saber si tu filtro Samsung es original (método del QR)</title>
+    <meta
+      name="description"
+      content="Guía para verificar si un filtro Samsung DA97-17376B es original o una réplica. Método del código QR, contador de escaneos y señales de alarma."
+    />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+
+    <main style="max-width: 720px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: filtro.marcaNombre, href: `/filtro-agua/${filtro.marca}/` },
+        { nombre: filtro.numeroPieza, href: `/filtro-agua/${filtro.marca}/${filtro.slug}/` },
+        { nombre: '¿Es original?' }
+      ]} />
+
+      <h1 style="font-size: 1.7rem; margin: 0 0 0.5rem; line-height: 1.25;">
+        Cómo saber si tu filtro Samsung es original
+      </h1>
+      <p style="color: #555; margin: 0 0 2rem; font-size: 1rem;">
+        Si compraste un filtro DA97-17376B y dudas de su autenticidad, esta guía te explica el método oficial de Samsung y las señales de alarma que debes buscar.
+      </p>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El método del código QR (el único oficial)</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Samsung cambió el sistema de autenticación. Ya no hay tira magnética como en las cajas antiguas. Ahora el filtro trae un código QR en la etiqueta gris. Para verificar:
+        </p>
+        <ol style="padding-left: 1.25rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.5rem;">Descarga la app de autenticación que Samsung indica en su web (no es la app SmartThings).</li>
+          <li style="margin-bottom: 0.5rem;">Escanea el código QR de la etiqueta del filtro.</li>
+          <li style="margin-bottom: 0.5rem;">La app te mostrará un número de escaneos. <strong>Si es 1, el filtro es genuino y nunca se había escaneado antes.</strong></li>
+          <li style="margin-bottom: 0.5rem;">Si el número es alto (cientos o miles), es una réplica: alguien copió el código de un filtro original y lo replicó en serie.</li>
+        </ol>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Señales de alarma (y falsas alarmas)</h2>
+        <ul style="padding-left: 1.25rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.5rem;"><strong>El etiquetado dice "Standrad" en lugar de "Standard".</strong> No es un error de la réplica: Samsung lo escribe así en su propia web. Es raro, pero es genuino.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>La app de escaneo no es de Samsung.</strong> Es una app externa. Samsung la usa así, aunque parezca sospechoso.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>El precio es sospechosamente bajo.</strong> Un original de 1 unidad ronda los 35 USD. Si lo compras por 10 USD, probablemente sea réplica.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>El vendedor no es Amazon ni Samsung.</strong> Ahí es donde más réplicas circulan. Verifica siempre el vendedor en la ficha.</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Qué hacer si descubres que es una réplica</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Si el contador de escaneos es alto o el filtro no encaja, devuélvelo. Las réplicas pueden no sellar bien y causar fugas que dañan la nevera. Además, no están cubiertas por la garantía de Samsung.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El filtro original, en Amazon</h2>
+        <p style="line-height: 1.65; margin: 0 0 1rem;">
+          Si ya verificaste que tu filtro es el DA97-17376B (cuadrado) y quieres comprar el original con etiqueta de autenticación:
+        </p>
+        <a
+          href={filtro.enlaceAfiliado}
+          rel="sponsored nofollow noopener noreferrer"
+          target="_blank"
+          style="display: inline-block; background: #ea580c; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none;"
+        >
+          Ver filtro original Samsung en Amazon
+        </a>
+        <p style="font-size: 0.75rem; color: #777; margin: 0.75rem 0 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </section>
+
+      <p style="margin: 2rem 0 0; font-size: 0.9rem;">
+        <a href={`/filtro-agua/${filtro.marca}/${filtro.slug}/`} style="color: #1d4ed8; text-decoration: none;">
+          ← Volver a la ficha del {filtro.numeroPieza}
+        </a>
+      </p>
+
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #777;">
+        <p style="margin: 0 0 0.5rem;">
+          <a href="/afiliados" style="color: #1d4ed8; text-decoration: none;">Aviso de afiliados</a>
+          <span> · </span>
+          <a href="/privacidad" style="color: #1d4ed8; text-decoration: none;">Privacidad</a>
+          <span> · </span>
+          <a href="/aviso-legal" style="color: #1d4ed8; text-decoration: none;">Aviso legal</a>
+        </p>
+        <p style="margin: 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

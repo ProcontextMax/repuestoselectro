@@ -1,0 +1,95 @@
+---
+import repuestos from '../../../data/repuestos.json';
+import Header from '../../../components/Header.astro';
+import MigasPan from '../../../components/MigasPan.astro';
+import SelectorNevera from '../../../components/SelectorNevera.astro';
+
+export function getStaticPaths() {
+  const marcas = [...new Set(repuestos.map(r => r.marca))];
+  return marcas.map(marca => {
+    const items = repuestos.filter(r => r.marca === marca);
+    return {
+      params: { marca },
+      props: { items, marcaNombre: items[0].marcaNombre },
+    };
+  });
+}
+
+const { items, marcaNombre } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filtros de agua {marcaNombre} — Originales y compatibles</title>
+    <meta
+      name="description"
+      content={`Filtros de agua originales para neveras ${marcaNombre}. Tabla de compatibilidad exacta y número de pieza verificado.`}
+    />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+
+    <main style="max-width: 960px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: marcaNombre }
+      ]} />
+
+      <h1 style="font-size: 1.8rem; margin: 0 0 0.5rem; line-height: 1.25;">
+        Filtros de agua {marcaNombre}
+      </h1>
+      <p style="color: #555; margin: 0 0 1.5rem; font-size: 1rem;">
+        {items.length === 1
+          ? `1 filtro original ${marcaNombre} disponible.`
+          : `${items.length} filtros originales ${marcaNombre} disponibles.`}
+      </p>
+
+      <SelectorNevera />
+
+      <h2 style="font-size: 1.1rem; margin: 2rem 0 1rem; color: #333;">
+        Filtros {marcaNombre}
+      </h2>
+
+      <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+        {items.map(f => (
+          <li>
+            <a
+              href={`/filtro-agua/${f.marca}/${f.slug}/`}
+              style="display: block; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; text-decoration: none; color: inherit; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.04);"
+            >
+              <strong style="display: block; font-size: 1.05rem; color: #1d4ed8; margin-bottom: 0.4rem;">
+                {f.titulo}
+              </strong>
+              <span style="display: block; font-size: 0.85rem; color: #555; margin-bottom: 0.5rem;">
+                Nº pieza: <code>{f.numeroPieza}</code>
+              </span>
+              <span style="display: block; font-size: 0.8rem; color: #777;">
+                {f.esOriginal ? `✓ Original ${f.fabricante}` : 'Compatible'} · {f.modelosCompatibles.length} modelos compatibles
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #777;">
+        <p style="margin: 0 0 0.5rem;">
+          <a href="/afiliados" style="color: #1d4ed8; text-decoration: none;">Aviso de afiliados</a>
+          <span> · </span>
+          <a href="/privacidad" style="color: #1d4ed8; text-decoration: none;">Privacidad</a>
+          <span> · </span>
+          <a href="/aviso-legal" style="color: #1d4ed8; text-decoration: none;">Aviso legal</a>
+        </p>
+        <p style="margin: 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
