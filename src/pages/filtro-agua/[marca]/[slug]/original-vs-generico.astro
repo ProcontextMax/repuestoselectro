@@ -112,6 +112,38 @@ const { filtro } = Astro.props;
         </p>
       </section>
 
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Otras guías de este filtro</h2>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
+          <li>
+            <a
+              href={`/filtro-agua/${filtro.marca}/${filtro.slug}/como-saber-si-es-original/`}
+              style="display: block; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; background: #fff;"
+            >
+              <strong style="display: block; font-size: 0.95rem; color: #1d4ed8; margin-bottom: 0.3rem;">
+                ¿Es original o una réplica?
+              </strong>
+              <span style="font-size: 0.85rem; color: #555;">
+                Verifica con el método oficial.
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/filtro-agua/${filtro.marca}/${filtro.slug}/no-encaja/`}
+              style="display: block; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; background: #fff;"
+            >
+              <strong style="display: block; font-size: 0.95rem; color: #1d4ed8; margin-bottom: 0.3rem;">
+                ¿No encaja o gotea?
+              </strong>
+              <span style="font-size: 0.85rem; color: #555;">
+                Las causas reales y la solución.
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
       <p style="margin: 2rem 0 0; font-size: 0.9rem;">
         <a href={`/filtro-agua/${filtro.marca}/${filtro.slug}/`} style="color: #1d4ed8; text-decoration: none;">
           ← Volver a la ficha del {filtro.numeroPieza}
