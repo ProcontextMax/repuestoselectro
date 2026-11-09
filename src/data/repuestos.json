@@ -576,5 +576,136 @@
     "enlaceAfiliado": "https://www.amazon.com/dp/B0973NDZTN?tag=qqo-20",
     "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/41e5RpUaC8L._AC_SX679_.jpg",
     "asin": "B0973NDZTN"
+  },
+  {
+    "categoria": "filtro-agua",
+    "categoriaNombre": "Filtros de agua para nevera",
+    "marca": "frigidaire",
+    "marcaNombre": "Frigidaire",
+    "slug": "eptwfu01",
+    "titulo": "Filtro Frigidaire EPTWFU01 — Original",
+    "tituloSeo": "Filtro de agua Frigidaire original — Evita que se atasque en el soporte",
+    "numeroPieza": "EPTWFU01",
+    "alias": ["PureSource Ultra", "Pure Source Ultra"],
+    "esOriginal": true,
+    "fabricante": "Frigidaire",
+    "tipoFiltro": "Cilíndrico (bloque de carbón extruido)",
+    "modelosCompatibles": [
+      "FFHD2250TD", "FG4H2272UF", "FGHB2868TF", "FGHB2868TP", "FGHD2368TF",
+      "FGSC2335TD", "FGSC2335TF", "FGSS2635TD", "FPBC2277RF", "FPBC2278UF",
+      "FPBG2277RF", "FPBS2777RF", "FPBS2778UF", "LGHK2336TF", "LGHX2636TF",
+      "PRMC2285AF"
+    ],
+    "compatibilidad": {
+      "familias": [
+        { "nombre": "Frigidaire Gallery", "modelos": ["FG4H2272UF", "FGHB2868TF", "FGHB2868TP", "FGHD2368TF", "FGSC2335TD", "FGSC2335TF", "FGSS2635TD"] },
+        { "nombre": "Frigidaire Professional", "modelos": ["FPBC2277RF", "FPBC2278UF", "FPBG2277RF", "FPBS2777RF", "FPBS2778UF"] },
+        { "nombre": "Frigidaire Estándar", "modelos": ["FFHD2250TD", "LGHK2336TF", "LGHX2636TF", "PRMC2285AF"] }
+      ]
+    },
+    "contraindicaciones": [
+      "No compatible con neveras Frigidaire que usan el filtro PureSource 3 o PureSource 2. Verifica el número de pieza de tu filtro actual.",
+      "No compatible con modelos que no aparecen en la tabla de compatibilidad.",
+      "No uses un filtro de terceros si tu nevera está en garantía: Frigidaire puede no cubrir daños causados por filtros no originales."
+    ],
+    "sintomas": [
+      "El dispensador de agua sale más lento de lo normal.",
+      "El hielo tiene sabor u olor extraño.",
+      "La luz de cambio de filtro está encendida.",
+      "El agua sale turbia o con partículas visibles."
+    ],
+    "comoSaberModelo": "Mira la etiqueta dentro de la nevera, en la pared lateral derecha o detrás de los cajones. El modelo empieza por F (Frigidaire estándar), FG (Gallery), FP (Professional) o LG (Gallery). También puedes buscarlo en el manual o en la app Frigidaire.",
+    "guiaCambio": [
+      "Localiza el alojamiento del filtro. En la mayoría de modelos Frigidaire está en la esquina superior derecha del compartimento fresco.",
+      "Retira el filtro viejo. Presiona el filtro hacia adentro para que se libere el mecanismo de bloqueo y tira de él hacia ti.",
+      "Prepara el filtro nuevo. Quita la tapa protectora.",
+      "Inserta el filtro nuevo. Alinéalo y empújalo hacia adentro hasta que encaje en su sitio. No necesita herramientas.",
+      "Purga el sistema. Deja correr agua por el dispensador durante unos 5 minutos (o 2 galones). Es normal que salga agua con aire y salpicaduras al principio. Si no purgas bien, el agua sabrá mal y salpicará.",
+      "Reinicia la luz. En la mayoría de modelos, el panel de control lo detecta automáticamente. Si no, mantén pulsado el botón 'Water Filter' o 'Reset' durante 3 segundos."
+    ],
+    "guiaReset": [
+      "Modelos con panel táctil: ve a 'Settings' → 'Water Filter' → 'Reset'.",
+      "Modelos con botones físicos: mantén pulsado el botón 'Water Filter' o 'Filter Status' durante 3 segundos.",
+      "Si la luz no se apaga, repite el proceso tras 10 segundos."
+    ],
+    "guiaProblemas": [
+      {
+        "pregunta": "¿Por qué mi filtro genérico se quedó atascado en el soporte?",
+        "respuesta": "Es un problema común con los filtros de terceros en las neveras Frigidaire. Las dimensiones del plástico no son exactas y el mecanismo de liberación no logra expulsarlos. Si te pasa esto, no fuerces con herramientas porque romperás el soporte. Este filtro original tiene las medidas exactas para que entre y salga sin problemas."
+      },
+      {
+        "pregunta": "¿Por qué salpica agua al instalar el filtro?",
+        "respuesta": "Es normal. Al cambiar el filtro entra aire en la tubería. Deja correr agua en un vaso grande o una jarra durante 5 minutos hasta que el flujo sea constante y sin burbujas. Si no lo haces, el dispensador salpicará y el agua sabrá mal."
+      },
+      {
+        "pregunta": "¿Qué pasa si uso un filtro de terceros?",
+        "respuesta": "Frigidaire advierte que los filtros no originales pueden no encajar bien, quedarse atascados o no filtrar correctamente. Además, no están cubiertos por la garantía. Este es el original de Frigidaire, con certificación NSF."
+      }
+    ],
+    "guiaOriginal": {
+      "intro": "Frigidaire no usa un QR como Samsung. La forma de saber si un PureSource Ultra es original es fijarse en el empaque y el número de pieza.",
+      "pasos": [
+        "Mira el empaque. El original viene en caja de cartón con el logo de Frigidaire y el número de pieza EPTWFU01.",
+        "Revisa el filtro. El original tiene el logo de Frigidaire grabado.",
+        "Comprueba el número de pieza. El original dice EPTWFU01. Si dice otra cosa, no es el PureSource Ultra.",
+        "Verifica el vendedor. El original lo vende Amazon o Frigidaire directamente."
+      ],
+      "senales": [
+        "El precio es sospechosamente bajo. Un original ronda los 45-50 USD. Si lo compras por 15 USD, probablemente sea réplica.",
+        "El filtro se queda atascado al intentar sacarlo. Los genéricos suelen tener este defecto.",
+        "El vendedor no es Amazon ni Frigidaire. Ahí es donde más réplicas circulan."
+      ],
+      "queHacer": "Si el filtro no sale del soporte o el agua sabe mal después de purgar, devuélvelo. Los filtros de terceros pueden dañar el mecanismo de bloqueo de la nevera. Frigidaire no cubre daños causados por filtros no originales."
+    },
+    "guiaNoEncaja": {
+      "intro": "Si compraste el PureSource Ultra y no entra o se queda atascado, hay dos causas principales.",
+      "causas": [
+        {
+          "titulo": "Causa 1: es el filtro equivocado (PureSource Ultra vs PureSource 3)",
+          "texto": "Frigidaire tiene varios filtros: PureSource Ultra (EPTWFU01), PureSource 3 (WF3CB) y PureSource 2 (WF2CB). No son intercambiables. El PureSource Ultra es cilíndrico y se empuja hacia adentro. Si tu nevera usa el PureSource 3 (que es más cuadrado), este no encaja."
+        },
+        {
+          "titulo": "Causa 2: el filtro genérico se quedó atascado",
+          "texto": "Si intentaste instalar un filtro de terceros y ahora no puedes sacarlo, el mecanismo de bloqueo está atascado. No uses alicates ni fuerces, puedes romper el soporte de la nevera. A veces, empujar el filtro hacia adentro con firmeza y girarlo un poco ayuda a liberar el pestillo."
+        }
+      ],
+      "gotea": "Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa que el filtro esté empujado hasta el fondo. Si la junta está doblada, no la fuerces: devuelve el filtro."
+    },
+    "guiaVsGenerico": {
+      "intro": "El original de Frigidaire cuesta $50, pero los genéricos tienen un problema muy específico en esta marca: se atascan en el soporte.",
+      "originalNoPerfecto": "El original de Frigidaire tiene certificación NSF y está diseñado para entrar y salir con un simple empujón. No es perfecto: hay reseñas de que es caro. Pero es el único que garantiza que no te dejará el filtro atascado dentro de la nevera.",
+      "riesgosGenerico": [
+        "Se queda atascado. Es la queja número uno en las reseñas de Frigidaire. Los genéricos tienen medidas ligeramente distintas y el mecanismo de liberación no los expulsa.",
+        "La garantía. Frigidaire no cubre daños causados por filtros no originales.",
+        "La filtración es inferior. Los genéricos baratos a veces no tienen certificación NSF."
+      ],
+      "tabla": [
+        { "opcion": "Frigidaire PureSource Ultra original (1 ud.)", "precio": "~$50", "certificacion": "NSF 42, 53, 401" },
+        { "opcion": "Filtro genérico (1 ud.)", "precio": "~$15-20", "certificacion": "Variable (riesgo de atasco)" }
+      ],
+      "recomendacion": [
+        "Si tu nevera está en garantía: original. El riesgo de romper el soporte del filtro no compensa el ahorro.",
+        "Si tu nevera es vieja y ya no tiene garantía: un genérico de marca conocida es una opción, pero ten en cuenta que el riesgo de que se atasque es alto.",
+        "Si quieres cero riesgo de atascos: original. Es el único que tiene las medidas exactas de fábrica."
+      ]
+    },
+    "textoOriginal": "El filtro Frigidaire PureSource Ultra (EPTWFU01) es el cartucho cilíndrico que Frigidaire usa en sus neveras Gallery, Professional y modelos estándar. Es un bloque de carbón extruido que reduce cloro, sedimentos, plomo y más de 70 contaminantes, con una capacidad de 200 galones o seis meses de uso. La instalación es un simple empujón: presionas el viejo hacia adentro para que salga, y empujas el nuevo hasta que encaja. Sin embargo, hay una trampa frecuente con esta marca: los filtros genéricos de terceros suelen tener medidas ligeramente distintas y se quedan atascados en el soporte de la nevera. Cuando esto pasa, forzar el mecanismo puede romperlo. Antes de comprar, verifica que tu filtro actual sea el EPTWFU01 y no el WF3CB (que es de otra forma). Después de instalar, deja correr agua durante 5 minutos para eliminar el aire y el carbón suelto, de lo contrario el dispensador salpicará y el agua sabrá mal. Cambiarlo cada seis meses evita que el carbón se sature y que el flujo de agua se reduzca.",
+    "faqs": [
+      {
+        "q": "¿Es compatible el filtro EPTWFU01 con mi Frigidaire?",
+        "a": "Sí, siempre que tu modelo esté en la tabla de compatibilidad de esta página. Verifica el número de pieza de tu filtro actual. Si es WF3CB o WF2CB, este no encaja."
+      },
+      {
+        "q": "¿Cada cuánto se cambia el filtro EPTWFU01?",
+        "a": "Cada 6 meses o 200 galones, lo que ocurra primero. La señal no es solo la luz: si el agua sale más lenta o el hielo huele raro, cámbialo."
+      },
+      {
+        "q": "¿Por qué mi filtro genérico se quedó atascado?",
+        "a": "Los genéricos no tienen las medidas exactas del original. El mecanismo de bloqueo de Frigidaire no logra expulsarlos. Usa siempre el original para evitar romper el soporte."
+      }
+    ],
+    "enlaceAfiliado": "https://www.amazon.com/dp/B01BKWSHHE?tag=qqo-20",
+    "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/41rdK0KSNPL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+    "asin": "B01BKWSHHE"
   }
 ]
