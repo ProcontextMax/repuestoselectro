@@ -1,0 +1,16 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "repuestoselectro",
+    "identifier": "repuestoselectro.lat"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:repuestoselectro.lat:knowledge:llms-txt",
+      "displayName": "Mapa del sitio para agentes de IA",
+      "type": "text/markdown",
+      "url": "https://repuestoselectro.lat/llms.txt",
+      "description": "Índice de las páginas principales del sitio: filtros de agua, guías de compatibilidad y páginas legales."
+    }
+  ]
+}
