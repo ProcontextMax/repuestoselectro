@@ -18,12 +18,13 @@ const { filtro } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Filtro Samsung original vs genérico: ¿cuál conviene?</title>
+    <title>Filtro {filtro.fabricante} original vs genérico: ¿cuál conviene?</title>
     <meta
       name="description"
-      content="Comparativa honesta entre el filtro Samsung DA97-17376B original y los genéricos Waterdrop, AQUA CREST y PUREPLUS. Precios, riesgos de fugas y garantía."
+      content={`Comparativa honesta entre el filtro ${filtro.fabricante} ${filtro.numeroPieza} original y los genéricos. Precios, riesgos de fugas y garantía.`}
     />
     <link rel="canonical" href={Astro.url} />
+    <link rel="ard" href="/.well-known/ard.json" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
     <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
@@ -40,31 +41,25 @@ const { filtro } = Astro.props;
       ]} />
 
       <h1 style="font-size: 1.7rem; margin: 0 0 0.5rem; line-height: 1.25;">
-        Filtro Samsung original vs genérico: ¿cuál conviene?
+        Filtro {filtro.fabricante} original vs genérico: ¿cuál conviene?
       </h1>
       <p style="color: #555; margin: 0 0 2rem; font-size: 1rem;">
-        El original cuesta el triple, pero el genérico tiene sus propios riesgos. Esta comparativa te ayuda a decidir según el estado de tu nevera y tu tolerancia al riesgo.
+        {filtro.guiaVsGenerico.intro}
       </p>
 
       <section style="margin-bottom: 2rem;">
         <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El original no es perfecto</h2>
-        <p style="line-height: 1.65; margin: 0 0 1rem;">
-          Hay reseñas de usuarios que reportan fugas con el filtro original de Samsung, incluso con el filtro bien instalado. Algunos casos han causado daños en la cocina y el sótano. Samsung responde siempre con la misma recomendación: revisar que el filtro esté bien asentado. No es un problema aislado, pero tampoco es la norma: la mayoría de los usuarios no reporta fugas.
-        </p>
         <p style="line-height: 1.65; margin: 0;">
-          Lo que sí ofrece el original es la etiqueta de autenticación y la certificación NSF 42, 53 y 401. Eso no garantiza que no gotee, pero sí que el carbón activado es real y filtra lo que dice filtrar.
+          {filtro.guiaVsGenerico.originalNoPerfecto}
         </p>
       </section>
 
       <section style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El genérico tiene dos riesgos reales</h2>
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">El genérico tiene riesgos reales</h2>
         <ul style="padding-left: 1.25rem; line-height: 1.7;">
-          <li style="margin-bottom: 0.5rem;">
-            <strong>Puede anular la garantía.</strong> No es una amenaza legal, pero es lo que los técnicos de Samsung dicen en la práctica: si usas un filtro no original y la nevera falla, la garantía puede no cubrirlo.
-          </li>
-          <li style="margin-bottom: 0.5rem;">
-            <strong>Puede no encajar o no apagar la luz.</strong> Hay reseñas de genéricos que encajan perfecto, pero también de usuarios que reportan que la luz de cambio de filtro no se apaga o que el filtro no llega al fondo.
-          </li>
+          {filtro.guiaVsGenerico.riesgosGenerico.map(riesgo => (
+            <li style="margin-bottom: 0.5rem;">{riesgo}</li>
+          ))}
         </ul>
       </section>
 
@@ -79,26 +74,13 @@ const { filtro } = Astro.props;
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">Samsung original (1 ud.)</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$35.49</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 53, 401</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">Waterdrop WD-F45 (3 uds.)</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$14</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 372</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">AQUA CREST (3 uds.)</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$11.66</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 372</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">PUREPLUS (3 uds.)</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">~$10.66</td>
-              <td style="border: 1px solid #ddd; padding: 0.5rem;">NSF 42, 372</td>
-            </tr>
+            {filtro.guiaVsGenerico.tabla.map(fila => (
+              <tr>
+                <td style="border: 1px solid #ddd; padding: 0.5rem;">{fila.opcion}</td>
+                <td style="border: 1px solid #ddd; padding: 0.5rem;">{fila.precio}</td>
+                <td style="border: 1px solid #ddd; padding: 0.5rem;">{fila.certificacion}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <p style="font-size: 0.8rem; color: #595959; margin: 0.75rem 0 0;">
@@ -109,15 +91,9 @@ const { filtro } = Astro.props;
       <section style="margin-bottom: 2rem;">
         <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">¿Cuál te conviene?</h2>
         <ul style="padding-left: 1.25rem; line-height: 1.7;">
-          <li style="margin-bottom: 0.5rem;">
-            <strong>Si tu nevera está en garantía:</strong> original. El riesgo de anular la garantía no compensa el ahorro.
-          </li>
-          <li style="margin-bottom: 0.5rem;">
-            <strong>Si tu nevera es vieja y ya no tiene garantía:</strong> un genérico de marca conocida (Waterdrop, AQUA CREST, PUREPLUS) es una opción razonable. Ahorras 2–3x, y el riesgo de fuga es bajo si la marca tiene certificación NSF.
-          </li>
-          <li style="margin-bottom: 0.5rem;">
-            <strong>Si quieres cero riesgo de fugas:</strong> original. No es perfecto, pero es el que tiene la etiqueta de autenticación y el respaldo de Samsung.
-          </li>
+          {filtro.guiaVsGenerico.recomendacion.map(rec => (
+            <li style="margin-bottom: 0.5rem;">{rec}</li>
+          ))}
         </ul>
       </section>
 
@@ -127,11 +103,11 @@ const { filtro } = Astro.props;
           href={filtro.enlaceAfiliado}
           rel="sponsored nofollow noopener noreferrer"
           target="_blank"
-          style="display: inline-block; background: #c2410c; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; margin-bottom: 0.75rem;"
+          style="display: inline-block; background: #c2410c; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none;"
         >
-          Ver filtro original Samsung en Amazon
+          Ver filtro original {filtro.fabricante} en Amazon
         </a>
-        <p style="font-size: 0.75rem; color: #595959; margin: 0;">
+        <p style="font-size: 0.75rem; color: #595959; margin: 0.75rem 0 0;">
           As an Amazon Associate I earn from qualifying purchases.
         </p>
       </section>

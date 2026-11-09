@@ -88,6 +88,59 @@
         "respuesta": "Samsung advierte que los filtros no originales pueden no sellar bien y causar fugas que dañan la nevera. Además, no están cubiertos por la garantía del fabricante. Este es el original de Samsung, con etiqueta de autenticación."
       }
     ],
+    "guiaOriginal": {
+      "intro": "Samsung cambió el sistema de autenticación. Ya no hay tira magnética como en las cajas antiguas. Ahora el filtro trae un código QR en la etiqueta gris.",
+      "pasos": [
+        "Descarga la app de autenticación que Samsung indica en su web (no es la app SmartThings).",
+        "Escanea el código QR de la etiqueta del filtro.",
+        "La app te mostrará un número de escaneos. Si es 1, el filtro es genuino y nunca se había escaneado antes.",
+        "Si el número es alto (cientos o miles), es una réplica: alguien copió el código de un filtro original y lo replicó en serie."
+      ],
+      "senales": [
+        "El etiquetado dice 'Standrad' en lugar de 'Standard'. No es un error de la réplica: Samsung lo escribe así en su propia web. Es raro, pero es genuino.",
+        "La app de escaneo no es de Samsung. Es una app externa. Samsung la usa así, aunque parezca sospechoso.",
+        "El precio es sospechosamente bajo. Un original de 1 unidad ronda los 35 USD. Si lo compras por 10 USD, probablemente sea réplica.",
+        "El vendedor no es Amazon ni Samsung. Ahí es donde más réplicas circulan. Verifica siempre el vendedor en la ficha."
+      ],
+      "queHacer": "Si el contador de escaneos es alto o el filtro no encaja, devuélvelo. Las réplicas pueden no sellar bien y causar fugas que dañan la nevera. Además, no están cubiertas por la garantía de Samsung."
+    },
+    "guiaNoEncaja": {
+      "intro": "Si compraste el DA97-17376B y no entra hasta el fondo, no fuerces. Hay tres causas posibles, y una tiene solución oficial de Samsung que casi nadie conoce.",
+      "causas": [
+        {
+          "titulo": "Causa 1: es el filtro equivocado (cuadrado vs redondo)",
+          "texto": "Es la causa más común. El DA97-17376B (también llamado HAF-QIN) es cuadrado. El DA29-00020B (HAF-CIN) es redondo. No son intercambiables: si tu nevera usa el redondo, el cuadrado no entra por mucho que fuerces. Mira el filtro viejo: si es cuadrado, es el DA97-17376B. Si es redondo, es el DA29-00020B."
+        },
+        {
+          "titulo": "Causa 2: el bloqueo está a medio abrir (el truco de Samsung)",
+          "texto": "Esta es la causa que casi nadie conoce. Cuando cambias de un filtro antiguo de 2 pestañas a un filtro nuevo de 3 pestañas, el mecanismo de bloqueo del alojamiento puede quedarse a medio abrir. La solución oficial de Samsung es: vuelve a insertar el filtro viejo, gíralo hacia la izquierda hasta el tope (más allá de donde saldría normalmente), sácalo en esa posición, y ahora inserta el filtro nuevo."
+        },
+        {
+          "titulo": "Causa 3: el filtro es una réplica o un lote defectuoso",
+          "texto": "Hay reseñas de usuarios que compraron el 'original' y no encaja: el plástico es más grueso, no llega al fondo. Usa el método del código QR. Si el contador de escaneos es alto, es una réplica. Si es 1, es original, y si aun así no encaja, puede ser un lote defectuoso: devuélvelo."
+        }
+      ],
+      "gotea": "Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa que el cartucho esté girado hasta el tope y que la junta de goma no esté doblada. Si la junta está doblada, no la fuerces: devuelve el filtro."
+    },
+    "guiaVsGenerico": {
+      "intro": "El original cuesta el triple, pero el genérico tiene sus propios riesgos. Esta comparativa te ayuda a decidir según el estado de tu nevera y tu tolerancia al riesgo.",
+      "originalNoPerfecto": "Hay reseñas de usuarios que reportan fugas con el filtro original de Samsung, incluso con el filtro bien instalado. Algunos casos han causado daños en la cocina y el sótano. Samsung responde siempre con la misma recomendación: revisar que el filtro esté bien asentado. No es un problema aislado, pero tampoco es la norma: la mayoría de los usuarios no reporta fugas. Lo que sí ofrece el original es la etiqueta de autenticación y la certificación NSF 42, 53 y 401.",
+      "riesgosGenerico": [
+        "Puede anular la garantía. No es una amenaza legal, pero es lo que los técnicos de Samsung dicen en la práctica: si usas un filtro no original y la nevera falla, la garantía puede no cubrirlo.",
+        "Puede no encajar o no apagar la luz. Hay reseñas de genéricos que encajan perfecto, pero también de usuarios que reportan que la luz de cambio de filtro no se apaga o que el filtro no llega al fondo."
+      ],
+      "tabla": [
+        { "opcion": "Samsung original (1 ud.)", "precio": "~$35.49", "certificacion": "NSF 42, 53, 401" },
+        { "opcion": "Waterdrop WD-F45 (3 uds.)", "precio": "~$14", "certificacion": "NSF 42, 372" },
+        { "opcion": "AQUA CREST (3 uds.)", "precio": "~$11.66", "certificacion": "NSF 42, 372" },
+        { "opcion": "PUREPLUS (3 uds.)", "precio": "~$10.66", "certificacion": "NSF 42, 372" }
+      ],
+      "recomendacion": [
+        "Si tu nevera está en garantía: original. El riesgo de anular la garantía no compensa el ahorro.",
+        "Si tu nevera es vieja y ya no tiene garantía: un genérico de marca conocida (Waterdrop, AQUA CREST, PUREPLUS) es una opción razonable. Ahorras 2–3x, y el riesgo de fuga es bajo si la marca tiene certificación NSF.",
+        "Si quieres cero riesgo de fugas: original. No es perfecto, pero es el que tiene la etiqueta de autenticación y el respaldo de Samsung."
+      ]
+    },
     "textoOriginal": "El filtro DA97-17376B es el cartucho cuadrado que Samsung usa en la mayoría de sus neveras French Door y Side-by-Side desde 2017. Es un bloque de carbón activado que reduce cloro, sedimentos y más de 70 contaminantes, con una capacidad de 300 galones o seis meses de uso. La señal para cambiarlo no es solo la luz del panel: si notas que el agua sale más despacio, o que el hielo huele raro, el filtro ya está saturado aunque la luz no se haya encendido. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras Samsung usan un filtro redondo (DA29-00020B), y este cuadrado no encaja. Antes de comprar, mira el cartucho viejo: si es redondo, este no es tu filtro. Si es cuadrado, este es el original de Samsung, con la etiqueta de autenticación que confirma que no es una réplica. Cambiarlo cada seis meses evita que el carbón se sature y empiece a liberar sabores extraños.",
     "faqs": [
       {
@@ -106,5 +159,159 @@
     "enlaceAfiliado": "https://www.amazon.com/dp/B071NFVVNG?tag=qqo-20",
     "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/51p8oHwHzXL._AC_SX679_.jpg",
     "asin": "B071NFVVNG"
+  },
+  {
+    "categoria": "filtro-agua",
+    "categoriaNombre": "Filtros de agua para nevera",
+    "marca": "lg",
+    "marcaNombre": "LG",
+    "slug": "lt1000p",
+    "titulo": "Filtro LG LT1000P — Original",
+    "tituloSeo": "Filtro de agua LG original — Compatibilidad y guía de cambio",
+    "numeroPieza": "LT1000P",
+    "alias": ["ADQ74793501", "ADQ75795105", "AGF80300704", "AGF80300705"],
+    "esOriginal": true,
+    "fabricante": "LG",
+    "tipoFiltro": "Cilíndrico (bloque de carbón)",
+    "modelosCompatibles": [
+      "GC-L22ATLFL", "GC-L22ATLPL", "GC-L268NSSM", "GC-L28ANKXL", "GC-Q278NQNM",
+      "GC-X22FTQEL", "GC-X22FTQKL", "GC-X268NMSM", "GC-X288NSSM", "GM-B258FLNB",
+      "GM-B268DSFM", "GM-B298NLNH", "GM-B298NQNH", "GM-B32PGLRH", "GM-F223DLXB",
+      "GM-F223DLXQ", "GM-J227SLRB", "GM-J227SLRN", "GM-J227SQRN", "GM-J237PLLD",
+      "GM-J237PLLM", "GM-J237WSEM", "GM-J258NSXM", "GM-J267SQRN", "GM-J267VSRN",
+      "GM-J277WLEM", "GM-J277WQEM", "GM-J277WSEM", "GM-L258NSXM", "GM-L258NSYM",
+      "GM-L267SLRN", "GM-L277PLLB", "GM-L288NLXH", "GM-Q258NSCT", "GM-V298NLNH",
+      "GM-V298NQNH", "GM-X227VQJN", "GM-X237WQAD", "GM-X237WQAM", "GM-X267NSTM",
+      "GM-X267VSJN", "GM-X277PQPD", "GM-X277WSAD", "GM-X277WSAM", "GM-X288NQXH",
+      "GM22SGPK", "GM25BQS", "GM28LIP", "GM28XID", "GM29BIP",
+      "GM39BIT", "GM39FVP", "GM39FVT", "GM65FPP", "GM84SXD",
+      "GM88SXM", "GM89SXD", "GM90BIP", "GR-B298NLNH", "GR-B32PGLRH",
+      "GR-X308LKZM", "GR-X308MKYM", "GR-X30GHKJM", "GR-X30GMKYM", "GR-X318BKNH",
+      "GR-X31FGNGL", "GS65SDPK", "GS73SXS", "LB26BGS", "LM22SGPK",
+      "LM56SPP", "LM57SXT", "LM65SCS", "LM65SDS", "LM65SGS",
+      "LM75BXT", "LM75SGS", "LM75SXT", "LM80SGD", "LM80SXS",
+      "LM85SXD", "LM87SXD", "LM89SXD", "LS65SDP1", "LS65SDT1",
+      "LS65SXP", "LS74SDP", "LS74SDT", "LS74SGP", "LS74SXP",
+      "VS22JDP", "VS22JS", "VS22XCT", "VS27JP", "VS27JS",
+      "VS27JT", "VS27LIP", "VS27XCS", "VS28XCT"
+    ],
+    "compatibilidad": {
+      "familias": [
+        { "nombre": "LG GC (Side-by-Side y French Door)", "modelos": ["GC-L22ATLFL", "GC-L22ATLPL", "GC-L268NSSM", "GC-L28ANKXL", "GC-Q278NQNM", "GC-X22FTQEL", "GC-X22FTQKL", "GC-X268NMSM", "GC-X288NSSM"] },
+        { "nombre": "LG GM (French Door y Side-by-Side)", "modelos": ["GM-B258FLNB", "GM-B268DSFM", "GM-B298NLNH", "GM-B298NQNH", "GM-B32PGLRH", "GM-F223DLXB", "GM-F223DLXQ", "GM-J227SLRB", "GM-J227SLRN", "GM-J227SQRN", "GM-J237PLLD", "GM-J237PLLM", "GM-J237WSEM", "GM-J258NSXM", "GM-J267SQRN", "GM-J267VSRN", "GM-J277WLEM", "GM-J277WQEM", "GM-J277WSEM", "GM-L258NSXM", "GM-L258NSYM", "GM-L267SLRN", "GM-L277PLLB", "GM-L288NLXH", "GM-Q258NSCT", "GM-V298NLNH", "GM-V298NQNH", "GM-X227VQJN", "GM-X237WQAD", "GM-X237WQAM", "GM-X267NSTM", "GM-X267VSJN", "GM-X277PQPD", "GM-X277WSAD", "GM-X277WSAM", "GM-X288NQXH", "GM22SGPK", "GM25BQS", "GM28LIP", "GM28XID", "GM29BIP", "GM39BIT", "GM39FVP", "GM39FVT", "GM65FPP", "GM84SXD", "GM88SXM", "GM89SXD", "GM90BIP"] },
+        { "nombre": "LG GR (Side-by-Side)", "modelos": ["GR-B298NLNH", "GR-B32PGLRH", "GR-X308LKZM", "GR-X308MKYM", "GR-X30GHKJM", "GR-X30GMKYM", "GR-X318BKNH", "GR-X31FGNGL"] },
+        { "nombre": "LG GS / LB", "modelos": ["GS65SDPK", "GS73SXS", "LB26BGS"] },
+        { "nombre": "LG LM (French Door)", "modelos": ["LM22SGPK", "LM56SPP", "LM57SXT", "LM65SCS", "LM65SDS", "LM65SGS", "LM75BXT", "LM75SGS", "LM75SXT", "LM80SGD", "LM80SXS", "LM85SXD", "LM87SXD", "LM89SXD"] },
+        { "nombre": "LG LS (Side-by-Side)", "modelos": ["LS65SDP1", "LS65SDT1", "LS65SXP", "LS74SDP", "LS74SDT", "LS74SGP", "LS74SXP"] },
+        { "nombre": "LG VS", "modelos": ["VS22JDP", "VS22JS", "VS22XCT", "VS27JP", "VS27JS", "VS27JT", "VS27LIP", "VS27XCS", "VS28XCT"] }
+      ]
+    },
+    "contraindicaciones": [
+      "No compatible con neveras LG que usan filtros redondos de otras series (verifica el número de pieza de tu filtro actual).",
+      "No compatible con modelos que no aparecen en la tabla de compatibilidad.",
+      "No uses un filtro de terceros si tu nevera está en garantía: LG puede no cubrir daños causados por filtros no originales."
+    ],
+    "sintomas": [
+      "El dispensador de agua sale más lento de lo normal.",
+      "El hielo tiene sabor u olor extraño.",
+      "La luz de cambio de filtro está encendida.",
+      "El agua sale turbia o con partículas visibles."
+    ],
+    "comoSaberModelo": "Mira la etiqueta dentro de la nevera, en la pared lateral derecha o detrás de los cajones de verdura. El modelo empieza por GC, GM, GR, GS, LM, LS o VS. También puedes buscarlo en el manual o en la app LG ThinQ.",
+    "guiaCambio": [
+      "Localiza el alojamiento del filtro. En la mayoría de modelos LG está en la esquina superior izquierda del compartimento fresco, o en la puerta.",
+      "Retira el filtro viejo. Gíralo hacia la izquierda (sentido antihorario) y tira de él hacia ti.",
+      "Prepara el filtro nuevo. Quita las tapas protectoras de las juntas tóricas.",
+      "Inserta el filtro nuevo. Alinea las pestañas con la ranura del alojamiento, empújalo hacia dentro y gíralo hacia la derecha hasta que las flechas coincidan.",
+      "Purga el sistema con el método intermitente: deja salir agua 30 segundos, reposa 60 segundos, y repite hasta completar 2.5 galones (unos 5 minutos en total). Esto elimina el aire atrapado y los restos de carbón. Si no lo haces bien, el agua sabrá raro.",
+      "Reinicia la luz. Mantén pulsado el botón 'Filtro de agua' o 'Reset' durante 3 segundos."
+    ],
+    "guiaReset": [
+      "Modelos con panel estándar: mantén pulsado el botón 'Water Filter' o 'Reset' durante 3 segundos hasta que la luz se apague.",
+      "Modelos con pantalla táctil: ve a 'Settings' → 'Water Filter' → 'Reset'.",
+      "Si la luz no se apaga, repite el proceso tras 10 segundos."
+    ],
+    "guiaProblemas": [
+      {
+        "pregunta": "¿Por qué gotea el filtro al instalarlo?",
+        "respuesta": "Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa que el filtro esté girado hasta el tope y que las juntas tóricas no estén dobladas."
+      },
+      {
+        "pregunta": "¿Por qué el agua sabe mal después del cambio?",
+        "respuesta": "Casi siempre es porque no se purgó suficiente, o porque no se hizo el purgado intermitente (30s sale / 60s reposa). Deja correr agua 5 minutos más siguiendo ese patrón. Si el sabor persiste, el filtro puede ser una réplica sin carbón activado real."
+      },
+      {
+        "pregunta": "¿Qué pasa si uso un filtro de terceros?",
+        "respuesta": "LG advierte que los filtros no originales pueden no sellar bien, causar fugas y dañar la nevera. Además, no están cubiertos por la garantía de LG. Este es el original de LG, con certificación NSF 42, 53 y 401."
+      }
+    ],
+    "guiaOriginal": {
+      "intro": "LG no usa un sistema de QR como Samsung. La forma de saber si un filtro LT1000P es original es más simple, pero también más fácil de falsificar. Estas son las señales que debes mirar.",
+      "pasos": [
+        "Mira el empaque. El original de LG viene en una caja de cartón con el logo de LG y el número de pieza ADQ74793501 impreso con claridad.",
+        "Revisa el filtro. El original tiene el logo de LG grabado en el plástico, no una etiqueta pegada.",
+        "Comprueba el número de pieza. El original dice ADQ74793501 en el lateral. Si dice otra cosa, no es el LT1000P.",
+        "Verifica el vendedor. El original lo vende Amazon o LG directamente. Si el vendedor es un tercero sin reputación, el riesgo de réplica es alto."
+      ],
+      "senales": [
+        "El precio es sospechosamente bajo. Un original de 1 unidad ronda los 50 USD. Si lo compras por 15 USD, probablemente sea réplica.",
+        "El filtro no encaja a la primera. El original entra con un cuarto de giro suave. Si tienes que forzar, no es original.",
+        "El agua sabe a plástico después de 5 minutos de purgado. El original no deja sabor si se purga bien.",
+        "El vendedor no es Amazon ni LG. Ahí es donde más réplicas circulan."
+      ],
+      "queHacer": "Si el filtro no encaja o el agua sabe mal después de purgar, devuélvelo. Los filtros de terceros pueden no sellar bien y causar fugas que dañan la nevera. LG no cubre daños causados por filtros no originales."
+    },
+    "guiaNoEncaja": {
+      "intro": "Si compraste el LT1000P y no entra hasta el fondo, no fuerces. Hay dos causas principales, y una es un error de compra muy común.",
+      "causas": [
+        {
+          "titulo": "Causa 1: es el filtro equivocado (LT1000P vs otros modelos LG)",
+          "texto": "LG tiene varias familias de filtros: LT1000P (cilíndrico), LT700P (cilíndrico más corto), LT120F (cuadrado para refrigeradores de puerta francesa), etc. El LT1000P no encaja en neveras que usan LT700P o LT120F. Antes de comprar, mira el filtro viejo: si el número de pieza no es ADQ74793501, este no es tu filtro."
+        },
+        {
+          "titulo": "Causa 2: el filtro es una réplica o un lote defectuoso",
+          "texto": "Hay reseñas de usuarios que compraron el 'original' y no encaja: el plástico es más grueso o las juntas tóricas están mal. Si el filtro es de un vendedor tercero sin reputación, probablemente sea réplica. Devuélvelo y compra el original de Amazon o LG."
+        }
+      ],
+      "gotea": "Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa que el filtro esté girado hasta el tope y que las juntas tóricas no estén dobladas. Si la junta está doblada, no la fuerces: devuelve el filtro."
+    },
+    "guiaVsGenerico": {
+      "intro": "El original de LG cuesta el triple que un genérico, pero los genéricos tienen riesgos que conviene conocer antes de ahorrar 20 dólares.",
+      "originalNoPerfecto": "El original de LG tiene certificación NSF 42, 53 y 401, y está diseñado para encajar a la primera. No es perfecto: hay reseñas de fugas aisladas, pero son la excepción. Lo que sí ofrece es la garantía de que el carbón activado es real y filtra lo que dice filtrar.",
+      "riesgosGenerico": [
+        "Puede anular la garantía. LG advierte que los filtros de terceros pueden causar fugas y daños no cubiertos por la garantía.",
+        "Puede no encajar o no apagar la luz. Hay reseñas de genéricos que encajan, pero también de usuarios que reportan que la luz de cambio de filtro no se apaga o que el filtro no llega al fondo.",
+        "La filtración es inferior. Los genéricos baratos a veces no tienen certificación NSF, lo que significa que no filtran lo que prometen."
+      ],
+      "tabla": [
+        { "opcion": "LG original (1 ud.)", "precio": "~$54", "certificacion": "NSF 42, 53, 401" },
+        { "opcion": "Waterdrop WD-LT1000P (3 uds.)", "precio": "~$30", "certificacion": "NSF 42, 372" },
+        { "opcion": "AQUA CREST LT1000P (3 uds.)", "precio": "~$28", "certificacion": "NSF 42, 372" },
+        { "opcion": "PUREPLUS LT1000P (3 uds.)", "precio": "~$25", "certificacion": "NSF 42, 372" }
+      ],
+      "recomendacion": [
+        "Si tu nevera está en garantía: original. El riesgo de anular la garantía no compensa el ahorro.",
+        "Si tu nevera es vieja y ya no tiene garantía: un genérico de marca conocida (Waterdrop, AQUA CREST, PUREPLUS) es una opción razonable, siempre que tenga certificación NSF.",
+        "Si quieres cero riesgo de fugas: original. Es el que tiene la certificación completa y el respaldo de LG."
+      ]
+    },
+    "textoOriginal": "El filtro LG LT1000P es el cartucho cilíndrico que LG usa en la mayoría de sus neveras French Door y Side-by-Side desde 2017. Es un bloque de carbón activado que reduce cloro, sedimentos, plomo y más de 70 contaminantes, con una capacidad de 200 galones o seis meses de uso. La señal para cambiarlo no es solo la luz del panel: si notas que el agua sale más despacio, o que el hielo huele raro, el filtro ya está saturado aunque la luz no se haya encendido. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras LG usan filtros de otras series, y este LT1000P no encaja en todas. Antes de comprar, mira el filtro viejo: si el número de pieza coincide con ADQ74793501, este es tu filtro. Si es otro, verifica la compatibilidad en la tabla de arriba. Cambiarlo cada seis meses evita que el carbón se sature y empiece a liberar sabores extraños.",
+    "faqs": [
+      {
+        "q": "¿Es compatible el filtro LT1000P con mi LG?",
+        "a": "Sí, siempre que tu modelo esté en la tabla de compatibilidad de esta página. Verifica el número exacto en la etiqueta de tu nevera. Si tu filtro actual tiene otro número de pieza, este puede no encajar."
+      },
+      {
+        "q": "¿Cada cuánto se cambia el filtro LT1000P?",
+        "a": "Cada 6 meses o 200 galones, lo que ocurra primero. Con agua dura o mucho uso, puede ser antes. La señal no es solo la luz: si el agua sale más lenta o huele raro, cámbialo."
+      },
+      {
+        "q": "¿Puedo usar un filtro genérico en lugar del original?",
+        "a": "Puedes, pero el encaje y la filtración varían. LG advierte que los filtros de terceros pueden causar fugas y daños no cubiertos por la garantía. Este es el original de LG, con certificación NSF 42, 53 y 401."
+      }
+    ],
+    "enlaceAfiliado": "https://www.amazon.com/dp/B074HLRXMP?tag=qqo-20",
+    "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/619ejfPUKbL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+    "asin": "B074HLRXMP"
   }
 ]
