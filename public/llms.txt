@@ -1,0 +1,21 @@
+# repuestoselectro
+
+> Repuestos originales para electrodomésticos con tabla de compatibilidad exacta y número de pieza verificado. Especializado en filtros de agua para nevera.
+
+## Filtros de agua
+
+- [Filtros de agua para nevera](https://repuestoselectro.lat/filtro-agua/): Categoría principal.
+- [Filtros Samsung](https://repuestoselectro.lat/filtro-agua/samsung/): Filtros originales Samsung.
+- [Filtro Samsung DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/): Ficha del producto con tabla de compatibilidad, número de pieza y guías.
+
+## Guías del filtro Samsung DA97-17376B
+
+- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-saber-si-es-original/): Método del código QR y contador de escaneos.
+- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/no-encaja/): Causas reales y solución oficial de Samsung.
+- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/original-vs-generico/): Comparativa de precios, riesgos y garantía.
+
+## Legal
+
+- [Aviso de afiliados](https://repuestoselectro.lat/afiliados/)
+- [Privacidad](https://repuestoselectro.lat/privacidad/)
+- [Aviso legal](https://repuestoselectro.lat/aviso-legal/)
