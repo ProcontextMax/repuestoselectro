@@ -29,6 +29,7 @@ const productoJsonLd = {
   name: filtro.titulo,
   description: filtro.textoOriginal.slice(0, 160),
   sku: filtro.numeroPieza,
+  image: filtro.imagenSchema,
   brand: { '@type': 'Brand', name: filtro.fabricante },
   offers: {
     '@type': 'Offer',
