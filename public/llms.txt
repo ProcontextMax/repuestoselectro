@@ -1,6 +1,6 @@
 # repuestoselectro
 
-> Repuestos originales para electrodomésticos con tabla de compatibilidad exacta y número de pieza verificado. Especializado en filtros de agua para nevera de Samsung, LG, GE, Bosch y Frigidaire.
+> Repuestos originales para electrodomésticos con tabla de compatibilidad exacta y número de pieza verificado. Especializado en filtros de agua para nevera de Samsung, LG, GE, Bosch, Frigidaire y Whirlpool.
 
 ## Filtros de agua
 
@@ -18,6 +18,9 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-saber-si-es-original/): Método del código QR.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/no-encaja/): Cuadrado vs redondo y el truco de Samsung.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/original-vs-generico/): Comparativa de precios y riesgos.
+- [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
+- [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-cambiar/): Instalación paso a paso, sin herramientas.
+- [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
 
 ## LG LT1000P
 
@@ -25,6 +28,9 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-saber-si-es-original/): Cómo verificar el empaque.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/no-encaja/): LT1000P vs LT700P.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/original-vs-generico/): Comparativa.
+- [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
+- [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-cambiar/): Instalación paso a paso, sin herramientas.
+- [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
 
 ## GE XWFE
 
@@ -32,6 +38,9 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/ge/xwfe/como-saber-si-es-original/): Cómo verificar el chip.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/ge/xwfe/no-encaja/): XWFE vs RPWFE.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/ge/xwfe/original-vs-generico/): Por qué los genéricos sin chip fallan.
+- [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/ge/xwfe/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
+- [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/ge/xwfe/como-cambiar/): Instalación paso a paso, sin herramientas.
+- [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/ge/xwfe/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
 
 ## Bosch UltraClarity Pro
 
@@ -39,6 +48,9 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/como-saber-si-es-original/): Cómo verificar el empaque.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/no-encaja/): UltraClarity vs UltraClarity Pro.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/original-vs-generico/): Comparativa con ICEPURE.
+- [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
+- [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/como-cambiar/): Instalación paso a paso, sin herramientas.
+- [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
 
 ## Frigidaire EPTWFU01
 
@@ -46,6 +58,9 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/como-saber-si-es-original/): Cómo verificar el empaque y el número de pieza.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/no-encaja/): PureSource Ultra vs PureSource 3.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/original-vs-generico/): Por qué los genéricos se atascan.
+- [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
+- [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/como-cambiar/): Instalación paso a paso, sin herramientas.
+- [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
 
 ## Whirlpool EveryDrop 1
 
@@ -53,6 +68,9 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/como-saber-si-es-original/): Cómo verificar el empaque.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/no-encaja/): EveryDrop 1 vs EveryDrop 2, 3 y 4.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/original-vs-generico/): Por qué los genéricos fallan.
+- [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
+- [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/como-cambiar/): Instalación paso a paso, sin herramientas.
+- [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
 
 ## Legal
 
