@@ -151,6 +151,26 @@
       ]
     },
     "textoOriginal": "El filtro DA97-17376B es el cartucho cuadrado que Samsung usa en la mayoría de sus neveras French Door y Side-by-Side desde 2017. Es un bloque de carbón activado que reduce cloro, sedimentos y más de 70 contaminantes, con una capacidad de 300 galones o seis meses de uso. La señal para cambiarlo no es solo la luz del panel: si notas que el agua sale más despacio, o que el hielo huele raro, el filtro ya está saturado aunque la luz no se haya encendido. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras Samsung usan un filtro redondo (DA29-00020B), y este cuadrado no encaja. Antes de comprar, mira el cartucho viejo: si es redondo, este no es tu filtro. Si es cuadrado, este es el original de Samsung, con la etiqueta de autenticación que confirma que no es una réplica. Cambiarlo cada seis meses evita que el carbón se sature y empiece a liberar sabores extraños.",
+    "guiaCambioDetalle": {
+      "intro": "El filtro DA97-17376B se instala con un cuarto de giro, sin herramientas. Pero hay un detalle que casi nadie explica: si vienes de un filtro viejo de 2 pestañas, el mecanismo de bloqueo puede quedarse a medio abrir y el nuevo no entrará hasta el fondo.",
+      "pasos": [
+        { "titulo": "Cierra la llave de paso", "detalle": "Evita que el agua a presión salga al retirar el cartucho viejo. En algunos modelos el agua se corta sola, pero es mejor asegurarse." },
+        { "titulo": "Encuentra el alojamiento", "detalle": "Está entre los cajones de verdura, en el centro, o en la esquina inferior. Si hay una tapa de plástico, ábrela." },
+        { "titulo": "Saca el filtro viejo", "detalle": "Gíralo hacia la izquierda entre 90° y 180° hasta que se desbloquee. Tira de él hacia ti. Si cuesta, no forces: vuelve a girar." },
+        { "titulo": "Coloca el filtro nuevo", "detalle": "Quita la tapa de protección. Alinéalo con la marca vertical del alojamiento, empújalo hacia dentro y gíralo a la derecha hasta que oigas un clic o veas el candado cerrado." },
+        { "titulo": "Purga el sistema", "detalle": "Abre la llave y deja correr agua entre 5 y 6 minutos (3 a 5 galones). Es normal que salga gris o con burbujas al principio: son restos de carbón y aire." }
+      ],
+      "errorComun": "Si el filtro no gira hasta el tope, es que el bloqueo está a medio abrir. Vuelve a insertar el filtro viejo, gíralo hacia la izquierda hasta el tope (más allá de donde saldría normalmente), sácalo en esa posición e inserta el nuevo. Eso abre el mecanismo por completo."
+    },
+    "guiaFugas": {
+      "intro": "Si el filtro gotea después de instalarlo, no entres en pánico. En la mayoría de casos es aire atrapado en la tubería o una junta mal colocada. Solo en casos raros es un filtro defectuoso.",
+      "causas": [
+        { "titulo": "Aire en la tubería", "detalle": "Es normal durante los primeros segundos. El aire empuja el agua y hace que gotee por la junta. Deja correr agua 5 minutos y el goteo debería parar." },
+        { "titulo": "Junta de goma doblada", "detalle": "Si el filtro no está girado hasta el tope, la junta no sella bien. Sácalo, revisa que la goma no esté doblada y vuelve a insertarlo." },
+        { "titulo": "Filtro defectuoso o réplica", "detalle": "Si después de 10 minutos sigue goteando y la junta está bien, el filtro puede estar defectuoso. Usa el método del QR para verificar si es original. Si es una réplica, devuélvelo." }
+      ],
+      "prevencion": "Antes de instalar el filtro nuevo, humedece la junta de goma con un poco de agua. Eso ayuda a que selle mejor y evita que se doble al girar."
+    },
     "faqs": [
       {
         "q": "¿Es compatible el filtro DA97-17376B con mi Samsung RF23?",
@@ -314,6 +334,26 @@
       ]
     },
     "textoOriginal": "El filtro LG LT1000P es el cartucho cilíndrico que LG usa en la mayoría de sus neveras French Door y Side-by-Side desde 2017. Es un bloque de carbón activado que reduce cloro, sedimentos, plomo y más de 70 contaminantes, con una capacidad de 200 galones o seis meses de uso. La señal para cambiarlo no es solo la luz del panel: si notas que el agua sale más despacio, o que el hielo huele raro, el filtro ya está saturado aunque la luz no se haya encendido. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras LG usan filtros de otras series, y este LT1000P no encaja en todas. Antes de comprar, mira el filtro viejo: si el número de pieza coincide con ADQ74793501, este es tu filtro. Si es otro, verifica la compatibilidad en la tabla de arriba. Cambiarlo cada seis meses evita que el carbón se sature y empiece a liberar sabores extraños.",
+    "guiaCambioDetalle": {
+      "intro": "El filtro LG LT1000P se instala con un cuarto de giro, sin herramientas. La clave está en el purgado intermitente: si no lo haces bien, el agua sabrá mal y parecerá que el filtro está defectuoso.",
+      "pasos": [
+        { "titulo": "Localiza el alojamiento", "detalle": "Está en la esquina superior izquierda del compartimento fresco, o en la puerta. En algunos modelos tiene una tapa de plástico que hay que abrir." },
+        { "titulo": "Retira el filtro viejo", "detalle": "Gíralo hacia la izquierda (sentido antihorario) y tira de él hacia ti." },
+        { "titulo": "Prepara el filtro nuevo", "detalle": "Quita las tapas protectoras de las juntas tóricas (las gomas)." },
+        { "titulo": "Inserta el filtro nuevo", "detalle": "Alinea las pestañas con la ranura del alojamiento, empújalo hacia dentro y gíralo hacia la derecha hasta que las flechas coincidan." },
+        { "titulo": "Purga con el método intermitente", "detalle": "Deja salir agua 30 segundos, reposa 60 segundos, y repite hasta completar 2.5 galones (unos 5 minutos). Esto elimina el aire atrapado y los restos de carbón." }
+      ],
+      "errorComun": "Si el filtro no gira hasta el tope, no fuerces. Revisa que las juntas tóricas no estén dobladas. Si están bien y aun así no encaja, puede ser una réplica o un lote defectuoso."
+    },
+    "guiaFugas": {
+      "intro": "Si el filtro LG gotea después de instalarlo, en la mayoría de casos es aire atrapado en la tubería o una junta mal colocada. Solo en casos raros es un filtro defectuoso.",
+      "causas": [
+        { "titulo": "Aire en la tubería", "detalle": "Es normal durante los primeros segundos. El aire empuja el agua y hace que gotee por la junta. Deja correr agua 5 minutos y el goteo debería parar." },
+        { "titulo": "Junta tórica doblada", "detalle": "Si el filtro no está girado hasta el tope, la junta no sella bien. Sácalo, revisa que la goma no esté doblada y vuelve a insertarlo." },
+        { "titulo": "Filtro defectuoso o réplica", "detalle": "Si después de 10 minutos sigue goteando y la junta está bien, el filtro puede estar defectuoso. Devuélvelo y compra el original." }
+      ],
+      "prevencion": "Antes de instalar el filtro nuevo, humedece la junta tórica con un poco de agua. Eso ayuda a que selle mejor y evita que se doble al girar."
+    },
     "faqs": [
       {
         "q": "¿Es compatible el filtro LT1000P con mi LG?",
@@ -454,6 +494,26 @@
       ]
     },
     "textoOriginal": "El filtro GE XWFE es el cartucho con chip RFID que GE usa en sus neveras French Door, Side-by-Side y integradas. El chip es lo que hace que la nevera reconozca el filtro y permita dispensar agua. Sin chip, la nevera muestra un error y bloquea el dispensador. Es un bloque de carbón activado que reduce más de 70 impurezas, incluyendo plomo, microplásticos y PFOA/PFOS, con una capacidad de 170 galones o seis meses de uso. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras GE usan el filtro RPWFE (sin chip), y el XWFE no encaja en esas. Antes de comprar, mira el filtro viejo: si no tiene chip, es RPWFE. Si tiene chip, es XWFE. Después de instalar, deja correr 2 galones de agua hasta que salga clara: es normal que salga negra al principio por el carbón suelto. Cambiarlo cada seis meses evita que el carbón se sature y que el chip falle.",
+    "guiaCambioDetalle": {
+      "intro": "El filtro GE XWFE se instala con un cuarto de giro. El detalle más importante es el chip RFID: si no está intacto, la nevera no reconocerá el filtro y bloqueará el dispensador.",
+      "pasos": [
+        { "titulo": "Localiza el alojamiento", "detalle": "Está en la esquina superior derecha del compartimento fresco, o en la puerta izquierda." },
+        { "titulo": "Retira el filtro viejo", "detalle": "Gíralo hacia la izquierda (sentido antihorario) y tira de él hacia ti." },
+        { "titulo": "Revisa el chip del filtro nuevo", "detalle": "Antes de insertarlo, verifica que el chip RFID esté pegado en el lateral y no esté dañado." },
+        { "titulo": "Inserta el filtro nuevo", "detalle": "Alinéalo y gíralo hacia la derecha hasta que encaje. No necesita herramientas." },
+        { "titulo": "Purga el sistema", "detalle": "Deja correr agua 2 galones (5 minutos). Es normal que salga negra o gris al principio por el carbón suelto." }
+      ],
+      "errorComun": "Si el filtro no gira hasta el tope o el chip no hace contacto, la nevera mostrará un error. Revisa que el chip esté intacto y que el filtro esté bien asentado."
+    },
+    "guiaFugas": {
+      "intro": "Si el filtro GE gotea después de instalarlo, revisa primero la junta y el chip. Un chip defectuoso puede hacer que la nevera no selle bien la válvula.",
+      "causas": [
+        { "titulo": "Aire en la tubería", "detalle": "Es normal durante los primeros segundos. Deja correr agua 5 minutos y el goteo debería parar." },
+        { "titulo": "Junta mal colocada", "detalle": "Saca el filtro, revisa que la goma no esté doblada y vuelve a insertarlo." },
+        { "titulo": "Chip o válvula defectuosa", "detalle": "Si el filtro es original y sigue goteando, el chip o la válvula pueden estar defectuosos. Devuélvelo y compra otro original." }
+      ],
+      "prevencion": "Humedece la junta con agua antes de insertar el filtro. Eso ayuda a que selle mejor y evita fugas."
+    },
     "faqs": [
       {
         "q": "¿Es compatible el filtro XWFE con mi GE?",
@@ -595,6 +655,26 @@
       ]
     },
     "textoOriginal": "El filtro Bosch UltraClarity Pro (11032531) es el cartucho cilíndrico que Bosch usa en sus neveras Benchmark, 800 Series y 300 Series, y que también es compatible con modelos de Thermador (REPLFLTR55) y Gaggenau (RA450022). Es un bloque de carbón activado que reduce cloro, cloraminas, plomo, sedimentos y productos farmacéuticos, con una capacidad de 250 galones o seis meses de uso. La instalación es un cuarto de giro, sin herramientas. Pero hay una trampa frecuente: muchas neveras Bosch usan el filtro UltraClarity (sin 'Pro'), y el UltraClarity Pro no encaja en esas. Antes de comprar, mira el filtro viejo: si el número de pieza no es 11032531 o BORPLFTR55, este no es tu filtro. Después de instalar, deja correr 5 minutos de agua hasta que salga clara. Cambiarlo cada seis meses evita que el carbón se sature y que el agua empiece a saber mal.",
+    "guiaCambioDetalle": {
+      "intro": "El filtro Bosch UltraClarity Pro se instala con un cuarto de giro. No tiene chip, así que la nevera no lo 'reconoce' automáticamente. Si la luz no se apaga, hay que reiniciarla manualmente.",
+      "pasos": [
+        { "titulo": "Localiza el alojamiento", "detalle": "Está en el interior del compartimento fresco, en la esquina superior derecha o en la puerta." },
+        { "titulo": "Retira el filtro viejo", "detalle": "Gíralo hacia la izquierda (sentido antihorario) y tira de él hacia ti." },
+        { "titulo": "Prepara el filtro nuevo", "detalle": "Quita la tapa protectora." },
+        { "titulo": "Inserta el filtro nuevo", "detalle": "Alinéalo y gíralo hacia la derecha hasta que encaje. No necesita herramientas." },
+        { "titulo": "Purga el sistema", "detalle": "Deja correr agua 5 minutos. Es normal que salga turbia o con burbujas al principio." }
+      ],
+      "errorComun": "Si el filtro no gira hasta el tope, el sensor de flujo no se activa y el agua no sale. Revisa que esté bien asentado."
+    },
+    "guiaFugas": {
+      "intro": "Si el filtro Bosch gotea después de instalarlo, revisa la junta y el cabezal del filtro. Un cabezal desgastado puede impedir que la junta selle correctamente.",
+      "causas": [
+        { "titulo": "Aire en la tubería", "detalle": "Es normal durante los primeros segundos. Deja correr agua 5 minutos y el goteo debería parar." },
+        { "titulo": "Junta doblada o dañada", "detalle": "Saca el filtro, revisa que la goma no esté doblada y vuelve a insertarlo." },
+        { "titulo": "Cabezal del filtro desgastado", "detalle": "Si el filtro es original y sigue goteando, el cabezal puede estar desgastado. Consulta con Bosch o un técnico." }
+      ],
+      "prevencion": "Humedece la junta con agua antes de insertar el filtro. Eso ayuda a que selle mejor."
+    },
     "faqs": [
       {
         "q": "¿Es compatible el filtro UltraClarity Pro con mi Bosch?",
@@ -735,6 +815,26 @@
       ]
     },
     "textoOriginal": "El filtro Frigidaire PureSource Ultra (EPTWFU01) es el cartucho cilíndrico que Frigidaire usa en sus neveras Gallery, Professional y modelos estándar. Es un bloque de carbón extruido que reduce cloro, sedimentos, plomo y más de 70 contaminantes, con una capacidad de 200 galones o seis meses de uso. La instalación es un simple empujón: presionas el viejo hacia adentro para que salga, y empujas el nuevo hasta que encaja. Sin embargo, hay una trampa frecuente con esta marca: los filtros genéricos de terceros suelen tener medidas ligeramente distintas y se quedan atascados en el soporte de la nevera. Cuando esto pasa, forzar el mecanismo puede romperlo. Antes de comprar, verifica que tu filtro actual sea el EPTWFU01 y no el WF3CB (que es de otra forma). Después de instalar, deja correr agua durante 5 minutos para eliminar el aire y el carbón suelto, de lo contrario el dispensador salpicará y el agua sabrá mal. Cambiarlo cada seis meses evita que el carbón se sature y que el flujo de agua se reduzca.",
+    "guiaCambioDetalle": {
+      "intro": "El filtro Frigidaire PureSource Ultra se instala con un simple empujón. El detalle más importante es no forzarlo: si no encaja a la primera, el mecanismo de bloqueo puede quedarse atascado.",
+      "pasos": [
+        { "titulo": "Localiza el alojamiento", "detalle": "Está en la esquina superior derecha del compartimento fresco." },
+        { "titulo": "Retira el filtro viejo", "detalle": "Presiona el filtro hacia adentro para liberar el mecanismo de bloqueo y tira de él hacia ti." },
+        { "titulo": "Prepara el filtro nuevo", "detalle": "Quita la tapa protectora." },
+        { "titulo": "Inserta el filtro nuevo", "detalle": "Alinéalo y empújalo hacia adentro hasta que encaje en su sitio. No necesita herramientas." },
+        { "titulo": "Purga el sistema", "detalle": "Deja correr agua 5 minutos (o 2 galones). Es normal que salga con aire y salpicaduras al principio." }
+      ],
+      "errorComun": "Si el filtro no entra o se queda atascado, no uses alicates ni fuerces. Puedes romper el soporte de la nevera. Intenta empujarlo hacia adentro con firmeza y girarlo un poco para liberar el pestillo."
+    },
+    "guiaFugas": {
+      "intro": "Si el filtro Frigidaire gotea después de instalarlo, revisa la junta y el soporte. Un soporte dañado o una junta doblada son las causas más comunes.",
+      "causas": [
+        { "titulo": "Aire en la tubería", "detalle": "Es normal durante los primeros segundos. Deja correr agua 5 minutos y el goteo debería parar." },
+        { "titulo": "Junta doblada", "detalle": "Saca el filtro, revisa que la goma no esté doblada y vuelve a insertarlo." },
+        { "titulo": "Soporte dañado", "detalle": "Si el filtro genérico se quedó atascado y tuviste que forzarlo, el soporte puede estar dañado. Consulta con un técnico." }
+      ],
+      "prevencion": "Humedece la junta con agua antes de insertar el filtro. Eso ayuda a que selle mejor y evita fugas."
+    },
     "faqs": [
       {
         "q": "¿Es compatible el filtro EPTWFU01 con mi Frigidaire?",
@@ -878,6 +978,26 @@
       ]
     },
     "textoOriginal": "El filtro Whirlpool EveryDrop 1 (EDR1RXD1) es el cartucho cilíndrico que Whirlpool usa en sus neveras Side-by-Side y French Door, y que también es compatible con modelos de Maytag, KitchenAid, Amana y JennAir. Es un bloque de carbón activado de cáscara de coco que reduce cloro, sedimentos, plomo y más de 70 contaminantes, con una capacidad de 200 galones o seis meses de uso. Una de las ventajas de este diseño es que la válvula de agua se cierra automáticamente al abrir la tapa del filtro, por lo que no necesitas cortar el suministro principal para cambiarlo. La instalación es rápida, pero requiere fijarse en las flechas de dirección y asegurarse de que las juntas tóricas (las gomas) no se doblen al insertarlo, ya que esto provocaría fugas. Después de instalar, deja correr agua durante 5 minutos hasta que salga clara. Aunque el fabricante recomienda cambiarlo cada 6 meses, algunos usuarios con poco consumo de agua lo estiran hasta un año (siempre que el agua sepa bien y no haya crecido bacterias en el carbón). Cambiarlo a tiempo evita que el carbón se sature y que el agua empiece a saber mal.",
+    "guiaCambioDetalle": {
+      "intro": "El filtro Whirlpool EveryDrop 1 se instala abriendo la tapa de acceso. La válvula se cierra automáticamente, así que no necesitas cortar el suministro de agua de la casa. El detalle más importante es no doblar las juntas tóricas al insertarlo.",
+      "pasos": [
+        { "titulo": "Localiza el alojamiento", "detalle": "Está en la esquina superior derecha del compartimento fresco, o en la puerta." },
+        { "titulo": "Abre la tapa de acceso", "detalle": "En muchos modelos, al abrir la tapa, el mecanismo empuja el filtro viejo hacia afuera." },
+        { "titulo": "Retira el filtro viejo", "detalle": "Fíjate en las flechas o pestañas de dirección: el filtro solo entra de una forma." },
+        { "titulo": "Inserta el filtro nuevo", "detalle": "Alinea las flechas y empuja suavemente hasta que haga contacto. Cierra la tapa con firmeza." },
+        { "titulo": "Purga el sistema", "detalle": "Abre el dispensador y deja correr varios vasos hasta que el flujo sea constante y sin aire." }
+      ],
+      "errorComun": "Si el filtro no encaja o la tapa no cierra bien, revisa que las juntas tóricas no estén dobladas. Si están bien y aun así no encaja, puede ser una réplica."
+    },
+    "guiaFugas": {
+      "intro": "Si el filtro Whirlpool gotea después de instalarlo, casi siempre es por las juntas tóricas (las gomas). Si se doblan al insertar el filtro, no sellan bien.",
+      "causas": [
+        { "titulo": "Aire en la tubería", "detalle": "Es normal durante los primeros segundos. Deja correr agua 5 minutos y el goteo debería parar." },
+        { "titulo": "Juntas tóricas dobladas", "detalle": "Saca el filtro, revisa que las gomas estén en su sitio y vuelve a insertarlo con cuidado." },
+        { "titulo": "Filtro defectuoso o réplica", "detalle": "Si el filtro es original y sigue goteando, puede estar defectuoso. Devuélvelo y compra otro original." }
+      ],
+      "prevencion": "Aplica una capa muy fina de vaselina o bálsamo labial en las juntas tóricas antes de insertar el filtro. Eso ayuda a que se deslicen sin doblarse."
+    },
     "faqs": [
       {
         "q": "¿Es compatible el filtro EveryDrop 1 con mi Whirlpool?",

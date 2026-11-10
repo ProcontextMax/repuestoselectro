@@ -1,0 +1,98 @@
+---
+import repuestos from '../../../../data/repuestos.json';
+import Header from '../../../../components/Header.astro';
+import MigasPan from '../../../../components/MigasPan.astro';
+import GuidesNav from '../../../../components/GuidesNav.astro';
+
+export function getStaticPaths() {
+  return repuestos.map(r => ({
+    params: { marca: r.marca, slug: r.slug },
+    props: { filtro: r },
+  }));
+}
+
+const { filtro } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>¿Por qué gotea el filtro {filtro.fabricante} {filtro.numeroPieza}? — Soluciones</title>
+    <meta name="description" content={`Si tu filtro ${filtro.fabricante} ${filtro.numeroPieza} gotea después de instalarlo, aquí están las causas reales y cómo solucionarlo sin romper la nevera.`} />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="ard" href="/.well-known/ard.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+
+    <main style="max-width: 720px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: filtro.marcaNombre, href: `/filtro-agua/${filtro.marca}/` },
+        { nombre: filtro.numeroPieza, href: `/filtro-agua/${filtro.marca}/${filtro.slug}/` },
+        { nombre: '¿Por qué gotea?' }
+      ]} />
+
+      <h1 style="font-size: 1.7rem; margin: 0 0 0.5rem; line-height: 1.25;">
+        ¿Por qué gotea el filtro {filtro.fabricante}?
+      </h1>
+      <p style="color: #555; margin: 0 0 2rem; font-size: 1rem;">
+        {filtro.guiaFugas.intro}
+      </p>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 1rem;">Las 3 causas más comunes</h2>
+        <div style="display: grid; gap: 1rem;">
+          {filtro.guiaFugas.causas.map((causa, i) => (
+            <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem;">
+              <strong style="display: block; color: #1d4ed8; margin-bottom: 0.4rem;">Causa {i + 1}: {causa.titulo}</strong>
+              <p style="margin: 0; font-size: 0.95rem; color: #444; line-height: 1.6;">{causa.detalle}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style="margin-bottom: 2rem; background: #f0fdf4; border-left: 4px solid #166534; padding: 1rem;">
+        <h2 style="font-size: 1.1rem; margin: 0 0 0.5rem; color: #166534;">Cómo prevenirlo la próxima vez</h2>
+        <p style="margin: 0; font-size: 0.95rem;">{filtro.guiaFugas.prevencion}</p>
+      </section>
+
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">¿Necesitas un filtro nuevo?</h2>
+        <a
+          href={filtro.enlaceAfiliado}
+          rel="sponsored nofollow noopener noreferrer"
+          target="_blank"
+          style="display: inline-block; background: #c2410c; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none;"
+        >
+          Ver filtro original {filtro.fabricante} en Amazon
+        </a>
+        <p style="font-size: 0.75rem; color: #595959; margin: 0.75rem 0 0;">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </section>
+
+      <GuidesNav marca={filtro.marca} slug={filtro.slug} currentPage="por-que-gotea" />
+
+      <p style="margin: 2rem 0 0; font-size: 0.9rem;">
+        <a href={`/filtro-agua/${filtro.marca}/${filtro.slug}/`} style="color: #1d4ed8; text-decoration: none;">
+          ← Volver a la ficha del {filtro.numeroPieza}
+        </a>
+      </p>
+
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.8rem; color: #595959;">
+        <p style="margin: 0 0 0.5rem;">
+          <a href="/afiliados" style="color: #1d4ed8; text-decoration: none;">Aviso de afiliados</a> · 
+          <a href="/privacidad" style="color: #1d4ed8; text-decoration: none;">Privacidad</a> · 
+          <a href="/aviso-legal" style="color: #1d4ed8; text-decoration: none;">Aviso legal</a>
+        </p>
+        <p style="margin: 0;">As an Amazon Associate I earn from qualifying purchases.</p>
+      </footer>
+    </main>
+  </body>
+</html>
