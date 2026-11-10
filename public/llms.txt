@@ -1,42 +1,50 @@
 # repuestoselectro
 
-> Repuestos originales para electrodomésticos con tabla de compatibilidad exacta y número de pieza verificado. Especializado en filtros de agua para nevera de Samsung, LG, GE y Bosch.
+> Repuestos originales para electrodomésticos con tabla de compatibilidad exacta y número de pieza verificado. Especializado en filtros de agua para nevera de Samsung, LG, GE, Bosch y Frigidaire.
 
 ## Filtros de agua
 
 - [Filtros de agua para nevera](https://repuestoselectro.lat/filtro-agua/): Categoría principal. Lista de marcas y selector por modelo de nevera.
-- [Filtros Samsung](https://repuestoselectro.lat/filtro-agua/samsung/): Filtros originales Samsung con compatibilidad verificada.
-- [Filtros LG](https://repuestoselectro.lat/filtro-agua/lg/): Filtros originales LG con compatibilidad verificada.
-- [Filtros GE](https://repuestoselectro.lat/filtro-agua/ge/): Filtros originales GE con compatibilidad verificada.
-- [Filtros Bosch](https://repuestoselectro.lat/filtro-agua/bosch/): Filtros originales Bosch con compatibilidad verificada.
+- [Filtros Samsung](https://repuestoselectro.lat/filtro-agua/samsung/): Filtros originales Samsung.
+- [Filtros LG](https://repuestoselectro.lat/filtro-agua/lg/): Filtros originales LG.
+- [Filtros GE](https://repuestoselectro.lat/filtro-agua/ge/): Filtros originales GE.
+- [Filtros Bosch](https://repuestoselectro.lat/filtro-agua/bosch/): Filtros originales Bosch.
+- [Filtros Frigidaire](https://repuestoselectro.lat/filtro-agua/frigidaire/): Filtros originales Frigidaire.
 
 ## Samsung DA97-17376B
 
-- [Filtro Samsung DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/): Ficha del producto. Tabla de compatibilidad exacta, número de pieza, síntomas, contraindicaciones y guías de instalación.
-- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-saber-si-es-original/): Método del código QR y contador de escaneos.
-- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/no-encaja/): Las 3 causas reales y la solución oficial de Samsung.
-- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/original-vs-generico/): Comparativa de precios, riesgos y garantía.
+- [Filtro Samsung DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/): Ficha del producto. Tabla de compatibilidad, número de pieza y guías.
+- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-saber-si-es-original/): Método del código QR.
+- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/no-encaja/): Cuadrado vs redondo y el truco de Samsung.
+- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/original-vs-generico/): Comparativa de precios y riesgos.
 
 ## LG LT1000P
 
-- [Filtro LG LT1000P](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/): Ficha del producto con tabla de compatibilidad y guías.
-- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-saber-si-es-original/): Cómo verificar el empaque y el número de pieza.
-- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/no-encaja/): LT1000P vs LT700P vs LT120F.
-- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/original-vs-generico/): Comparativa de precios y riesgos.
+- [Filtro LG LT1000P](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/): Ficha del producto.
+- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-saber-si-es-original/): Cómo verificar el empaque.
+- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/no-encaja/): LT1000P vs LT700P.
+- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/original-vs-generico/): Comparativa.
 
 ## GE XWFE
 
-- [Filtro GE XWFE](https://repuestoselectro.lat/filtro-agua/ge/xwfe/): Ficha del producto. El filtro con chip RFID que la nevera necesita para dispensar agua.
-- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/ge/xwfe/como-saber-si-es-original/): Cómo verificar el chip RFID y el empaque.
-- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/ge/xwfe/no-encaja/): XWFE vs RPWFE y el problema del chip defectuoso.
-- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/ge/xwfe/original-vs-generico/): Por qué los genéricos sin chip no funcionan.
+- [Filtro GE XWFE](https://repuestoselectro.lat/filtro-agua/ge/xwfe/): Ficha del producto. El filtro con chip RFID.
+- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/ge/xwfe/como-saber-si-es-original/): Cómo verificar el chip.
+- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/ge/xwfe/no-encaja/): XWFE vs RPWFE.
+- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/ge/xwfe/original-vs-generico/): Por qué los genéricos sin chip fallan.
 
 ## Bosch UltraClarity Pro
 
-- [Filtro Bosch UltraClarity Pro](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/): Ficha del producto. Compatible con Bosch, Thermador y Gaggenau.
-- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/como-saber-si-es-original/): Cómo verificar el empaque y el número de pieza 11032531.
-- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/no-encaja/): UltraClarity vs UltraClarity Pro y el cabezal reemplazado.
-- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/original-vs-generico/): Comparativa con ICEPURE y Glacier Fresh.
+- [Filtro Bosch UltraClarity Pro](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/): Ficha del producto.
+- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/como-saber-si-es-original/): Cómo verificar el empaque.
+- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/no-encaja/): UltraClarity vs UltraClarity Pro.
+- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/bosch/ultraclarity-pro/original-vs-generico/): Comparativa con ICEPURE.
+
+## Frigidaire EPTWFU01
+
+- [Filtro Frigidaire EPTWFU01](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/): Ficha del producto. El filtro que evita atascos en el soporte.
+- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/como-saber-si-es-original/): Cómo verificar el empaque y el número de pieza.
+- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/no-encaja/): PureSource Ultra vs PureSource 3.
+- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/original-vs-generico/): Por qué los genéricos se atascan.
 
 ## Legal
 
