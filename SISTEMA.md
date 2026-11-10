@@ -34,8 +34,9 @@ Documento de referencia para añadir un producto nuevo. Se sigue al pie de la le
 | GE | XWFE | `B0882ZJ48W` | ✅ | 3/3 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 3/3 |
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 3/3 |
+| Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 3/3 |
 
-**Total:** 30 páginas generadas (home, categoría, 5 marcas, 5 fichas, 15 guías, 3 legales).
+**Total:** 35 páginas generadas (home, categoría, 6 marcas, 6 fichas, 18 guías, 3 legales).
 
 ---
 

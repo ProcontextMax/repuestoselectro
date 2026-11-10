@@ -10,6 +10,7 @@
 - [Filtros GE](https://repuestoselectro.lat/filtro-agua/ge/): Filtros originales GE.
 - [Filtros Bosch](https://repuestoselectro.lat/filtro-agua/bosch/): Filtros originales Bosch.
 - [Filtros Frigidaire](https://repuestoselectro.lat/filtro-agua/frigidaire/): Filtros originales Frigidaire.
+- [Filtros Whirlpool](https://repuestoselectro.lat/filtro-agua/whirlpool/): Filtros originales Whirlpool.
 
 ## Samsung DA97-17376B
 
@@ -45,6 +46,13 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/como-saber-si-es-original/): Cómo verificar el empaque y el número de pieza.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/no-encaja/): PureSource Ultra vs PureSource 3.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/frigidaire/eptwfu01/original-vs-generico/): Por qué los genéricos se atascan.
+
+## Whirlpool EveryDrop 1
+
+- [Filtro Whirlpool EveryDrop 1](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/): Ficha del producto. El filtro original con válvula de cierre automático.
+- [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/como-saber-si-es-original/): Cómo verificar el empaque.
+- [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/no-encaja/): EveryDrop 1 vs EveryDrop 2, 3 y 4.
+- [Original vs genérico](https://repuestoselectro.lat/filtro-agua/whirlpool/everydrop-1/original-vs-generico/): Por qué los genéricos fallan.
 
 ## Legal
 
