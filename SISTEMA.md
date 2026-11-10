@@ -1,9 +1,14 @@
+Perfecto. Ahora que el `llms.txt` está actualizado, el último paso para cerrar técnicamente el proyecto es actualizar el archivo de documentación interna **`SISTEMA.md`** para que refleje la 5ª marca.
+
+**Paso único — actualizar `SISTEMA.md` con Frigidaire**
+
+Abre:
+
 ```powershell
-cd C:\Users\mvx55\proyectos\repuestoseletro
 code SISTEMA.md
 ```
 
-Y dentro de VS Code, borra todo (`Ctrl + A`, `Supr`) y pega **esto completo**:
+Borra todo (`Ctrl + A`, `Supr`) y pega esta versión actualizada:
 
 ```markdown
 # Sistema de productos — repuestoselectro.lat
@@ -28,8 +33,9 @@ Documento de referencia para añadir un producto nuevo. Se sigue al pie de la le
 | LG | LT1000P | `B074HLRXMP` | ✅ | 3/3 |
 | GE | XWFE | `B0882ZJ48W` | ✅ | 3/3 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 3/3 |
+| Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 3/3 |
 
-**Total:** 25 páginas generadas (home, categoría, 4 marcas, 4 fichas, 12 guías, 3 legales).
+**Total:** 30 páginas generadas (home, categoría, 5 marcas, 5 fichas, 15 guías, 3 legales).
 
 ---
 
@@ -331,20 +337,11 @@ Select-String -LiteralPath "src\pages\filtro-agua\[marca]\[slug]\index.astro" -P
 
 ## 9. Próximos pasos (cuando se retome)
 
-1. **Verificar en Search Console** que las nuevas URLs del Bosch se indexan (tarda unos días).
-2. **Añadir una 5ª marca** siguiendo el sistema (Frigidaire, Whirlpool, etc.).
+1. **Verificar en Search Console** que las nuevas URLs de Frigidaire se indexan (tarda unos días).
+2. **Añadir una 6ª marca** siguiendo el sistema (Whirlpool, etc.).
 3. **Esperar datos de Search Console** (2–4 semanas) para ver qué marcas y modelos traen más impresiones.
-4. **Revisar Lighthouse** después de añadir el Bosch (por si el peso de la imagen del schema afecta al LCP).
-5. **Valorar AdSense** cuando haya 15–20 páginas con contenido original (hoy hay 25, así que ya se podría aplicar).
+4. **Revisar Lighthouse** después de añadir Frigidaire (por si el peso de la imagen del schema afecta al LCP).
+5. **Valorar AdSense** (con 30 páginas, ya cumples el mínimo de contenido).
 6. **Considerar Clarity** (Microsoft) como alternativa a Statcounter (sin cookies problemáticas).
 ```
 
-Guarda con `Ctrl + S` y luego:
-
-```powershell
-cd C:\Users\mvx55\proyectos\repuestoseletro
-npm run build
-git add SISTEMA.md
-git commit -m "Actualizar SISTEMA.md: 4 productos, 4 marcas, aprendizajes técnicos y próximos pasos"
-git push
-```
