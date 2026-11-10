@@ -88,6 +88,15 @@
         "respuesta": "Samsung advierte que los filtros no originales pueden no sellar bien y causar fugas que dañan la nevera. Además, no están cubiertos por la garantía del fabricante. Este es el original de Samsung, con etiqueta de autenticación."
       }
     ],
+    "guiaResetLuz": {
+      "intro": "Si cambiaste el filtro pero la luz de 'Cambiar filtro' sigue encendida o parpadeando en rojo, es porque la nevera necesita saber que el cartucho es nuevo. No es un error de la nevera ni del filtro.",
+      "metodos": [
+        { "modelo": "Modelos con panel estándar", "pasos": "Mantén presionado el botón 'Ice Type' o 'Filter Change' durante 3 segundos hasta que la luz se apague o cambie a verde." },
+        { "modelo": "Modelos Family Hub", "pasos": "Abre la app SmartThings o el panel de la nevera, entra en 'Fridge Manager' → 'Fridge Settings' → 'Water Filter' y pulsa 'Reset'." },
+        { "modelo": "Modelos con menú de flechas", "pasos": "Navega hasta 'More Options' o 'Settings', busca 'Filter Reset' y confirma con el botón central." }
+      ],
+      "errorComun": "Si después de hacer el reset la luz sigue encendida, revisa que el filtro esté girado hasta el tope. Si está flojo, la nevera no lo detectará como válido."
+    },
     "guiaOriginal": {
       "intro": "Samsung cambió el sistema de autenticación. Ya no hay tira magnética como en las cajas antiguas. Ahora el filtro trae un código QR en la etiqueta gris.",
       "pasos": [
@@ -245,6 +254,15 @@
         "respuesta": "LG advierte que los filtros no originales pueden no sellar bien, causar fugas y dañar la nevera. Además, no están cubiertos por la garantía de LG. Este es el original de LG, con certificación NSF 42, 53 y 401."
       }
     ],
+    "guiaResetLuz": {
+      "intro": "Si tu nevera LG sigue mostrando la luz de 'Cambiar filtro' después de instalar uno nuevo, es porque el contador interno no se ha reiniciado. La nevera no sabe que el agua ya está limpia.",
+      "metodos": [
+        { "modelo": "Modelos con panel estándar", "pasos": "Mantén presionado el botón 'Water Filter' o 'Reset' durante 3 segundos hasta que la luz se apague." },
+        { "modelo": "Modelos con pantalla táctil", "pasos": "Entra en 'Settings' (Ajustes) → 'Water Filter' → 'Reset'." },
+        { "modelo": "Si no se apaga", "pasos": "Desconecta la nevera de la corriente durante 5 minutos y vuelve a enchufarla. Esto reinicia el sistema." }
+      ],
+      "errorComun": "Si la luz sigue encendida, saca el filtro y vuelve a insertarlo asegurándote de que gira hasta el tope. A veces, si no encaja perfectamente, el sensor no lo detecta."
+    },
     "guiaOriginal": {
       "intro": "LG no usa un sistema de QR como Samsung. La forma de saber si un filtro LT1000P es original es más simple, pero también más fácil de falsificar. Estas son las señales que debes mirar.",
       "pasos": [
@@ -378,6 +396,15 @@
         "respuesta": "GE diseñó el XWFE con chip para que la nevera solo acepte filtros originales. Los genéricos sin chip no funcionan: la nevera muestra un error y no dispensa agua. Los genéricos con chip (como Glacier Fresh) pueden funcionar, pero el riesgo de que el chip falle es mayor. Este es el original de GE, vendido por Amazon."
       }
     ],
+    "guiaResetLuz": {
+      "intro": "El filtro GE XWFE tiene un chip. Si cambiaste el filtro y la luz de error sigue encendida, puede ser que el chip no se haya leído o que necesites reiniciar el sistema manualmente.",
+      "metodos": [
+        { "modelo": "Modelos con pantalla LCD", "pasos": "El reset es automático al detectar el filtro nuevo. Si no se apaga, ve a 'Settings' → 'Water Filter' → 'Reset'." },
+        { "modelo": "Modelos con panel de botones", "pasos": "Mantén pulsado el botón 'Water' o 'Filter' durante 3 segundos hasta que la luz se apague." },
+        { "modelo": "Si la luz no se apaga", "pasos": "Revisa que el chip RFID esté intacto y que el filtro esté girado hasta el tope. Si el chip está dañado, el filtro es defectuoso." }
+      ],
+      "errorComun": "Si usaste un filtro de terceros sin chip, la nevera nunca apagará la luz y bloqueará el dispensador. Necesitas el filtro original para que el sistema lo reconozca."
+    },
     "guiaOriginal": {
       "intro": "GE no usa un QR como Samsung. La forma de saber si un XWFE es original es más simple, pero el chip es la clave. Estas son las señales.",
       "pasos": [
@@ -509,6 +536,15 @@
         "respuesta": "Bosch advierte que los filtros no originales pueden no sellar bien y causar fugas. Hay reseñas de genéricos (ICEPURE) que reportan que 'rompió el cabezal del filtro' o 'arruinó la máquina de hielo'. Este es el original de Bosch, con certificación NSF 42, 53 y 401."
       }
     ],
+    "guiaResetLuz": {
+      "intro": "El filtro Bosch UltraClarity Pro no tiene chip, así que la nevera no lo 'reconoce' de forma automática. Si la luz de cambio de filtro sigue encendida, hay que reiniciarla desde el panel.",
+      "metodos": [
+        { "modelo": "Modelos con pantalla LCD", "pasos": "El reset es automático al detectar el filtro nuevo. Si no se apaga, ve a 'Settings' → 'Water Filter' → 'Reset'." },
+        { "modelo": "Modelos con panel de botones", "pasos": "Mantén pulsado el botón 'Water Filter' o 'Reset' durante 3 segundos hasta que la luz se apague." },
+        { "modelo": "Si la luz no se apaga", "pasos": "Revisa que el filtro esté girado hasta el tope. Si no encaja perfectamente, el sensor de flujo no se activa." }
+      ],
+      "errorComun": "Si el agua no sale y la luz parpadea, es posible que el cabezal del filtro esté desgastado o que el filtro no esté haciendo contacto. Prueba a girarlo un poco más."
+    },
     "guiaOriginal": {
       "intro": "Bosch no usa un QR como Samsung. La forma de saber si un UltraClarity Pro es original es más simple, pero hay que fijarse en el empaque y el vendedor.",
       "pasos": [
@@ -642,6 +678,15 @@
         "respuesta": "Frigidaire advierte que los filtros no originales pueden no encajar bien, quedarse atascados o no filtrar correctamente. Además, no están cubiertos por la garantía. Este es el original de Frigidaire, con certificación NSF."
       }
     ],
+    "guiaResetLuz": {
+      "intro": "En las neveras Frigidaire, el reinicio de la luz de cambio de filtro se hace normalmente desde el panel frontal. Si acabas de instalar el PureSource Ultra y la alerta sigue ahí, necesitas apagarla a mano.",
+      "metodos": [
+        { "modelo": "Modelos con panel táctil", "pasos": "Ve a 'Settings' → 'Water Filter' → 'Reset'." },
+        { "modelo": "Modelos con botones físicos", "pasos": "Mantén pulsado el botón 'Water Filter' o 'Filter Status' durante 3 segundos." },
+        { "modelo": "Si la luz no se apaga", "pasos": "Desconecta la nevera de la corriente durante 5 minutos. Esto reinicia el sistema y suele apagar la alerta." }
+      ],
+      "errorComun": "Si el filtro genérico se quedó atascado y no puedes sacarlo, el sensor puede estar bloqueado. No fuerces con herramientas; intenta empujar el filtro hacia adentro con firmeza para liberar el pestillo."
+    },
     "guiaOriginal": {
       "intro": "Frigidaire no usa un QR como Samsung. La forma de saber si un PureSource Ultra es original es fijarse en el empaque y el número de pieza.",
       "pasos": [
@@ -774,6 +819,15 @@
         "respuesta": "Whirlpool advierte que los filtros no originales pueden no sellar bien, causar fugas y dañar la nevera. Además, muchos genéricos restringen demasiado el flujo de agua y la nevera cree que el filtro está defectuoso, mostrando un error. Este es el original de Whirlpool, con certificación NSF 42, 53 y 401."
       }
     ],
+    "guiaResetLuz": {
+      "intro": "El filtro Whirlpool EveryDrop 1 no tiene chip, pero la nevera tiene un temporizador interno. Si cambiaste el filtro y la luz sigue ahí, hay que reiniciar el contador.",
+      "metodos": [
+        { "modelo": "Modelos con panel táctil", "pasos": "Ve a 'Settings' → 'Water Filter' → 'Reset'." },
+        { "modelo": "Modelos con botones físicos", "pasos": "Mantén pulsado el botón 'Filter', 'Water' o 'Colder' (según el modelo) durante 3 segundos." },
+        { "modelo": "Si la luz no se apaga", "pasos": "Abre y cierra la tapa del filtro. A veces, si la tapa no queda bien cerrada, el sistema no registra el cambio." }
+      ],
+      "errorComun": "Si usaste un filtro genérico que restringe demasiado el flujo de agua, la nevera puede encender la luz de error pensando que el filtro está defectuoso. Usa el original para evitar este problema."
+    },
     "guiaOriginal": {
       "intro": "Whirlpool no usa un QR como Samsung. La forma de saber si un EveryDrop 1 es original es fijarse en el empaque y el número de pieza.",
       "pasos": [

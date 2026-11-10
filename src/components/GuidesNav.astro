@@ -1,0 +1,43 @@
+---
+interface Props {
+  marca: string;
+  slug: string;
+  currentPage: string;
+}
+
+const { marca, slug, currentPage } = Astro.props;
+
+// Lista maestra de todas las guías disponibles
+const allGuides = [
+  { id: 'como-saber-si-es-original', title: '¿Es original?', desc: 'Verifica autenticidad.' },
+  { id: 'no-encaja', title: '¿No encaja?', desc: 'Soluciones de ajuste.' },
+  { id: 'original-vs-generico', title: 'Original vs Genérico', desc: 'Comparativa.' },
+  { id: 'como-reiniciar-luz', title: 'Cómo reiniciar la luz', desc: 'Apaga la alerta.' },
+  { id: 'como-cambiar', title: 'Cómo cambiar el filtro', desc: 'Instalación paso a paso.' },
+  { id: 'por-que-gotea', title: '¿Por qué gotea?', desc: 'Evita fugas.' }
+];
+
+// Filtramos para no mostrar la página en la que ya estamos
+const otherGuides = allGuides.filter(g => g.id !== currentPage);
+---
+
+<section style="margin-bottom: 2rem;">
+  <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Otras guías de este filtro</h2>
+  <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
+    {otherGuides.map(guide => (
+      <li>
+        <a
+          href={`/filtro-agua/${marca}/${slug}/${guide.id}/`}
+          style="display: block; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; background: #fff;"
+        >
+          <strong style="display: block; font-size: 0.95rem; color: #1d4ed8; margin-bottom: 0.3rem;">
+            {guide.title}
+          </strong>
+          <span style="font-size: 0.85rem; color: #555;">
+            {guide.desc}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
