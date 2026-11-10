@@ -707,5 +707,139 @@
     "enlaceAfiliado": "https://www.amazon.com/dp/B01BKWSHHE?tag=qqo-20",
     "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/41rdK0KSNPL._AC_SY300_SX300_QL70_FMwebp_.jpg",
     "asin": "B01BKWSHHE"
+  },
+  {
+    "categoria": "filtro-agua",
+    "categoriaNombre": "Filtros de agua para nevera",
+    "marca": "whirlpool",
+    "marcaNombre": "Whirlpool",
+    "slug": "everydrop-1",
+    "titulo": "Filtro Whirlpool EveryDrop 1 — Original",
+    "tituloSeo": "Filtro de agua Whirlpool original — Evita fugas y falsificaciones",
+    "numeroPieza": "EDR1RXD1",
+    "alias": ["EveryDrop 1", "W10295370A", "Filter 1"],
+    "esOriginal": true,
+    "fabricante": "Whirlpool",
+    "tipoFiltro": "Cilíndrico (bloque de carbón de cáscara de coco)",
+    "modelosCompatibles": [
+      "WRS322FDAB", "WRS325FDAB", "WRS526SIAH", "WRS537SIAB", "WRS315SDHZ02",
+      "WRL767SIAM", "WRS325FDAM04", "WRS315SDAM", "JFC2290HEM", "JFC2380HEP",
+      "GSC25C4EYW00", "GSC25C4EYW01", "GSC25C4EYW02", "GSC25C4EYY00", "GSC25C4EYY01",
+      "46-9930", "46-9081", "P4RFWB", "P5WB2L", "P8RFWB2L", "P8WB2L"
+    ],
+    "compatibilidad": {
+      "familias": [
+        { "nombre": "Whirlpool Side-by-Side", "modelos": ["WRS322FDAB", "WRS325FDAB", "WRS526SIAH", "WRS537SIAB", "WRS315SDHZ02", "WRL767SIAM", "WRS325FDAM04", "WRS315SDAM"] },
+        { "nombre": "Maytag / KitchenAid / Amana / JennAir", "modelos": ["JFC2290HEM", "JFC2380HEP"] },
+        { "nombre": "Kenmore (equivalencias)", "modelos": ["46-9930", "46-9081"] }
+      ]
+    },
+    "contraindicaciones": [
+      "No compatible con neveras que usan EveryDrop 2, 3, 4 o 5. Verifica el número de pieza de tu filtro actual (debe ser EDR1RXD1 o W10295370A).",
+      "No compatible con modelos que no aparecen en la tabla de compatibilidad.",
+      "No uses un filtro de terceros si tu nevera está en garantía: Whirlpool puede no cubrir daños causados por filtros no originales."
+    ],
+    "sintomas": [
+      "El dispensador de agua sale más lento de lo normal.",
+      "El hielo tiene sabor u olor extraño.",
+      "La luz de cambio de filtro está encendida.",
+      "El agua sale turbia o con partículas visibles."
+    ],
+    "comoSaberModelo": "Mira la etiqueta dentro de la nevera, en la pared lateral derecha o detrás de los cajones. El modelo empieza por W (Whirlpool), M (Maytag), K (KitchenAid), A (Amana) o J (JennAir). También puedes buscarlo en el manual.",
+    "guiaCambio": [
+      "Localiza el alojamiento del filtro. En la mayoría de modelos Whirlpool está en la esquina superior derecha del compartimento fresco, o en la puerta.",
+      "Abre la tapa de acceso. En muchos modelos, al abrir la tapa, el mecanismo empuja el filtro viejo hacia afuera. La válvula se cierra sola, así que no necesitas cortar el suministro de agua de la casa.",
+      "Retira el filtro viejo. Fíjate en las flechas o pestañas de dirección: el filtro solo entra de una forma. No fuerces.",
+      "Inserta el filtro nuevo. Alinea las flechas con las del alojamiento y empuja suavemente hasta que haga contacto.",
+      "Cierra la tapa de acceso con firmeza. Escucharás un sonido de agua y aire entrando en el cartucho. Asegúrate de que la tapa encaje completamente.",
+      "Purga el sistema. Abre el dispensador de agua y deja correr varios vasos (o un par de galones) hasta que el flujo sea constante y sin aire.",
+      "Reinicia el contador. En muchos modelos, mantén pulsado el botón 'Colder' o 'Filter' durante 3 segundos hasta que la luz se apague."
+    ],
+    "guiaReset": [
+      "Modelos con panel táctil: ve a 'Settings' → 'Water Filter' → 'Reset'.",
+      "Modelos con botones físicos: mantén pulsado el botón 'Filter', 'Water' o 'Colder' (según el modelo) durante 3 segundos.",
+      "Si la luz no se apaga, repite el proceso tras 10 segundos."
+    ],
+    "guiaProblemas": [
+      {
+        "pregunta": "¿Por qué gotea agua al instalar el filtro nuevo?",
+        "respuesta": "Es casi siempre por las juntas tóricas (las gomas del filtro). Si se han doblado o movido al insertar el filtro, no sellarán bien. Saca el filtro, revisa que las gomas estén en su sitio y vuelve a insertarlo. Si ves que la goma se sale con facilidad, puedes aplicar una capa muy fina de vaselina o bálsamo labial (como truco de emergencia) para que se deslice mejor, pero no debería ser necesario."
+      },
+      {
+        "pregunta": "¿Por qué hace ruido de agua o aire al cerrar la tapa?",
+        "respuesta": "Es completamente normal. Al abrir la tapa, el sistema libera la presión. Al cerrar e insertar el filtro nuevo, el agua y el aire vuelven a llenar el cartucho. Ese sonido confirma que el flujo se ha restablecido."
+      },
+      {
+        "pregunta": "¿Puedo usar un filtro de terceros o genérico?",
+        "respuesta": "Whirlpool advierte que los filtros no originales pueden no sellar bien, causar fugas y dañar la nevera. Además, muchos genéricos restringen demasiado el flujo de agua y la nevera cree que el filtro está defectuoso, mostrando un error. Este es el original de Whirlpool, con certificación NSF 42, 53 y 401."
+      }
+    ],
+    "guiaOriginal": {
+      "intro": "Whirlpool no usa un QR como Samsung. La forma de saber si un EveryDrop 1 es original es fijarse en el empaque y el número de pieza.",
+      "pasos": [
+        "Mira el empaque. El original viene en caja de cartón con el logo de EveryDrop by Whirlpool y el número de pieza EDR1RXD1.",
+        "Revisa el filtro. El original tiene el logo de EveryDrop grabado en el plástico.",
+        "Comprueba el número de pieza. El original dice EDR1RXD1 o W10295370A en el lateral.",
+        "Verifica el vendedor. El original lo vende Amazon o Whirlpool directamente."
+      ],
+      "senales": [
+        "El precio es sospechosamente bajo. Un original ronda los 50 USD. Si lo compras por 15 USD, probablemente sea réplica.",
+        "El filtro no encaja a la primera. El original entra con un giro suave.",
+        "El agua sabe a plástico después de 5 minutos de purgado. El original no deja sabor si se purga bien.",
+        "El vendedor no es Amazon ni Whirlpool. Ahí es donde más réplicas circulan."
+      ],
+      "queHacer": "Si el filtro no encaja o el agua sabe mal después de purgar, devuélvelo. Los filtros de terceros pueden no sellar bien y causar fugas. Whirlpool no cubre daños causados por filtros no originales."
+    },
+    "guiaNoEncaja": {
+      "intro": "Si compraste el EveryDrop 1 y no entra o no encaja, no fuerces. Hay dos causas principales.",
+      "causas": [
+        {
+          "titulo": "Causa 1: es el filtro equivocado (EveryDrop 1 vs otros EveryDrop)",
+          "texto": "Whirlpool tiene varias familias de filtros: EveryDrop 1 (EDR1RXD1), EveryDrop 2 (EDR2RXD1), EveryDrop 3 (EDR3RXD1) y EveryDrop 4 (EDR4RXD1). No son intercambiables. El EveryDrop 1 es cilíndrico y se usa en neveras Whirlpool, Maytag, KitchenAid, Amana y JennAir. Antes de comprar, mira el filtro viejo: si el número de pieza no es EDR1RXD1 o W10295370A, este no es tu filtro."
+        },
+        {
+          "titulo": "Causa 2: el filtro es una réplica o un lote defectuoso",
+          "texto": "Hay reseñas de usuarios que compraron el 'original' y no encaja. Si el filtro es de un vendedor tercero sin reputación, probablemente sea réplica. Devuélvelo y compra el original de Amazon o Whirlpool."
+        }
+      ],
+      "gotea": "Es normal durante los primeros segundos por el aire atrapado. Si sigue goteando después de 5 minutos, revisa las juntas tóricas (las gomas). Si están dobladas, sácalas, vuelve a colocarlas con cuidado o aplica un poco de vaselina. Si la goma está rota, devuelve el filtro."
+    },
+    "guiaVsGenerico": {
+      "intro": "El original de Whirlpool cuesta $50, pero los genéricos tienen riesgos que conviene conocer.",
+      "originalNoPerfecto": "El original de Whirlpool tiene certificación NSF 42, 53 y 401, y es el único aprobado por Whirlpool, Maytag, KitchenAid, Amana y JennAir. No es perfecto: hay reseñas de que es caro. Pero es el único que garantiza la filtración que Whirlpool promete y evita que la nevera muestre errores de flujo.",
+      "riesgosGenerico": [
+        "Puede anular la garantía. Whirlpool advierte que los filtros de terceros pueden causar fugas y daños no cubiertos por la garantía.",
+        "Error de flujo. Muchos genéricos baratos tienen un flujo de agua restringido que hace que la nevera crea que el filtro está defectuoso y encienda la luz de error.",
+        "La filtración es inferior. Los genéricos baratos a veces no tienen certificación NSF, lo que significa que no filtran lo que prometen."
+      ],
+      "tabla": [
+        { "opcion": "Whirlpool EveryDrop 1 original (1 ud.)", "precio": "~$50", "certificacion": "NSF 42, 53, 401" },
+        { "opcion": "Waterdrop WD-F1 (3 uds.)", "precio": "~$25", "certificacion": "NSF 42, 372" },
+        { "opcion": "PUREPLUS (2 uds.)", "precio": "~$20", "certificacion": "NSF 42, 372" }
+      ],
+      "recomendacion": [
+        "Si tu nevera está en garantía: original. El riesgo de anular la garantía no compensa el ahorro.",
+        "Si tu nevera es vieja y ya no tiene garantía: un genérico de marca conocida (Waterdrop, PUREPLUS) es una opción razonable, siempre que tenga certificación NSF.",
+        "Si quieres cero riesgo de fugas o errores de flujo: original. Es el único que tiene la certificación completa y el respaldo de Whirlpool."
+      ]
+    },
+    "textoOriginal": "El filtro Whirlpool EveryDrop 1 (EDR1RXD1) es el cartucho cilíndrico que Whirlpool usa en sus neveras Side-by-Side y French Door, y que también es compatible con modelos de Maytag, KitchenAid, Amana y JennAir. Es un bloque de carbón activado de cáscara de coco que reduce cloro, sedimentos, plomo y más de 70 contaminantes, con una capacidad de 200 galones o seis meses de uso. Una de las ventajas de este diseño es que la válvula de agua se cierra automáticamente al abrir la tapa del filtro, por lo que no necesitas cortar el suministro principal para cambiarlo. La instalación es rápida, pero requiere fijarse en las flechas de dirección y asegurarse de que las juntas tóricas (las gomas) no se doblen al insertarlo, ya que esto provocaría fugas. Después de instalar, deja correr agua durante 5 minutos hasta que salga clara. Aunque el fabricante recomienda cambiarlo cada 6 meses, algunos usuarios con poco consumo de agua lo estiran hasta un año (siempre que el agua sepa bien y no haya crecido bacterias en el carbón). Cambiarlo a tiempo evita que el carbón se sature y que el agua empiece a saber mal.",
+    "faqs": [
+      {
+        "q": "¿Es compatible el filtro EveryDrop 1 con mi Whirlpool?",
+        "a": "Sí, siempre que tu modelo esté en la tabla de compatibilidad de esta página. Verifica el número de pieza de tu filtro actual. Si no es EDR1RXD1 o W10295370A, este no encaja."
+      },
+      {
+        "q": "¿Cada cuánto se cambia el filtro EveryDrop 1?",
+        "a": "Cada 6 meses o 200 galones, lo que ocurra primero. Si usas muy poca agua (por ejemplo, solo para beber), algunos usuarios lo cambian una vez al año, pero no se recomienda pasar de ahí por riesgo de bacterias."
+      },
+      {
+        "q": "¿Puedo usar un filtro genérico en lugar del original?",
+        "a": "Puedes, pero el riesgo de que no encaje, cause fugas o bloquee el flujo de agua es alto. Whirlpool advierte que los filtros de terceros pueden causar daños no cubiertos por la garantía. Este es el original de Whirlpool, con certificación NSF."
+      }
+    ],
+    "enlaceAfiliado": "https://www.amazon.com/dp/B00UXG4WR8?tag=qqo-20",
+    "imagenSchema": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T4/images/I/61okP+ToroL._AC_SX679_.jpg",
+    "asin": "B00UXG4WR8"
   }
 ]
