@@ -1,15 +1,3 @@
-Perfecto. Ahora que el `llms.txt` está actualizado, el último paso para cerrar técnicamente el proyecto es actualizar el archivo de documentación interna **`SISTEMA.md`** para que refleje la 5ª marca.
-
-**Paso único — actualizar `SISTEMA.md` con Frigidaire**
-
-Abre:
-
-```powershell
-code SISTEMA.md
-```
-
-Borra todo (`Ctrl + A`, `Supr`) y pega esta versión actualizada:
-
 ```markdown
 # Sistema de productos — repuestoselectro.lat
 
@@ -29,14 +17,15 @@ Documento de referencia para añadir un producto nuevo. Se sigue al pie de la le
 
 | Marca | Producto | ASIN | Ficha | Guías |
 |---|---|---|---|---|
-| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 3/3 |
-| LG | LT1000P | `B074HLRXMP` | ✅ | 3/3 |
-| GE | XWFE | `B0882ZJ48W` | ✅ | 3/3 |
-| Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 3/3 |
-| Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 3/3 |
-| Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 3/3 |
+| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 |
+| LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 |
+| GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 |
+| Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 |
+| Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 |
+| Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 |
 
-**Total:** 35 páginas generadas (home, categoría, 6 marcas, 6 fichas, 18 guías, 3 legales).
+**Total:** 53 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 3 legales) + 1 `404.html` estático = 54 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `53 page(s) built`.*
 
 ---
 
@@ -60,10 +49,13 @@ src/
         └── [marca]/
             ├── index.astro               ← marca (lista de productos)
             └── [slug]/
-                ├── index.astro           ← FICHA DEL PRODUCTO (pilar)
+                ├── index.astro               ← FICHA DEL PRODUCTO (pilar)
                 ├── como-saber-si-es-original.astro
                 ├── no-encaja.astro
-                └── original-vs-generico.astro
+                ├── original-vs-generico.astro
+                ├── como-reiniciar-luz.astro
+                ├── como-cambiar.astro
+                └── por-que-gotea.astro
 ```
 
 **Archivos en `public/`:**
@@ -96,6 +88,9 @@ public/
 /filtro-agua/[marca]/[slug]/como-saber-si-es-original/
 /filtro-agua/[marca]/[slug]/no-encaja/
 /filtro-agua/[marca]/[slug]/original-vs-generico/
+/filtro-agua/[marca]/[slug]/como-reiniciar-luz/
+/filtro-agua/[marca]/[slug]/como-cambiar/
+/filtro-agua/[marca]/[slug]/por-que-gotea/
 /afiliados/  /privacidad/  /aviso-legal/
 /.well-known/ai-catalog.json  /.well-known/ard.json
 /llms.txt  /robots.txt  /sitemap-index.xml  /sitemap-0.xml
@@ -130,11 +125,32 @@ Cada producto es un objeto en `repuestos.json`. Los campos con `*` son obligator
   "contraindicaciones": ["..."],
   "sintomas": ["..."],
   "comoSaberModelo": "...",
-  "guiaCambio": ["paso 1", "paso 2"],
+  "guiaCambio": ["paso 1", "paso 2"],              // legacy opcional
   "guiaReset": ["método 1", "método 2"],
-  "guiaProblemas": [
+  "guiaProblemas": [                                // legacy opcional
     { "pregunta": "...", "respuesta": "..." }
   ],
+  "guiaCambioDetalle": {                            // OBLIGATORIO
+    "intro": "...",
+    "pasos": [
+      { "titulo": "...", "detalle": "..." }
+    ],
+    "errorComun": "..."
+  },
+  "guiaFugas": {                                    // OBLIGATORIO
+    "intro": "...",
+    "causas": [
+      { "titulo": "...", "detalle": "..." }
+    ],
+    "prevencion": "..."
+  },
+  "guiaResetLuz": {
+    "intro": "...",
+    "metodos": [
+      { "modelo": "...", "pasos": "..." }
+    ],
+    "errorComun": "..."
+  },
   "guiaOriginal": {
     "intro": "...",
     "pasos": ["..."],
@@ -169,6 +185,8 @@ Cada producto es un objeto en `repuestos.json`. Los campos con `*` son obligator
 
 **Nota sobre imágenes:** la `imagenSchema` debe ser la URL original del CDN de Amazon (`m.media-amazon.com`). No se descarga ni se altera. Solo se enlaza.
 
+**Nota sobre `guiaCambio` vs `guiaCambioDetalle`:** `guiaCambio` (array de strings) y `guiaProblemas` (array de `{pregunta, respuesta}`) son legado. La versión nueva y rica es `guiaCambioDetalle` (objeto con `intro`/`pasos`/`errorComun`) y `guiaFugas` (objeto con `intro`/`causas`/`prevencion`). Se mantienen ambos porque la ficha del producto aún consume los viejos; las páginas nuevas `/como-cambiar/` y `/por-que-gotea/` consumen los nuevos.
+
 ---
 
 ## 5. Checklist para añadir un producto
@@ -192,7 +210,7 @@ Cada producto es un objeto en `repuestos.json`. Los campos con `*` son obligator
 - [ ] `tituloSeo` (<title>) sin número de pieza, con diferencial.
 - [ ] `modelosCompatibles` (lista plana, sin duplicados).
 - [ ] `compatibilidad.familias` (agrupada).
-- [ ] `guiaCambio`, `guiaReset`, `guiaProblemas` **específicos** del producto.
+- [ ] `guiaCambioDetalle`, `guiaFugas`, `guiaResetLuz` **específicos** del producto.
 - [ ] `guiaOriginal`, `guiaNoEncaja`, `guiaVsGenerico` **específicos** del producto.
 - [ ] `textoOriginal` 150-300 palabras, redactado desde cero.
 - [ ] `faqs` 3 preguntas.
@@ -203,36 +221,66 @@ Cada producto es un objeto en `repuestos.json`. Los campos con `*` son obligator
   $r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
   "Total: $($r.Count)"
   "$($r[N].marca) / $($r[N].slug)"
+  "$($r[N].guiaCambioDetalle.intro)"
+  "$($r[N].guiaFugas.intro)"
   ```
 
 ### Fase C — Verificación local
 
-- [ ] `npm run build` sin errores. El número de páginas debe ser **5 × número de productos + 5** (home, categoría, 3 legales).
-- [ ] Verificar que las 5 páginas del producto nuevo se generan:
+- [ ] `npm run build` sin errores. El número de páginas debe ser **53 con 6 productos**. La fórmula es `5 + 8N` (home + categoría + 3 legales = 5; ficha + marca + 6 guías = 8 por producto). Con cada producto nuevo se suman **8 páginas**. **Confirmar siempre con el log del build.**
+- [ ] Verificar que las 8 páginas del producto nuevo se generan:
   ```powershell
-  Get-ChildItem -Recurse "dist\filtro-agua\[marca]" -Filter *.html | Select-Object FullName
+  Get-ChildItem -Recurse -LiteralPath "dist\filtro-agua\[marca]" -Filter *.html | Select-Object FullName
   ```
 - [ ] Verificar el sitemap:
   ```powershell
   Get-Content dist\sitemap-0.xml
   ```
-- [ ] Verificar que las guías del producto nuevo muestran **su** contenido, no el de otro producto.
-- [ ] Verificar que el interlinking funciona: cada guía enlaza a las otras dos del mismo producto.
+- [ ] Verificar que las guías del producto nuevo muestran **su** contenido, no el de otro producto (especialmente `como-cambiar` y `por-que-gotea`):
+  ```powershell
+  Select-String -LiteralPath "dist\filtro-agua\[marca]\[slug]\por-que-gotea\index.html" -Pattern "filtro [Marca] gotea" -Quiet
+  ```
+- [ ] Verificar que el interlinking funciona: cada guía enlaza a las otras cinco del mismo producto.
+- [ ] Verificar que la **ficha del producto** enlaza a las **6 guías** en el bloque "Guías sobre este filtro" (ver 7.8):
+  ```powershell
+  $html = Get-Content "dist\filtro-agua\[marca]\[slug]\index.html" -Raw
+  ([regex]::Matches($html, "como-saber-si-es-original|no-encaja|original-vs-generico|como-reiniciar-luz|como-cambiar|por-que-gotea")).Count
+  ```
+  Debe devolver al menos **6** (idealmente 6, uno por guía).
 - [ ] Verificar que el selector incluye los modelos del producto nuevo.
 - [ ] Verificar que la pestaña del navegador muestra `tituloSeo` y el H1 muestra `titulo`.
 
 ### Fase D — Despliegue
 
 - [ ] `git add .`
-- [ ] `git commit -m "Añadir filtro [Marca] [Modelo] con sus 3 guías"`
+- [ ] `git commit -m "Añadir filtro [Marca] [Modelo] con sus 6 guías"`
 - [ ] `git push`
 - [ ] Esperar 1–2 minutos a que Cloudflare reconstruya.
-- [ ] Verificar en producción:
-  - Ficha del producto: `https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/`
-  - Página de marca: `https://repuestoselectro.lat/filtro-agua/[marca]/`
-  - Las 3 guías.
-  - El sitemap: `https://repuestoselectro.lat/sitemap-0.xml`
-- [ ] En Search Console, si quieres acelerar la indexación, usar "Inspección de URLs" → "Solicitar indexación" para la ficha del producto nuevo.
+- [ ] Verificar en producción las 8 URLs del producto nuevo (ficha, marca, 6 guías):
+  ```powershell
+  $urls = @(
+    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/",
+    "https://repuestoselectro.lat/filtro-agua/[marca]/",
+    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/como-saber-si-es-original/",
+    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/no-encaja/",
+    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/original-vs-generico/",
+    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/como-reiniciar-luz/",
+    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/como-cambiar/",
+    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/por-que-gotea/"
+  )
+  foreach ($u in $urls) {
+    try { $code = (Invoke-WebRequest -Uri $u -Method Head -UseBasicParsing -TimeoutSec 15).StatusCode }
+    catch { $code = $_.Exception.Response.StatusCode.value__ }
+    "{0}  {1}" -f $code, $u
+  }
+  ```
+  Todas deben devolver `200`.
+- [ ] Verificar el sitemap en producción:
+  ```powershell
+  (Invoke-WebRequest -Uri "https://repuestoselectro.lat/sitemap-0.xml" -UseBasicParsing).Content -split "`n" | Select-String "como-cambiar|por-que-gotea" | Measure-Object | Select-Object -ExpandProperty Count
+  ```
+  Debe devolver `2 × N` (con 6 productos, `12`).
+- [ ] En Search Console, "Inspección de URLs" → "Solicitar indexación" para la ficha del producto nuevo y para las 2 guías nuevas.
 
 ---
 
@@ -247,9 +295,11 @@ Cada producto es un objeto en `repuestos.json`. Los campos con `*` son obligator
 7. **Favicon con `?v=3`** en todas las páginas.
 8. **Enlaces de afiliado con `rel="sponsored nofollow noopener noreferrer"`** y aviso "As an Amazon Associate..." cerca.
 9. **Migas de pan en todas las páginas internas.**
-10. **El bloque "Guías sobre este filtro"** solo existe en la ficha del producto, no en las guías.
-11. **Interlinking entre guías:** cada guía enlaza a las otras dos del mismo producto.
+10. **El bloque "Guías sobre este filtro"** existe en la ficha del producto y enlaza a las 6 guías (ver 7.8). No existe en las guías.
+11. **Interlinking entre guías:** cada guía enlaza a las otras cinco del mismo producto.
 12. **Selector con texto de ayuda de todas las marcas.** Cuando se añade una marca nueva, se añade una línea al `<ul>` del desplegable "¿Cómo saber el modelo de mi nevera?".
+13. **`guiaCambioDetalle` y `guiaFugas` son obligatorios** en cada producto. Si falta uno, Astro explota al generar `como-cambiar/` o `por-que-gotea/` para ese producto (ver 7.7).
+14. **Cuando se añade una guía nueva al producto**, hay que añadir también su `<li>` en el bloque manual "Guías sobre este filtro" de la ficha (ver 7.8).
 
 ---
 
@@ -267,6 +317,8 @@ Remove-Item -Recurse -Force -LiteralPath "src\pages\filtro-agua\[marca]\modelo"
 Get-ChildItem -LiteralPath "src\pages\filtro-agua\[marca]"
 ```
 
+Y para escribir en archivos con corchetes en la ruta, usar `(Resolve-Path -LiteralPath $file).Path` en lugar de `(Resolve-Path $file)`.
+
 ### 7.2 Rutas de importación en Astro
 
 El número de `../` es igual al número de carpetas entre el archivo y `src/`:
@@ -277,7 +329,8 @@ El número de `../` es igual al número de carpetas entre el archivo y `src/`:
 | `src/pages/filtro-agua/index.astro` | `../../data/repuestos.json` |
 | `src/pages/filtro-agua/[marca]/index.astro` | `../../../data/repuestos.json` |
 | `src/pages/filtro-agua/[marca]/[slug]/index.astro` | `../../../../data/repuestos.json` |
-| `src/pages/filtro-agua/[marca]/[slug]/como-saber-si-es-original.astro` | `../../../../data/repuestos.json` |
+| `src/pages/filtro-agua/[marca]/[slug]/como-cambiar.astro` | `../../../../data/repuestos.json` |
+| `src/pages/filtro-agua/[marca]/[slug]/por-que-gotea.astro` | `../../../../data/repuestos.json` |
 
 ### 7.3 Codificación UTF-8
 
@@ -294,6 +347,8 @@ Cloudflare Pages, si no encuentra un `404.html` en la raíz del build, activa un
 
 **Solución:** tener `public/404.html` con un 404 real. Eso desactiva el fallback y permite que `.well-known` se sirva correctamente.
 
+**Nota sobre el conteo de `.html` en `dist`:** el build de Astro dice `53 page(s) built`, pero en `dist` hay `54` archivos `.html` porque el `404.html` viene de `public/` y se copia tal cual. No es un error.
+
 ### 7.5 La CSP y Cloudflare Web Analytics
 
 Cloudflare inyecta su beacon de analíticas (`static.cloudflareinsights.com`) en el HTML. Si la CSP no lo permite, el script se bloquea y la consola muestra un error.
@@ -305,6 +360,43 @@ Cloudflare inyecta su beacon de analíticas (`static.cloudflareinsights.com`) en
 Las 50 páginas de modelo (`/modelo/[modelo]/`) eran contenido duplicado: todas mostraban la misma tarjeta del mismo filtro. Google las trata como duplicadas y no aportan valor.
 
 **Solución:** eliminar la carpeta `modelo`, hacer que los chips de la tabla de compatibilidad sean texto plano (no enlaces), y hacer que el selector navegue directamente a la ficha del producto.
+
+### 7.7 Campos nuevos rompen el build en productos sin rellenar
+
+Si añades un campo nuevo al schema (por ejemplo `guiaCambioDetalle` o `guiaFugas`) y solo lo rellenas en un producto, Astro falla al generar las páginas de los demás: `guiaCambioDetalle.intro` es `undefined` y la plantilla explota. El error típico es `Cannot read properties of undefined (reading 'intro')`.
+
+**Solución:** cada vez que añadas un campo al schema, rellénalo en **todos** los productos del JSON antes de hacer `npm run build`. Verifica con:
+
+```powershell
+$r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
+$r | ForEach-Object { "$($_.marca): cambio=$([bool]$_.guiaCambioDetalle) fugas=$([bool]$_.guiaFugas)" }
+```
+
+Todos deben salir con `cambio=True fugas=True`.
+
+### 7.8 El bloque "Guías sobre este filtro" de la ficha es manual
+
+La ficha (`src/pages/filtro-agua/[marca]/[slug]/index.astro`) tiene el bloque "Guías sobre este filtro" con los enlaces a las guías **escritos a mano** (no generados desde el JSON). Cuando añadas una guía nueva al producto (crear el `.astro` correspondiente), también hay que añadir su `<li>` en ese bloque.
+
+**Síntoma:** la guía nueva se genera correctamente (`dist/filtro-agua/[marca]/[slug]/[nueva-guia]/index.html` existe y responde 200), pero la ficha del producto no la enlaza. Solo aparecen las que estaban en el HTML original (típicamente 3).
+
+**Solución:** añadir el `<li>` con el `href` y los textos antes del `</ul>` del bloque, o refactorizar el bloque para que consuma un array `guias` compartido.
+
+**Verificación local:**
+```powershell
+$html = Get-Content "dist\filtro-agua\[marca]\[slug]\index.html" -Raw
+([regex]::Matches($html, "como-saber-si-es-original|no-encaja|original-vs-generico|como-reiniciar-luz|como-cambiar|por-que-gotea")).Count
+```
+Debe devolver **6** (uno por cada guía) o más si las guías se mencionan varias veces.
+
+**Verificación en producción:**
+```powershell
+$html = (Invoke-WebRequest -Uri "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/" -UseBasicParsing).Content
+([regex]::Matches($html, "como-reiniciar-luz|como-cambiar|por-que-gotea")).Count
+```
+Debe devolver 3 (o el número de guías nuevas que existan).
+
+**Importante:** el HTML generado por Astro está minificado en una sola línea. `Select-String | Measure-Object` cuenta **líneas**, no coincidencias, así que devuelve `1` aunque haya 3 guías. Para contar coincidencias reales hay que usar `[regex]::Matches(...)`.
 
 ---
 
@@ -322,27 +414,67 @@ Verificar JSON:
 $r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
 "Total: $($r.Count)"
 $r | ForEach-Object { "$($_.marca) / $($_.slug)" }
+$r | ForEach-Object { "$($_.marca): cambio=$([bool]$_.guiaCambioDetalle) fugas=$([bool]$_.guiaFugas)" }
 ```
 
 Verificar páginas generadas:
 ```powershell
 Get-ChildItem -Recurse dist\filtro-agua -Filter index.html | Select-Object FullName
+Get-ChildItem -Recurse -LiteralPath "dist\filtro-agua" -Filter index.html |
+  Where-Object { $_.FullName -match 'como-cambiar|por-que-gotea' } |
+  Select-Object -ExpandProperty FullName
+```
+
+Contar `.html` en `dist` (debe ser `page(s) built` + 1 por el `404.html`):
+```powershell
+(Get-ChildItem -Recurse -LiteralPath "dist" -Filter *.html | Measure-Object).Count
 ```
 
 Buscar en archivos con corchetes:
 ```powershell
 Select-String -LiteralPath "src\pages\filtro-agua\[marca]\[slug]\index.astro" -Pattern "guiaOriginal"
+Select-String -LiteralPath "dist\filtro-agua\lg\lt1000p\por-que-gotea\index.html" -Pattern "filtro LG gotea" -Quiet
+```
+
+Verificar producción:
+```powershell
+$urls = @(
+  "https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-cambiar/",
+  "https://repuestoselectro.lat/filtro-agua/lg/lt1000p/por-que-gotea/"
+)
+foreach ($u in $urls) {
+  try { $code = (Invoke-WebRequest -Uri $u -Method Head -UseBasicParsing -TimeoutSec 15).StatusCode }
+  catch { $code = $_.Exception.Response.StatusCode.value__ }
+  "{0}  {1}" -f $code, $u
+}
 ```
 
 ---
 
 ## 9. Próximos pasos (cuando se retome)
 
-1. **Verificar en Search Console** que las nuevas URLs de Frigidaire se indexan (tarda unos días).
-2. **Añadir una 6ª marca** siguiendo el sistema (Whirlpool, etc.).
-3. **Esperar datos de Search Console** (2–4 semanas) para ver qué marcas y modelos traen más impresiones.
-4. **Revisar Lighthouse** después de añadir Frigidaire (por si el peso de la imagen del schema afecta al LCP).
-5. **Valorar AdSense** (con 30 páginas, ya cumples el mínimo de contenido).
-6. **Considerar Clarity** (Microsoft) como alternativa a Statcounter (sin cookies problemáticas).
+1. **Verificar en Search Console** que las 12 URLs nuevas (`como-cambiar/` y `por-que-gotea/`) se indexan (tarda unos días).
+2. **Enviar el sitemap actualizado** desde Search Console (Sitemaps → `sitemap-index.xml` → "Enviar").
+3. **Esperar datos de Search Console** (2–4 semanas) para ver qué marcas, modelos y guías traen más impresiones.
+4. **Revisar Lighthouse** en la ficha de un producto (por si el peso de la imagen del schema afecta al LCP).
+5. **Lote 1 de páginas transversales** (3 páginas, reutilizan datos del JSON, no necesitan contenido nuevo):
+   - `/filtro-agua/cuando-cambiar-filtro/` → `sintomas`, `faqs`, `guiaProblemas` de los 6 productos.
+   - `/filtro-agua/como-detectar-filtro-falso/` → `guiaOriginal` de los 6 productos.
+   - `/filtro-agua/como-saber-modelo-nevera/` → `comoSaberModelo` de los 6 productos.
+6. **Lote 2 de páginas por producto** (12 páginas, solo si el Lote 1 trae tráfico):
+   - `por-que-sabe-a-plastico/` y `cuanto-dura-el-filtro/` por cada producto.
+7. **Valorar AdSense** (con 53 páginas ya cumples de sobra el mínimo de contenido).
+8. **Considerar Clarity** (Microsoft) como alternativa a Statcounter (sin cookies problemáticas).
 ```
 
+---
+
+**Guárdalo** sobrescribiendo `SISTEMA.md`, y cuando quieras lo commiteamos:
+
+```powershell
+git add SISTEMA.md
+git commit -m "Actualizar SISTEMA.md: aprendizaje 7.8 y plan de paginas transversales"
+git push
+```
+
+Pégame la salida del `git push` cuando lo hagas y cerramos esta sesión.
