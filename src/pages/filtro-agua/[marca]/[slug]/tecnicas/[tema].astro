@@ -1,0 +1,161 @@
+---
+import { getCollection } from 'astro:content';
+import { marked } from 'marked';
+import repuestos from '../../../../../data/repuestos.json';
+import Header from '../../../../../components/Header.astro';
+import MigasPan from '../../../../../components/MigasPan.astro';
+
+export async function getStaticPaths() {
+  const tecnicas = await getCollection('tecnicas');
+  return tecnicas.map(entry => ({
+    params: {
+      marca: entry.data.marca,
+      slug: entry.data.slug,
+      tema: entry.data.tema,
+    },
+    props: { entry, producto: repuestos.find(r => r.marca === entry.data.marca && r.slug === entry.data.slug) },
+  }));
+}
+
+const { entry, producto } = Astro.props;
+const { titulo, tituloSeo, descripcion, autor, revisor, fecha, faqs } = entry.data;
+const productoUrl = `/filtro-agua/${entry.data.marca}/${entry.data.slug}/`;
+const productoNombre = producto ? producto.titulo : `${entry.data.marca} ${entry.data.slug}`;
+
+const htmlRaw = await marked.parse(entry.body ?? '');
+
+const cta1 = `
+<aside style="margin: 2rem 0; padding: 1rem 1.25rem; background: #fff7ed; border-left: 4px solid #c2410c; border-radius: 6px;">
+  <p style="margin: 0; font-size: 0.95rem;">
+    <strong>¿Ya sabes que este es tu filtro?</strong>
+    <a href="${productoUrl}" style="color: #1d4ed8; text-decoration: underline;">Ver ficha completa del ${productoNombre} →</a>
+  </p>
+</aside>
+`;
+
+const parts = htmlRaw.split(/(<h2[^>]*>)/);
+let insertIndex;
+if (parts.length >= 8) {
+  insertIndex = 7;
+} else if (parts.length >= 6) {
+  insertIndex = 5;
+} else if (parts.length >= 4) {
+  insertIndex = 3;
+} else {
+  insertIndex = parts.length;
+}
+parts.splice(insertIndex, 0, cta1);
+const htmlConCta1 = parts.join('');
+
+const cta2 = `
+<aside style="margin: 2rem 0; padding: 1rem 1.25rem; background: #f0fdf4; border-left: 4px solid #166534; border-radius: 6px;">
+  <p style="margin: 0; font-size: 0.95rem;">
+    <strong>Guía relacionada:</strong>
+    <a href="${productoUrl}" style="color: #1d4ed8; text-decoration: underline;">Ficha completa del ${productoNombre}</a>
+    — compatibilidad, todas las guías paso a paso.
+  </p>
+</aside>
+`;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://repuestoselectro.lat').toString();
+const fechaIso = fecha.toISOString().split('T')[0];
+const fechaLegible = fecha.toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: titulo,
+  description: descripcion,
+  author: { '@type': 'Organization', name: autor },
+  publisher: { '@type': 'Organization', name: 'repuestoselectro.lat' },
+  datePublished: fechaIso,
+  dateModified: fechaIso,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+};
+
+const faqSchema = faqs && faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+} : null;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloSeo}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="canonical" href={canonical} />
+    <link rel="ard" href="/.well-known/ard.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+    <style>
+      .article-body { line-height: 1.7; color: #222; font-size: 1rem; }
+      .article-body h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; line-height: 1.3; }
+      .article-body h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; line-height: 1.3; }
+      .article-body p { margin: 0 0 1rem; }
+      .article-body table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+      .article-body th, .article-body td { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; }
+      .article-body th { background: #022E2E; color: #fff; }
+      .article-body ul, .article-body ol { margin: 0 0 1rem 1.25rem; }
+      .article-body li { margin-bottom: 0.4rem; }
+      .article-body strong { font-weight: 600; }
+      .faq-item { border-bottom: 1px solid #e5e7eb; padding: 0.75rem 0; }
+      .faq-item summary { font-weight: 600; cursor: pointer; color: #1d4ed8; }
+      .faq-item p { margin: 0.5rem 0 0; font-size: 0.95rem; }
+    </style>
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+    <main style="max-width: 760px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: entry.data.marca.charAt(0).toUpperCase() + entry.data.marca.slice(1), href: `/filtro-agua/${entry.data.marca}/` },
+        { nombre: producto ? producto.numeroPieza : entry.data.slug, href: productoUrl },
+        { nombre: 'Guías técnicas', href: `${productoUrl}tecnicas/` },
+        { nombre: titulo }
+      ]} />
+
+      <article>
+        <h1 style="font-size: 1.8rem; line-height: 1.25; margin: 0 0 0.75rem;">{titulo}</h1>
+
+        <div style="background: #eef5ff; border-left: 4px solid #19b95c; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; color: #333; margin-bottom: 1.5rem;">
+          <p style="margin: 0 0 0.25rem;"><strong>Autor:</strong> {autor}</p>
+          <p style="margin: 0 0 0.25rem;"><strong>Revisado por:</strong> {revisor}</p>
+          <p style="margin: 0;"><strong>Última actualización:</strong> <time datetime={fechaIso}>{fechaLegible}</time></p>
+        </div>
+
+        <div class="article-body" set:html={htmlConCta1} />
+
+        <div set:html={cta2} />
+
+        {faqs && faqs.length > 0 && (
+          <section style="margin-top: 2rem;">
+            <h2 style="font-size: 1.4rem; margin: 0 0 1rem;">Preguntas frecuentes</h2>
+            {faqs.map(f => (
+              <details class="faq-item">
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </section>
+        )}
+
+        <p style="margin: 2.5rem 0 0; font-size: 0.9rem;">
+          <a href={`${productoUrl}tecnicas/`} style="color: #1d4ed8; text-decoration: none;">← Ver todas las guías técnicas</a>
+          <span style="color: #ccc; margin: 0 0.5rem;">·</span>
+          <a href={productoUrl} style="color: #1d4ed8; text-decoration: none;">Volver a la ficha del {producto ? producto.numeroPieza : entry.data.slug}</a>
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

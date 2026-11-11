@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import repuestos from '../../../../../data/repuestos.json';
+import Header from '../../../../../components/Header.astro';
+import MigasPan from '../../../../../components/MigasPan.astro';
+
+export async function getStaticPaths() {
+  return repuestos.map(item => ({
+    params: { marca: item.marca, slug: item.slug },
+    props: { producto: item },
+  }));
+}
+
+const { producto } = Astro.props;
+const tecnicas = (await getCollection('tecnicas'))
+  .filter(t => t.data.marca === producto.marca && t.data.slug === producto.slug)
+  .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guías técnicas del filtro {producto.marcaNombre} {producto.numeroPieza}</title>
+    <meta name="description" content={`Guías técnicas del filtro ${producto.marcaNombre} ${producto.numeroPieza}: diagnóstico, instalación, mantenimiento y autenticidad.`} />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="ard" href="/.well-known/ard.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="/favicon.ico?v=3" />
+  </head>
+  <body style="margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111;">
+    <Header />
+    <main style="max-width: 960px; margin: 0 auto; padding: 2rem 1rem 3rem;">
+      <MigasPan niveles={[
+        { nombre: 'Filtro de agua', href: '/filtro-agua/' },
+        { nombre: producto.marcaNombre, href: `/filtro-agua/${producto.marca}/` },
+        { nombre: producto.numeroPieza, href: `/filtro-agua/${producto.marca}/${producto.slug}/` },
+        { nombre: 'Guías técnicas' }
+      ]} />
+
+      <h1 style="font-size: 1.8rem; margin: 0 0 0.5rem; line-height: 1.25;">
+        Guías técnicas del filtro {producto.marcaNombre} {producto.numeroPieza}
+      </h1>
+      <p style="color: #555; margin: 0 0 2rem; font-size: 1rem;">
+        {tecnicas.length === 0
+          ? 'Aún no hay guías técnicas publicadas para este producto.'
+          : `${tecnicas.length} ${tecnicas.length === 1 ? 'guía técnica' : 'guías técnicas'} publicadas.`}
+      </p>
+
+      {tecnicas.length > 0 && (
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          {tecnicas.map(t => (
+            <li>
+              <a
+                href={`/filtro-agua/${producto.marca}/${producto.slug}/tecnicas/${t.data.tema}/`}
+                style="display: block; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem; text-decoration: none; color: inherit; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.04);"
+              >
+                <span style="display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #c2410c; background: #fff7ed; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.5rem;">
+                  {t.data.tipo}
+                </span>
+                <strong style="display: block; font-size: 1.05rem; color: #1d4ed8; margin-bottom: 0.4rem; line-height: 1.35;">
+                  {t.data.titulo}
+                </strong>
+                <span style="display: block; font-size: 0.85rem; color: #555; line-height: 1.5;">
+                  {t.data.descripcion}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <p style="margin: 2rem 0 0; font-size: 0.9rem;">
+        <a href={`/filtro-agua/${producto.marca}/${producto.slug}/`} style="color: #1d4ed8; text-decoration: none;">
+          ← Volver a la ficha del {producto.numeroPieza}
+        </a>
+      </p>
+    </main>
+  </body>
+</html>

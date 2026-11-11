@@ -1,0 +1,84 @@
+﻿
+> repuestoselectro@0.0.1 build
+> astro build
+
+[2m07:24:10[22m [34m[content][39m Syncing content
+[2m07:24:11[22m [34m[content][39m Synced content
+[2m07:24:11[22m [34m[types][39m Generated [2m2.78s[22m
+[2m07:24:11[22m [34m[build][39m output: [34m"static"[39m
+[2m07:24:11[22m [34m[build][39m mode: [34m"static"[39m
+[2m07:24:11[22m [34m[build][39m directory: [34mC:\Users\mvx55\proyectos\repuestoseletro\dist\[39m
+[2m07:24:11[22m [34m[build][39m Collecting build info...
+[2m07:24:11[22m [34m[build][39m [32mΓ£ô Completed in 2.93s.[39m
+[2m07:24:11[22m [34m[build][39m Building static entrypoints...
+[2m07:24:12[22m [34m[vite][39m [32mΓ£ô built in 1.14s[39m
+[2m07:24:12[22m [34m[vite][39m [32mΓ£ô built in 93ms[39m
+[2m07:24:12[22m [34m[build][39m Rearranging server assets...
+
+[42m[30m generating static routes [39m[49m
+[2m07:24:12[22m   [34mΓö£ΓöÇ[39m [2m/afiliados/index.html[22m [2m(+159ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/aviso-legal/index.html[22m [2m(+17ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/como-cambiar/index.html[22m [2m(+16ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/como-cambiar/index.html[22m [2m(+10ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/como-cambiar/index.html[22m [2m(+9ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/como-cambiar/index.html[22m [2m(+10ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/como-cambiar/index.html[22m [2m(+10ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/como-cambiar/index.html[22m [2m(+10ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/como-reiniciar-luz/index.html[22m [2m(+9ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/como-reiniciar-luz/index.html[22m [2m(+8ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/como-reiniciar-luz/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/como-reiniciar-luz/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/como-reiniciar-luz/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/como-reiniciar-luz/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/como-saber-si-es-original/index.html[22m [2m(+8ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/como-saber-si-es-original/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/como-saber-si-es-original/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/como-saber-si-es-original/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/como-saber-si-es-original/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/como-saber-si-es-original/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/no-encaja/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/no-encaja/index.html[22m [2m(+5ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/no-encaja/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/no-encaja/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/no-encaja/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/no-encaja/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/original-vs-generico/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/original-vs-generico/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/original-vs-generico/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/original-vs-generico/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/original-vs-generico/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/original-vs-generico/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/por-que-gotea/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/por-que-gotea/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/por-que-gotea/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/por-que-gotea/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/por-que-gotea/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/por-que-gotea/index.html[22m [2m(+8ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/tecnicas/goteo-tras-cambiar/index.html[22m [2m(+47ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/tecnicas/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/tecnicas/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/tecnicas/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/tecnicas/index.html[22m [2m(+6ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/tecnicas/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/tecnicas/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/da97-17376b/index.html[22m [2m(+15ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/lt1000p/index.html[22m [2m(+12ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/xwfe/index.html[22m [2m(+11ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/ultraclarity-pro/index.html[22m [2m(+9ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/eptwfu01/index.html[22m [2m(+16ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/everydrop-1/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/samsung/index.html[22m [2m(+8ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/lg/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/ge/index.html[22m [2m(+11ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/bosch/index.html[22m [2m(+8ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/frigidaire/index.html[22m [2m(+8ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/whirlpool/index.html[22m [2m(+7ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/filtro-agua/index.html[22m [2m(+25ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/privacidad/index.html[22m [2m(+12ms)[22m 
+[2m07:24:13[22m   [34mΓö£ΓöÇ[39m [2m/index.html[22m [2m(+14ms)[22m 
+[2m07:24:13[22m [32mΓ£ô Completed in 972ms.
+[39m
+[2m07:24:13[22m [34m[build][39m [32mΓ£ô Completed in 2.51s.[39m
+[2m07:24:13[22m [34m[@astrojs/sitemap][39m `sitemap-index.xml` created at `dist`
+[2m07:24:13[22m [34m[build][39m 60 page(s) built in [1m5.52s[22m
+[2m07:24:13[22m [34m[build][39m [1mComplete![22m
