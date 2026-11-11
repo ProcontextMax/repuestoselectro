@@ -1,8 +1,3 @@
-## `SISTEMA.md` actualizado — bloque completo para sobrescribir
-
-Copia todo esto y sobrescribe `SISTEMA.md` (borra todo y pega):
-
-```markdown
 # Sistema de productos — repuestoselectro.lat
 
 Documento de referencia para añadir un producto nuevo o un artículo técnico. Se sigue al pie de la letra.
@@ -26,10 +21,10 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 0 |
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
-| Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 0 |
+| Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 1 |
 
-**Total:** 68 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 9 artículos técnicos, 3 legales) + 1 `404.html` estático = 69 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `68 page(s) built`.*
+**Total:** 69 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 10 artículos técnicos, 3 legales) + 1 `404.html` estático = 70 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `69 page(s) built`.*
 
 **Artículos técnicos publicados (Samsung DA97-17376B):**
 
@@ -45,6 +40,11 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | 8 | `empaque-clamshell-dificil-de-abrir` | instalacion | `/filtro-agua/samsung/da97-17376b/tecnicas/empaque-clamshell-dificil-de-abrir/` |
 | 9 | `dispensador-no-funciona-sin-filtro` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/dispensador-no-funciona-sin-filtro/` |
 
+**Artículos técnicos publicados (Whirlpool EveryDrop 1):**
+
+| # | Tema | Tipo | URL |
+|---|---|---|---|
+| 1 | `cada-cuanto-cambiar-filtro` | mantenimiento | `/filtro-agua/whirlpool/everydrop-1/tecnicas/cada-cuanto-cambiar-filtro/` |
 ---
 
 ## 2. Estructura de archivos
@@ -473,7 +473,10 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | GE | Replicar los 6 con datos de GE (chip RFID) | Media |
 | Bosch | Replicar los 6 | Media |
 | Frigidaire | Replicar los 6 | Media |
-| Whirlpool | Replicar los 6 | Media |
+| Whirlpool | ✅ `cada-cuanto-cambiar-filtro` (publicado esta sesión) | Hecho |
+| Whirlpool | `sabor-a-cloro-regresa-antes` (saturación de carbón) | Media |
+| Whirlpool | `presion-baja-o-hielo-hueco` (verificar vs `guiaResetLuz`) | Media |
+| Whirlpool | `tapon-de-bypass` (requiere verificar número de parte) | Baja |
 
 **Plan sugerido:**
 
@@ -495,7 +498,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Sesión 2 | 4 artículos Samsung más | 65 |
 | Sesión 3 | 4 artículos Samsung más (sabor, empaque, dispensador) | 68 |
 | Sesión 3 (pendiente) | Replicar a LG | ~71 |
-```
+| Sesión 4 | 1 artículo técnico Whirlpool (`cada-cuanto-cambiar-filtro`) + auditoría canibalización §7.15 + SISTEMA.md §1/§9/§10 | 69 |
 
 ---
 
