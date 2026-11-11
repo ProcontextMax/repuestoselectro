@@ -3,6 +3,7 @@ import repuestos from '../../../../data/repuestos.json';
 import Header from '../../../../components/Header.astro';
 import MigasPan from '../../../../components/MigasPan.astro';
 import SelectorNevera from '../../../../components/SelectorNevera.astro';
+import { getCollection } from 'astro:content';
 
 export function getStaticPaths() {
   return repuestos.map(r => ({
@@ -12,6 +13,9 @@ export function getStaticPaths() {
 }
 
 const { filtro } = Astro.props;
+
+const tecnicas = (await getCollection('tecnicas'))
+  .filter(t => t.data.marca === filtro.marca && t.data.productoSlug === filtro.slug);
 
 const parrafos = filtro.textoOriginal
   .split(/(?<=\.)\s+/)
@@ -320,6 +324,22 @@ const breadcrumbJsonLd = {
           </li>
         </ul>
       </section>
+
+      {tecnicas.length > 0 && (
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: 1.25rem; margin: 0 0 0.75rem;">Guías técnicas</h2>
+          <p style="color: #555; margin: 0 0 1rem; font-size: 0.9rem;">
+            {tecnicas.length} {tecnicas.length === 1 ? 'artículo técnico' : 'artículos técnicos'} con diagnóstico, mantenimiento y autenticidad de este filtro.
+          </p>
+          <a
+            href={`/filtro-agua/${filtro.marca}/${filtro.slug}/tecnicas/`}
+            style="display: inline-block; background: #022E2E; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none;"
+          >
+            Ver guías técnicas →
+          </a>
+        </section>
+      )}
+
 
       <div style="border: 2px solid #c2410c; border-radius: 10px; padding: 1.5rem; margin: 2rem 0; text-align: center; background: #fff7ed;">
         <p style="font-size: 1rem; margin: 0 0 1rem; color: #333;">
