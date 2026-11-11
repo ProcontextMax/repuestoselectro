@@ -21,6 +21,10 @@
 - [Guías técnicas del Samsung DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/): Índice de artículos técnicos del producto.
 - [Goteo tras cambiar DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/goteo-tras-cambiar/): Diagnóstico de fuga, junta tórica y émbolo del receptáculo.
 - [Cuánto dura el filtro DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/cuanto-dura/): Capacidad de 1.136 litros o seis meses, lo que ocurra primero.
+- [Goteo al dispensar en DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/gotea-solo-al-dispensar/): Goteo exclusivo al accionar el dispensador, válvula y sello.
+- [Flujo débil en DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/flujo-debil-o-poca-agua/): Diagnóstico de caudal reducido, presión de línea y cabezal.
+- [Silbido tras instalar DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/ruido-silbido-despues-de-instalar/): Ruido por aire atrapado o sellado incompleto, purga.
+- [Jarra o máquina de hielo no llena](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/jarra-autollenado-o-maquina-hielo-falla/): Diagnóstico de autollenado, sensor y válvula.
 - [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
 - [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-cambiar/): Instalación paso a paso, sin herramientas.
 - [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
