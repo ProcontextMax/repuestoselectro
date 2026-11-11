@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { producto } = Astro.props;
 const tecnicas = (await getCollection('tecnicas'))
-  .filter(t => t.data.marca === producto.marca && t.data.slug === producto.slug)
+  .filter(t => t.data.marca === producto.marca && t.data.productoSlug === producto.slug)
   .sort((a, b) => b.data.fecha.getTime() - a.data.fecha.getTime());
 ---
 

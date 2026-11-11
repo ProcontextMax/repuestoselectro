@@ -8,7 +8,7 @@ const tecnicas = defineCollection({
     tituloSeo: z.string().max(65),
     descripcion: z.string().min(120).max(160),
     marca: z.string(),
-    slug: z.string(),
+    productoSlug: z.string(),
     tema: z.string(),
     tipo: z.enum([
       'instalacion',

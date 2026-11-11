@@ -7,19 +7,20 @@ import MigasPan from '../../../../../components/MigasPan.astro';
 
 export async function getStaticPaths() {
   const tecnicas = await getCollection('tecnicas');
+
   return tecnicas.map(entry => ({
     params: {
       marca: entry.data.marca,
-      slug: entry.data.slug,
+      slug: entry.data.productoSlug,
       tema: entry.data.tema,
     },
-    props: { entry, producto: repuestos.find(r => r.marca === entry.data.marca && r.slug === entry.data.slug) },
+    props: { entry, producto: repuestos.find(r => r.marca === entry.data.marca && r.slug === entry.data.productoSlug) },
   }));
 }
 
 const { entry, producto } = Astro.props;
 const { titulo, tituloSeo, descripcion, autor, revisor, fecha, faqs } = entry.data;
-const productoUrl = `/filtro-agua/${entry.data.marca}/${entry.data.slug}/`;
+const productoUrl = `/filtro-agua/${entry.data.marca}/${entry.data.productoSlug}/`;
 const productoNombre = producto ? producto.titulo : `${entry.data.marca} ${entry.data.slug}`;
 
 const htmlRaw = await marked.parse(entry.body ?? '');
