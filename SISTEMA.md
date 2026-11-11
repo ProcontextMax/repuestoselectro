@@ -1,6 +1,17 @@
-## Vamos con C — Documentar `SISTEMA.md`
+## ✅ Verificación en producción correcta
 
-Aquí tienes el `SISTEMA.md` completo actualizado. **Borra todo el actual y pega esto** (un solo bloque).
+Todo OK:
+- 3 URLs con `200`
+- 3 verificaciones del índice en producción
+- 2 verificaciones del sitemap en producción
+
+**Total: 61 páginas en producción** (53 base + 6 índices + 2 artículos).
+
+---
+
+## `SISTEMA.md` actualizado (bloque completo para reemplazar)
+
+Copia esto y sobrescribe `SISTEMA.md`:
 
 ```markdown
 # Sistema de productos — repuestoselectro.lat
@@ -21,15 +32,15 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 
 | Marca | Producto | ASIN | Ficha | Guías | Técnicas |
 |---|---|---|---|---|---|
-| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 1 |
+| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 2 |
 | LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 0 |
 | GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 0 |
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 0 |
 
-**Total:** 60 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 1 artículo técnico, 3 legales) + 1 `404.html` estático = 61 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `60 page(s) built`.*
+**Total:** 61 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 2 artículos técnicos, 3 legales) + 1 `404.html` estático = 62 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `61 page(s) built`.*
 
 ---
 
@@ -37,10 +48,11 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 
 ```
 src/
-├── content.config.ts                     ← NUEVO: schema de colecciones (raíz de src/)
+├── content.config.ts                     ← Schema de colecciones (raíz de src/)
 ├── content/
-│   └── tecnicas/                         ← NUEVO: 1 .md por artículo técnico
-│       └── samsung-da97-17376b-goteo-tras-cambiar.md
+│   └── tecnicas/                         ← 1 .md por artículo técnico
+│       ├── samsung-da97-17376b-goteo-tras-cambiar.md
+│       └── samsung-da97-17376b-cuanto-dura.md
 ├── data/
 │   └── repuestos.json                    ← todos los productos
 ├── components/
@@ -64,7 +76,7 @@ src/
                 ├── como-reiniciar-luz.astro
                 ├── como-cambiar.astro
                 ├── por-que-gotea.astro
-                └── tecnicas/                  ← NUEVO
+                └── tecnicas/
                     ├── index.astro            ← listado de técnicas del producto
                     └── [tema].astro           ← template del artículo técnico
 ```
@@ -88,8 +100,8 @@ src/
 /filtro-agua/[marca]/[slug]/como-reiniciar-luz/
 /filtro-agua/[marca]/[slug]/como-cambiar/
 /filtro-agua/[marca]/[slug]/por-que-gotea/
-/filtro-agua/[marca]/[slug]/tecnicas/               NUEVO: listado de técnicas
-/filtro-agua/[marca]/[slug]/tecnicas/[tema]/        NUEVO: artículo técnico
+/filtro-agua/[marca]/[slug]/tecnicas/               listado de técnicas
+/filtro-agua/[marca]/[slug]/tecnicas/[tema]/        artículo técnico
 /afiliados/  /privacidad/  /aviso-legal/
 /.well-known/ai-catalog.json  /.well-known/ard.json
 /llms.txt  /robots.txt  /sitemap-index.xml  /sitemap-0.xml
@@ -99,13 +111,15 @@ src/
 
 ## 4. Esquema del JSON por producto (`repuestos.json`)
 
-Sin cambios respecto a la versión anterior. Ver sección 4 del histórico: `categoria`, `marca`, `slug`, `titulo`, `tituloSeo`, `numeroPieza`, `esOriginal`, `modelosCompatibles`, `compatibilidad`, `contraindicaciones`, `sintomas`, `comoSaberModelo`, `guiaCambioDetalle` (obligatorio), `guiaFugas` (obligatorio), `guiaResetLuz`, `guiaOriginal`, `guiaNoEncaja`, `guiaVsGenerico`, `textoOriginal`, `faqs`, `enlaceAfiliado`, `imagenSchema`, `asin`.
+Sin cambios respecto a versiones anteriores. Campos: `categoria`, `marca`, `slug`, `titulo`, `tituloSeo`, `numeroPieza`, `esOriginal`, `modelosCompatibles`, `compatibilidad`, `contraindicaciones`, `sintomas`, `comoSaberModelo`, `guiaCambioDetalle` (obligatorio), `guiaFugas` (obligatorio), `guiaResetLuz`, `guiaOriginal`, `guiaNoEncaja`, `guiaVsGenerico`, `textoOriginal`, `faqs`, `enlaceAfiliado`, `imagenSchema`, `asin`.
 
 **Campos legacy:** `guiaCambio` (array) y `guiaProblemas` (array) se mantienen porque la ficha los consume; las páginas `/como-cambiar/` y `/por-que-gotea/` consumen los nuevos.
 
+**IMPORTANTE:** en `repuestos.json`, el campo se llama `slug`. En el frontmatter de los `.md` técnicos, el campo se llama **`productoSlug`** (ver 5.1 y 7.11). Son nombres distintos a propósito para evitar la colisión del Content Layer.
+
 ---
 
-## 5. Artículos técnicos (`src/content/tecnicas/*.md`) — NUEVO
+## 5. Artículos técnicos (`src/content/tecnicas/*.md`)
 
 Los artículos técnicos son piezas de contenido profundo por producto. No son fichas ni guías estructuradas: son artículos tipo blog técnico, de 1.200 a 1.800 palabras, con tabla de verificaciones y FAQ.
 
@@ -117,7 +131,7 @@ titulo: "H1 del artículo"                                  # 50-65 caracteres
 tituloSeo: "Título para Google y pestaña"                  # máx. 65 caracteres
 descripcion: "Meta description"                            # 120-160 caracteres
 marca: "samsung"                                           # debe coincidir con repuestos.json
-slug: "da97-17376b"                                        # debe coincidir con repuestos.json
+productoSlug: "da97-17376b"                                # OJO: se llama productoSlug, NO slug (ver 7.11)
 tema: "goteo-tras-cambiar"                                 # URL slug del artículo
 tipo: "diagnostico"                                        # ver tabla 5.2
 keyword: "goteo filtro samsung da97-17376b"
@@ -163,9 +177,9 @@ El **cuerpo** del `.md` (después del frontmatter `---`) cumple:
 
 ### 5.4 Reglas del `tituloSeo`
 
-**Excepción a la regla general de la ficha.** Para técnicas, el `tituloSeo` **sí incluye el número de pieza**, porque la búsqueda del usuario es específica ("goteo filtro samsung da97-17376b"). Reglas:
+**Excepción a la regla general de la ficha.** Para técnicas, el `tituloSeo` **sí incluye el número de pieza**, porque la búsqueda del usuario es específica. Reglas:
 
-1. **50-60 caracteres** (más corto que el H1, para que no se trunque en Google).
+1. **50-60 caracteres**.
 2. **Keyword principal al principio**.
 3. **Número de pieza literal** si el artículo es específico de un producto.
 4. **Sin clickbait ni imperativos**.
@@ -179,15 +193,16 @@ Ejemplo válido:
 
 - [ ] Elegir producto y tema (`tema` = slug de URL, en kebab-case).
 - [ ] Generar el artículo con la herramienta (o escribirlo desde cero).
-- [ ] Convertirlo al formato `.md` con frontmatter (sin H1, sin E-E-A-T, sin FAQ, sin CTAs, sin enlaces a Amazon).
+- [ ] Convertirlo al formato `.md` con frontmatter. **Atención:** el campo del producto se llama `productoSlug`, NO `slug` (ver 7.11). Sin H1, sin E-E-A-T, sin FAQ en el cuerpo, sin CTAs, sin enlaces a Amazon.
 - [ ] Verificar el `tituloSeo` (50-60 chars, keyword-first, código literal).
 - [ ] Verificar `descripcion` (120-160 chars).
-- [ ] Guardar el `.md` como `src/content/tecnicas/[marca]-[slug]-[tema].md`.
+- [ ] Guardar el `.md` como `src/content/tecnicas/[marca]-[productoSlug]-[tema].md`.
 - [ ] `npm run build` → el número total de páginas sube en 1.
 - [ ] Verificar en local `/tecnicas/[tema]/` responde 200.
 - [ ] Verificar que el CTA 1 está entre el primer y el último H2.
 - [ ] Verificar que no hay `amazon.com` en el HTML.
 - [ ] Verificar que el schema FAQPage está presente.
+- [ ] Verificar que el índice `/tecnicas/` del producto ahora muestra el nuevo artículo (contador +1).
 - [ ] Commit + push.
 - [ ] Verificar en producción (200 + 4 verificaciones OK).
 
@@ -196,21 +211,22 @@ Ejemplo válido:
 ## 6. Reglas fijas
 
 1. **Solo originales verificados.** Si no hay original con stock y vendedor Amazon/fabricante, no se añade.
-2. **El `<title>` de la ficha no repite el número de pieza.** Ya está en la URL. **Excepción:** los artículos técnicos sí lo llevan (ver 5.4).
-3. **El `<h1>` sí lleva el número de pieza.** Confirmación visual para el usuario.
-4. **Guías y técnicas específicas por producto.** No se comparten entre productos.
-5. **Contenido redactado desde cero.** Nunca copiar de Google, reseñas o ficha de Amazon.
-6. **Sin precio ni envío en la ficha.** En tablas comparativas, siempre "precios indicativos".
-7. **Favicon con `?v=3`** en todas las páginas.
-8. **Enlaces de afiliado con `rel="sponsored nofollow noopener noreferrer"`** y aviso cerca.
+2. **El `<title>` de la ficha no repite el número de pieza.** **Excepción:** los artículos técnicos sí lo llevan (ver 5.4).
+3. **El `<h1>` sí lleva el número de pieza.**
+4. **Guías y técnicas específicas por producto.**
+5. **Contenido redactado desde cero.**
+6. **Sin precio ni envío en la ficha.**
+7. **Favicon con `?v=3`.**
+8. **Enlaces de afiliado con `rel="sponsored nofollow noopener noreferrer"`.**
 9. **Migas de pan en todas las páginas internas.**
 10. **El bloque "Guías sobre este filtro"** existe en la ficha del producto y enlaza a las 6 guías (ver 7.8).
 11. **Interlinking entre guías:** cada guía enlaza a las otras cinco del mismo producto.
 12. **Selector con texto de ayuda de todas las marcas.**
-13. **`guiaCambioDetalle` y `guiaFugas` son obligatorios** en cada producto (ver 7.7).
-14. **Cuando se añade una guía nueva al producto**, hay que añadir también su `<li>` en el bloque manual "Guías sobre este filtro" de la ficha (ver 7.8).
+13. **`guiaCambioDetalle` y `guiaFugas` son obligatorios** (ver 7.7).
+14. **Cuando se añade una guía nueva**, hay que añadir su `<li>` en el bloque manual de la ficha (ver 7.8).
 15. **Los artículos técnicos NO llevan enlaces a Amazon** ni CTAs de afiliado. Solo los 2 CTAs al producto que inyecta el template.
-16. **El cuerpo del `.md` técnico NO lleva H1, ni E-E-A-T, ni FAQ, ni CTAs** — todo eso lo renderiza el template.
+16. **El cuerpo del `.md` técnico NO lleva H1, ni E-E-A-T, ni FAQ, ni CTAs.**
+17. **En el frontmatter de los `.md` técnicos, el campo del producto se llama `productoSlug`, NO `slug`** (ver 7.11).
 
 ---
 
@@ -235,33 +251,13 @@ Si no hay `404.html`, Cloudflare activa SPA fallback y rompe `.well-known`. Tene
 No crear páginas `/modelo/[modelo]/` que solo cambien una tarjeta. Google las trata como duplicadas.
 
 ### 7.7 Campos nuevos rompen el build en productos sin rellenar
-Si añades un campo al schema y solo lo rellenas en un producto, Astro explota al generar las páginas de los demás. Rellenar en **todos** antes del `npm run build`. Verificar:
-```powershell
-$r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
-$r | ForEach-Object { "$($_.marca): cambio=$([bool]$_.guiaCambioDetalle) fugas=$([bool]$_.guiaFugas)" }
-```
+Si añades un campo al schema y solo lo rellenas en un producto, Astro explota al generar las páginas de los demás. Rellenar en **todos** antes del `npm run build`.
 
 ### 7.8 El bloque "Guías sobre este filtro" de la ficha es manual
 La ficha (`src/pages/filtro-agua/[marca]/[slug]/index.astro`) tiene el bloque "Guías sobre este filtro" con los enlaces **escritos a mano**. Cuando añadas una guía nueva, también hay que añadir su `<li>` en ese bloque.
 
-**Verificación local:**
-```powershell
-$html = Get-Content "dist\filtro-agua\[marca]\[slug]\index.html" -Raw -Encoding UTF8
-([regex]::Matches($html, "como-saber-si-es-original|no-encaja|original-vs-generico|como-reiniciar-luz|como-cambiar|por-que-gotea")).Count
-```
-Debe devolver **6**.
-
-**Nota importante:** el HTML generado por Astro está minificado en una sola línea. `Select-String | Measure-Object` cuenta **líneas**, no coincidencias. Para contar coincidencias reales usar `[regex]::Matches(...)`.
-
 ### 7.9 Content Layer de Astro 5+: config en `src/content.config.ts`, no en `src/content/config.ts`
-**Astro 5** cambió la API de Content Collections. Si pones la config en `src/content/config.ts`, el build falla con:
-
-```
-[LegacyContentConfigError] Found legacy content config file in "src\content\config.ts".
-Please move this file to "src/content.config.ts" and ensure each collection has a loader defined.
-```
-
-**Solución correcta:**
+**Astro 5** cambió la API de Content Collections. Si pones la config en `src/content/config.ts`, el build falla con `[LegacyContentConfigError]`. **Solución:**
 
 1. Mover el archivo a **`src/content.config.ts`** (raíz de `src/`, no dentro de `content/`).
 2. Cada colección debe tener un **`loader`**:
@@ -277,24 +273,53 @@ Please move this file to "src/content.config.ts" and ensure each collection has 
    export const collections = { tecnicas };
    ```
 
-**Sin el `loader`,** Astro no lee los `.md` y `getCollection('tecnicas')` devuelve array vacío → el `getStaticPaths` de `[tema].astro` no genera rutas → el build dice `0 page(s) built` para esa sección.
-
-**Verificar el síntoma:** si el build da 59 páginas (con los 6 índices vacíos pero sin el artículo), el problema es el loader.
+**Sin el `loader`,** Astro no lee los `.md` y `getCollection('tecnicas')` devuelve array vacío.
 
 ### 7.10 `build.log` se commitea por error
-El `Tee-Object` y `Out-File` de PowerShell crean `build.log` en la raíz del proyecto. Ese archivo **no debe estar en el repo**. Solución:
+El `Tee-Object` y `Out-File` de PowerShell crean `build.log` en la raíz. Solución:
 
 ```powershell
 Add-Content -LiteralPath ".gitignore" -Value "build.log" -Encoding UTF8
 git rm --cached build.log
-git add .gitignore
-git commit -m "Sacar build.log del repo y anadirlo a .gitignore"
-git push
 ```
 
-Si ya está commiteado, `git rm --cached` lo saca del tracking sin borrarlo del disco. El `.gitignore` evita que vuelva a entrar.
+**Alternativa más limpia:** no usar `Tee-Object` ni `Out-File`. Hacer `npm run build` directamente.
 
-**Alternativa más limpia:** no usar `Tee-Object` ni `Out-File`. Hacer `npm run build` directamente y ver el output en la terminal.
+### 7.11 Colisión de `id` en Content Layer por el campo `slug` — NUEVO Y CRÍTICO
+**Síntoma:** tienes 2 `.md` en `src/content/tecnicas/`, ambos válidos, pero el build dice `60 page(s)` en vez de `61`. Solo se genera 1 artículo. `getCollection('tecnicas').length` devuelve `1` aunque hay 2 archivos.
+
+**Causa:** en Astro 5 Content Layer, si el frontmatter tiene un campo llamado `slug`, Astro lo usa como `id` de la entry. Si dos `.md` del mismo producto tienen el mismo `slug` (ej. `da97-17376b`), **colisionan** y Astro descarta uno silenciosamente (sin error, sin warning).
+
+**Solución:** renombrar el campo `slug` → `productoSlug` en:
+1. `src/content.config.ts` (schema)
+2. Todos los `.md` (frontmatter)
+3. `src/pages/filtro-agua/[marca]/[slug]/tecnicas/index.astro` (`t.data.slug` → `t.data.productoSlug`)
+4. `src/pages/filtro-agua/[marca]/[slug]/tecnicas/[tema].astro` (`entry.data.slug` → `entry.data.productoSlug` en las referencias al producto)
+
+Al no llamarse `slug`, Astro usa el **nombre del archivo** como `id`, que es único por archivo.
+
+**Comando de migración (si vuelve a pasar):**
+
+```powershell
+# 1. En los .md
+Get-ChildItem "src\content\tecnicas" -Filter *.md | ForEach-Object {
+  $c = Get-Content -LiteralPath $_.FullName -Encoding UTF8 -Raw
+  $c = $c -replace "(?m)^slug: ", "productoSlug: "
+  [System.IO.File]::WriteAllText($_.FullName, $c, (New-Object System.Text.UTF8Encoding $false))
+}
+```
+
+**Verificación del síntoma:** si el build da menos páginas de las esperadas y el índice `/tecnicas/` solo muestra 1 artículo, es este bug. Comprobar con:
+
+```powershell
+# En el getStaticPaths, añadir temporalmente:
+console.log('Total tecnicas:', tecnicas.length);
+tecnicas.forEach(t => console.log('  id:', t.id, '| tema:', t.data.tema));
+```
+
+Si `Total tecnicas` es menor que el número de `.md` en disco, es colisión de `id`.
+
+**Regla preventiva:** nunca llamar `slug` a un campo del frontmatter de Content Layer si puede repetirse entre archivos. Usar nombres específicos (`productoSlug`, `categoriaSlug`, `temaSlug`).
 
 ---
 
@@ -310,7 +335,6 @@ Verificar JSON:
 ```powershell
 $r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
 "Total: $($r.Count)"
-$r | ForEach-Object { "$($_.marca): cambio=$([bool]$_.guiaCambioDetalle) fugas=$([bool]$_.guiaFugas)" }
 ```
 
 Verificar total de páginas:
@@ -347,20 +371,22 @@ foreach ($m in $marcas) {
 
 ## 9. Próximos pasos
 
-1. **Añadir el segundo artículo técnico a Samsung** para validar que el flujo se repite sin problemas (`instalacion`, `mantenimiento` u otro `tipo`).
-2. **Replicar el piloto a los otros 5 productos** (`cuanto-dura` o similar, un artículo por producto).
+1. **Replicar `cuanto-dura` a los otros 5 productos** (LG, GE, Bosch, Frigidaire, Whirlpool). Mismo `tema`, mismo `tipo: mantenimiento`, cambia `marca`, `productoSlug`, `keyword`. 5 artículos nuevos.
+2. **Añadir `goteo-tras-cambiar` a los otros 5 productos** (mismo `tema`, `tipo: diagnostico`). 5 artículos nuevos.
 3. **Implementar schema `HowTo`** para los tipos `instalacion`, `diagnostico` y `mantenimiento` en `[tema].astro` (actualmente emite `Article` siempre).
-4. **Verificar en Search Console** que las URLs nuevas (`/tecnicas/` + artículos) se indexan.
+4. **Verificar en Search Console** que las URLs nuevas (`/tecnicas/` + 2 artículos) se indexan.
 5. **Enviar el sitemap actualizado** desde Search Console.
 6. **Revisar Lighthouse** en la ficha de un producto y en un artículo técnico.
-7. **Valorar AdSense** (con 60 páginas ya cumples de sobra el mínimo).
+7. **Valorar AdSense** (con 61 páginas ya cumples de sobra el mínimo).
 8. **Considerar Clarity** (Microsoft) como alternativa a Statcounter.
 ```
 
 ---
 
-**Guárdalo** sobrescribiendo `SISTEMA.md`. Cuando lo tengas, dime si quieres:
+**Guarda el archivo** y dime si quieres:
 
-- **Verificar** que se guardó bien (un comando de PowerShell).
+- **Verificar** que se guardó bien (comando de PowerShell).
 - **Commit + push** directamente.
-- **Pasar a la opción B** (replicar a los otros 5 productos).
+- **Pasar al siguiente paso** (replicar `cuanto-dura` a los 5 productos restantes).
+
+¿Qué hacemos?
