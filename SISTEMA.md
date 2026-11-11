@@ -1,17 +1,6 @@
-## ✅ Verificación en producción correcta
+## `SISTEMA.md` actualizado — bloque completo para sobrescribir
 
-Todo OK:
-- 3 URLs con `200`
-- 3 verificaciones del índice en producción
-- 2 verificaciones del sitemap en producción
-
-**Total: 61 páginas en producción** (53 base + 6 índices + 2 artículos).
-
----
-
-## `SISTEMA.md` actualizado (bloque completo para reemplazar)
-
-Copia esto y sobrescribe `SISTEMA.md`:
+Copia todo esto y sobrescribe `SISTEMA.md` (borra todo y pega):
 
 ```markdown
 # Sistema de productos — repuestoselectro.lat
@@ -32,15 +21,26 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 
 | Marca | Producto | ASIN | Ficha | Guías | Técnicas |
 |---|---|---|---|---|---|
-| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 2 |
+| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 6 |
 | LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 0 |
 | GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 0 |
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 0 |
 
-**Total:** 61 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 2 artículos técnicos, 3 legales) + 1 `404.html` estático = 62 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `61 page(s) built`.*
+**Total:** 65 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 6 artículos técnicos, 3 legales) + 1 `404.html` estático = 66 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `65 page(s) built`.*
+
+**Artículos técnicos publicados (Samsung DA97-17376B):**
+
+| # | Tema | Tipo | URL |
+|---|---|---|---|
+| 1 | `goteo-tras-cambiar` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/goteo-tras-cambiar/` |
+| 2 | `cuanto-dura` | mantenimiento | `/filtro-agua/samsung/da97-17376b/tecnicas/cuanto-dura/` |
+| 3 | `gotea-solo-al-dispensar` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/gotea-solo-al-dispensar/` |
+| 4 | `flujo-debil-o-poca-agua` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/flujo-debil-o-poca-agua/` |
+| 5 | `ruido-silbido-despues-de-instalar` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/ruido-silbido-despues-de-instalar/` |
+| 6 | `jarra-autollenado-o-maquina-hielo-falla` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/jarra-autollenado-o-maquina-hielo-falla/` |
 
 ---
 
@@ -52,7 +52,11 @@ src/
 ├── content/
 │   └── tecnicas/                         ← 1 .md por artículo técnico
 │       ├── samsung-da97-17376b-goteo-tras-cambiar.md
-│       └── samsung-da97-17376b-cuanto-dura.md
+│       ├── samsung-da97-17376b-cuanto-dura.md
+│       ├── samsung-da97-17376b-gotea-solo-al-dispensar.md
+│       ├── samsung-da97-17376b-flujo-debil-o-poca-agua.md
+│       ├── samsung-da97-17376b-ruido-silbido-despues-de-instalar.md
+│       └── samsung-da97-17376b-jarra-autollenado-o-maquina-hielo-falla.md
 ├── data/
 │   └── repuestos.json                    ← todos los productos
 ├── components/
@@ -83,8 +87,6 @@ src/
 
 **Archivos en `public/`:** `favicon.svg`, `favicon.ico`, `robots.txt`, `llms.txt`, `404.html`, `_headers`, `_redirects`, `.well-known/ai-catalog.json`, `.well-known/ard.json`.
 
-**`SISTEMA.md`** (este archivo) en la raíz del proyecto.
-
 ---
 
 ## 3. Estructura de URLs
@@ -111,17 +113,15 @@ src/
 
 ## 4. Esquema del JSON por producto (`repuestos.json`)
 
-Sin cambios respecto a versiones anteriores. Campos: `categoria`, `marca`, `slug`, `titulo`, `tituloSeo`, `numeroPieza`, `esOriginal`, `modelosCompatibles`, `compatibilidad`, `contraindicaciones`, `sintomas`, `comoSaberModelo`, `guiaCambioDetalle` (obligatorio), `guiaFugas` (obligatorio), `guiaResetLuz`, `guiaOriginal`, `guiaNoEncaja`, `guiaVsGenerico`, `textoOriginal`, `faqs`, `enlaceAfiliado`, `imagenSchema`, `asin`.
+Campos: `categoria`, `marca`, `slug`, `titulo`, `tituloSeo`, `numeroPieza`, `esOriginal`, `modelosCompatibles`, `compatibilidad`, `contraindicaciones`, `sintomas`, `comoSaberModelo`, `guiaCambioDetalle` (obligatorio), `guiaFugas` (obligatorio), `guiaResetLuz`, `guiaOriginal`, `guiaNoEncaja`, `guiaVsGenerico`, `textoOriginal`, `faqs`, `enlaceAfiliado`, `imagenSchema`, `asin`.
 
-**Campos legacy:** `guiaCambio` (array) y `guiaProblemas` (array) se mantienen porque la ficha los consume; las páginas `/como-cambiar/` y `/por-que-gotea/` consumen los nuevos.
+**Campos legacy:** `guiaCambio` y `guiaProblemas` se mantienen porque la ficha los consume; las páginas `/como-cambiar/` y `/por-que-gotea/` consumen los nuevos.
 
-**IMPORTANTE:** en `repuestos.json`, el campo se llama `slug`. En el frontmatter de los `.md` técnicos, el campo se llama **`productoSlug`** (ver 5.1 y 7.11). Son nombres distintos a propósito para evitar la colisión del Content Layer.
+**IMPORTANTE:** en `repuestos.json`, el campo se llama `slug`. En el frontmatter de los `.md` técnicos, el campo se llama **`productoSlug`** (ver 7.11). Son nombres distintos a propósito para evitar la colisión del Content Layer.
 
 ---
 
 ## 5. Artículos técnicos (`src/content/tecnicas/*.md`)
-
-Los artículos técnicos son piezas de contenido profundo por producto. No son fichas ni guías estructuradas: son artículos tipo blog técnico, de 1.200 a 1.800 palabras, con tabla de verificaciones y FAQ.
 
 ### 5.1 Frontmatter obligatorio
 
@@ -129,9 +129,9 @@ Los artículos técnicos son piezas de contenido profundo por producto. No son f
 ---
 titulo: "H1 del artículo"                                  # 50-65 caracteres
 tituloSeo: "Título para Google y pestaña"                  # máx. 65 caracteres
-descripcion: "Meta description"                            # 120-160 caracteres
+descripcion: "Meta description"                            # 120-160 caracteres (OBLIGATORIO, ver 7.13)
 marca: "samsung"                                           # debe coincidir con repuestos.json
-productoSlug: "da97-17376b"                                # OJO: se llama productoSlug, NO slug (ver 7.11)
+productoSlug: "da97-17376b"                                # OJO: productoSlug, NO slug (ver 7.11)
 tema: "goteo-tras-cambiar"                                 # URL slug del artículo
 tipo: "diagnostico"                                        # ver tabla 5.2
 keyword: "goteo filtro samsung da97-17376b"
@@ -146,15 +146,13 @@ faqs:                                                       # opcional, 5-8 reco
 
 ### 5.2 Tipos y schema estructurado
 
-El schema (`Article` vs `HowTo`) se decide por el campo `tipo`:
-
 | `tipo` | Schema principal | Cuándo usarlo |
 |---|---|---|
-| `instalacion` | HowTo + FAQPage | Más del 60% es procedimental (pasos de instalación) |
-| `diagnostico` | HowTo + FAQPage | Troubleshooting con verificaciones paso a paso |
+| `instalacion` | HowTo + FAQPage | Más del 60% es procedimental |
+| `diagnostico` | HowTo + FAQPage | Troubleshooting con verificaciones |
 | `mantenimiento` | HowTo + FAQPage | Calendario + verificaciones periódicas |
 | `autenticidad` | Article + FAQPage | Análisis, no procedimiento |
-| `compatibilidad` | Article + FAQPage | Tablas de referencia, no procedimiento |
+| `compatibilidad` | Article + FAQPage | Tablas de referencia |
 | `comparativa` | Article + FAQPage | Comparación entre opciones |
 
 **Implementación actual:** el template `[tema].astro` emite siempre `Article` + `FAQPage`. Cuando se añada el soporte para `HowTo`, se hará en el template leyendo `tipo`. No requiere cambios en los `.md` ya escritos.
@@ -166,10 +164,12 @@ El **cuerpo** del `.md` (después del frontmatter `---`) cumple:
 - **NO** lleva H1 (va en `titulo` del frontmatter).
 - **NO** lleva bloque E-E-A-T (el template lo renderiza desde `autor`, `revisor`, `fecha`).
 - **NO** lleva FAQ (van en `faqs[]` del frontmatter).
-- **NO** lleva enlaces al producto (los inyecta el template automáticamente: CTA 1 tras el 3.er H2, CTA 2 antes de FAQ).
+- **NO** lleva enlaces al producto (los inyecta el template: CTA 1 tras el 3.er H2, CTA 2 antes de FAQ).
 - **NO** lleva enlaces a Amazon ni a plataformas de compra.
 - **NO** cita reseñas de terceros ni las parafrasea.
 - **NO** menciona precios.
+- **NO** atribuye frases a "la guía de Samsung", "el manual del fabricante" o similares sin cita exacta (ver 7.14).
+- **NO** incluye cifras sin fuente verificable (ver 7.14).
 - **SÍ** incluye el código de pieza literal en el primer párrafo y al menos 5 veces más.
 - **SÍ** empieza con un bloque LLM (40-80 palabras, primera oración con sujeto de causa técnica).
 - **SÍ** tiene al menos 3 H2 (para que el CTA 1 del medio quede bien ubicado).
@@ -177,7 +177,7 @@ El **cuerpo** del `.md` (después del frontmatter `---`) cumple:
 
 ### 5.4 Reglas del `tituloSeo`
 
-**Excepción a la regla general de la ficha.** Para técnicas, el `tituloSeo` **sí incluye el número de pieza**, porque la búsqueda del usuario es específica. Reglas:
+Para técnicas, el `tituloSeo` **sí incluye el número de pieza**, porque la búsqueda del usuario es específica.
 
 1. **50-60 caracteres**.
 2. **Keyword principal al principio**.
@@ -192,25 +192,53 @@ Ejemplo válido:
 ### 5.5 Flujo de autoría (checklist)
 
 - [ ] Elegir producto y tema (`tema` = slug de URL, en kebab-case).
+- [ ] **Verificar canibalización** con guías existentes del producto (ver 7.15). Si el tema solapa con una guía, cambiar el ángulo o descartar.
 - [ ] Generar el artículo con la herramienta (o escribirlo desde cero).
 - [ ] Convertirlo al formato `.md` con frontmatter. **Atención:** el campo del producto se llama `productoSlug`, NO `slug` (ver 7.11). Sin H1, sin E-E-A-T, sin FAQ en el cuerpo, sin CTAs, sin enlaces a Amazon.
+- [ ] **Verificar `descripcion` entre 120-160 caracteres** (ver 7.13).
+- [ ] **Verificar que no hay cifras sin fuente** (ver 7.14).
+- [ ] **Verificar que no hay atribuciones vagas a Samsung/fabricante** (ver 7.14).
+- [ ] **Verificar que no hay códigos de pieza no confirmados en `repuestos.json`** (ver 7.14).
 - [ ] Verificar el `tituloSeo` (50-60 chars, keyword-first, código literal).
-- [ ] Verificar `descripcion` (120-160 chars).
 - [ ] Guardar el `.md` como `src/content/tecnicas/[marca]-[productoSlug]-[tema].md`.
 - [ ] `npm run build` → el número total de páginas sube en 1.
 - [ ] Verificar en local `/tecnicas/[tema]/` responde 200.
 - [ ] Verificar que el CTA 1 está entre el primer y el último H2.
 - [ ] Verificar que no hay `amazon.com` en el HTML.
 - [ ] Verificar que el schema FAQPage está presente.
-- [ ] Verificar que el índice `/tecnicas/` del producto ahora muestra el nuevo artículo (contador +1).
+- [ ] Verificar que el índice `/tecnicas/` del producto muestra el nuevo artículo (contador +1).
+- [ ] Verificar que la ficha del producto muestra el contador actualizado.
 - [ ] Commit + push.
-- [ ] Verificar en producción (200 + 4 verificaciones OK).
+- [ ] Verificar en producción (200 + verificaciones).
+
+### 5.6 Checklist de revisión de artículos generados por IA
+
+**Antes de meter un artículo generado por IA, verificar SIEMPRE:**
+
+| # | Verificación | Comando / método |
+|---|---|---|
+| 1 | `descripcion` entre 120-160 chars | `$desc.Length` |
+| 2 | `tituloSeo` ≤ 65 chars | `$tituloSeo.Length` |
+| 3 | Código literal en H1, LLM, tabla, FAQ | `-match "DA97-17376B"` varias veces |
+| 4 | 8 H2 + 1 H3 fuera de FAQ | regex `<h2` |
+| 5 | Tabla con 5-8 filas | inspección visual |
+| 6 | 5-8 FAQ | inspección visual |
+| 7 | Extensión 1.200-1.800 palabras | inspección visual |
+| 8 | Cero Amazon | `-match "amazon\.com"` |
+| 9 | Cero precios | `-match "\$|USD|precio"` |
+| 10 | Cero atribuciones vagas ("el manual de Samsung") | `-match "manual de Samsung\|guía de Samsung\|documentación del fabricante"` |
+| 11 | Cero cifras sin fuente (1,9 L/min, 30-125 PSI, 316 galones) | `-match "L/min\|GPM\|PSI\|galones"` |
+| 12 | Cero códigos no verificados (DA97-08006C, HAF-CU1) | `-match "DA97-08006C\|HAF-CU1"` |
+| 13 | Datos coherentes con `repuestos.json` (300 galones / 1.136 litros) | `-match "1\.136 litros"` |
+| 14 | Diferencia clara con guías existentes | inspección manual |
+
+**Si falla cualquier verificación, corregir antes del build.**
 
 ---
 
 ## 6. Reglas fijas
 
-1. **Solo originales verificados.** Si no hay original con stock y vendedor Amazon/fabricante, no se añade.
+1. **Solo originales verificados.**
 2. **El `<title>` de la ficha no repite el número de pieza.** **Excepción:** los artículos técnicos sí lo llevan (ver 5.4).
 3. **El `<h1>` sí lleva el número de pieza.**
 4. **Guías y técnicas específicas por producto.**
@@ -224,16 +252,20 @@ Ejemplo válido:
 12. **Selector con texto de ayuda de todas las marcas.**
 13. **`guiaCambioDetalle` y `guiaFugas` son obligatorios** (ver 7.7).
 14. **Cuando se añade una guía nueva**, hay que añadir su `<li>` en el bloque manual de la ficha (ver 7.8).
-15. **Los artículos técnicos NO llevan enlaces a Amazon** ni CTAs de afiliado. Solo los 2 CTAs al producto que inyecta el template.
+15. **Los artículos técnicos NO llevan enlaces a Amazon** ni CTAs de afiliado.
 16. **El cuerpo del `.md` técnico NO lleva H1, ni E-E-A-T, ni FAQ, ni CTAs.**
 17. **En el frontmatter de los `.md` técnicos, el campo del producto se llama `productoSlug`, NO `slug`** (ver 7.11).
+18. **`descripcion` de los `.md` técnicos: 120-160 caracteres** (ver 7.13).
+19. **Cero atribuciones vagas a Samsung/fabricante en los artículos técnicos** (ver 7.14).
+20. **Cero cifras sin fuente verificable en los artículos técnicos** (ver 7.14).
+21. **Verificar canibalización antes de crear un artículo técnico** (ver 7.15).
 
 ---
 
 ## 7. Aprendizajes técnicos (para no repetir errores)
 
 ### 7.1 Corchetes en PowerShell
-Usar siempre `-LiteralPath`. Para escribir con `[System.IO.File]::WriteAllText` en rutas con corchetes, usar `(Resolve-Path -LiteralPath $file).Path` o `[System.IO.Directory]::CreateDirectory` (que ignora el globbing de PowerShell).
+Usar siempre `-LiteralPath`. Para escribir con `[System.IO.File]::WriteAllText` en rutas con corchetes, usar `(Resolve-Path -LiteralPath $file).Path` o `[System.IO.Directory]::CreateDirectory` (que ignora el globbing).
 
 ### 7.2 Rutas de importación en Astro
 El número de `../` es igual al número de carpetas entre el archivo y `src/`. En `tecnicas/index.astro` y `tecnicas/[tema].astro` son **5 niveles** (`../../../../../`).
@@ -251,97 +283,126 @@ Si no hay `404.html`, Cloudflare activa SPA fallback y rompe `.well-known`. Tene
 No crear páginas `/modelo/[modelo]/` que solo cambien una tarjeta. Google las trata como duplicadas.
 
 ### 7.7 Campos nuevos rompen el build en productos sin rellenar
-Si añades un campo al schema y solo lo rellenas en un producto, Astro explota al generar las páginas de los demás. Rellenar en **todos** antes del `npm run build`.
+Si añades un campo al schema y solo lo rellenas en un producto, Astro explota. Rellenar en **todos** antes del `npm run build`.
 
 ### 7.8 El bloque "Guías sobre este filtro" de la ficha es manual
-La ficha (`src/pages/filtro-agua/[marca]/[slug]/index.astro`) tiene el bloque "Guías sobre este filtro" con los enlaces **escritos a mano**. Cuando añadas una guía nueva, también hay que añadir su `<li>` en ese bloque.
+La ficha tiene el bloque con los enlaces **escritos a mano**. Cuando añadas una guía nueva, también hay que añadir su `<li>`.
 
-### 7.9 Content Layer de Astro 5+: config en `src/content.config.ts`, no en `src/content/config.ts`
-**Astro 5** cambió la API de Content Collections. Si pones la config en `src/content/config.ts`, el build falla con `[LegacyContentConfigError]`. **Solución:**
-
-1. Mover el archivo a **`src/content.config.ts`** (raíz de `src/`, no dentro de `content/`).
-2. Cada colección debe tener un **`loader`**:
-   ```typescript
-   import { defineCollection, z } from 'astro:content';
-   import { glob } from 'astro/loaders';
-
-   const tecnicas = defineCollection({
-     loader: glob({ pattern: '**/*.md', base: './src/content/tecnicas' }),
-     schema: z.object({ /* ... */ }),
-   });
-
-   export const collections = { tecnicas };
-   ```
-
-**Sin el `loader`,** Astro no lee los `.md` y `getCollection('tecnicas')` devuelve array vacío.
+### 7.9 Content Layer de Astro 5+: config en `src/content.config.ts`
+Astro 5 cambió la API. Si pones la config en `src/content/config.ts`, el build falla con `[LegacyContentConfigError]`. **Solución:** mover a `src/content.config.ts` + `loader: glob(...)` en cada colección.
 
 ### 7.10 `build.log` se commitea por error
-El `Tee-Object` y `Out-File` de PowerShell crean `build.log` en la raíz. Solución:
+El `Tee-Object` y `Out-File` crean `build.log` en la raíz. Solución: `.gitignore` + `git rm --cached build.log`.
 
-```powershell
-Add-Content -LiteralPath ".gitignore" -Value "build.log" -Encoding UTF8
-git rm --cached build.log
-```
+### 7.11 Colisión de `id` en Content Layer por el campo `slug`
+**Síntoma:** 2 `.md` válidos, pero el build dice `60 page(s)` en vez de `61`. Solo se genera 1 artículo. `getCollection('tecnicas').length` devuelve `1`.
 
-**Alternativa más limpia:** no usar `Tee-Object` ni `Out-File`. Hacer `npm run build` directamente.
+**Causa:** en Astro 5 Content Layer, si el frontmatter tiene un campo llamado `slug`, Astro lo usa como `id` de la entry. Si dos `.md` del mismo producto tienen el mismo `slug` (ej. `da97-17376b`), **colisionan** y Astro descarta uno silenciosamente.
 
-### 7.11 Colisión de `id` en Content Layer por el campo `slug` — NUEVO Y CRÍTICO
-**Síntoma:** tienes 2 `.md` en `src/content/tecnicas/`, ambos válidos, pero el build dice `60 page(s)` en vez de `61`. Solo se genera 1 artículo. `getCollection('tecnicas').length` devuelve `1` aunque hay 2 archivos.
-
-**Causa:** en Astro 5 Content Layer, si el frontmatter tiene un campo llamado `slug`, Astro lo usa como `id` de la entry. Si dos `.md` del mismo producto tienen el mismo `slug` (ej. `da97-17376b`), **colisionan** y Astro descarta uno silenciosamente (sin error, sin warning).
-
-**Solución:** renombrar el campo `slug` → `productoSlug` en:
-1. `src/content.config.ts` (schema)
-2. Todos los `.md` (frontmatter)
-3. `src/pages/filtro-agua/[marca]/[slug]/tecnicas/index.astro` (`t.data.slug` → `t.data.productoSlug`)
-4. `src/pages/filtro-agua/[marca]/[slug]/tecnicas/[tema].astro` (`entry.data.slug` → `entry.data.productoSlug` en las referencias al producto)
-
-Al no llamarse `slug`, Astro usa el **nombre del archivo** como `id`, que es único por archivo.
-
-**Comando de migración (si vuelve a pasar):**
-
-```powershell
-# 1. En los .md
-Get-ChildItem "src\content\tecnicas" -Filter *.md | ForEach-Object {
-  $c = Get-Content -LiteralPath $_.FullName -Encoding UTF8 -Raw
-  $c = $c -replace "(?m)^slug: ", "productoSlug: "
-  [System.IO.File]::WriteAllText($_.FullName, $c, (New-Object System.Text.UTF8Encoding $false))
-}
-```
-
-**Verificación del síntoma:** si el build da menos páginas de las esperadas y el índice `/tecnicas/` solo muestra 1 artículo, es este bug. Comprobar con:
-
-```powershell
-# En el getStaticPaths, añadir temporalmente:
-console.log('Total tecnicas:', tecnicas.length);
-tecnicas.forEach(t => console.log('  id:', t.id, '| tema:', t.data.tema));
-```
-
-Si `Total tecnicas` es menor que el número de `.md` en disco, es colisión de `id`.
+**Solución:** renombrar `slug` → `productoSlug` en `config.ts`, todos los `.md`, y las referencias en `index.astro` y `[tema].astro`.
 
 **Regla preventiva:** nunca llamar `slug` a un campo del frontmatter de Content Layer si puede repetirse entre archivos. Usar nombres específicos (`productoSlug`, `categoriaSlug`, `temaSlug`).
 
----
 ### 7.12 La sección de técnicas en la ficha es condicional pero manual
+La ficha tiene un bloque `{tecnicas.length > 0 && (...)}` que muestra el botón "Ver guías técnicas →" solo si el producto tiene al menos 1 artículo técnico. **El bloque está escrito a mano.**
 
-La ficha (`src/pages/filtro-agua/[marca]/[slug]/index.astro`) tiene un bloque `{tecnicas.length > 0 && (...)}` que muestra el botón "Ver guías técnicas →" solo si el producto tiene al menos 1 artículo técnico. **El bloque está escrito a mano** (no se genera desde una lista compartida), igual que el bloque "Guías sobre este filtro" (ver 7.8).
+**Solución:** añadir import `getCollection`, const `tecnicas`, y el bloque condicional antes del bloque de Amazon.
 
-**Síntoma:** la página `/tecnicas/` existe y responde 200, pero es huérfana (no se llega a ella desde la ficha). El usuario solo puede llegar escribiendo la URL a mano. Google la indexa pero no recibe autoridad interna.
+### 7.13 `descripcion` debe estar entre 120-160 caracteres — NUEVO
+El schema de `content.config.ts` valida `descripcion: z.string().min(120).max(160)`. Si el `.md` tiene una descripción de 118 o 119 caracteres, el build falla con:
 
-**Solución:** añadir el bloque `{tecnicas.length > 0 && (...)}` antes del bloque de Amazon en la ficha. Requiere tres cambios en `index.astro`:
+```
+[InvalidContentEntryDataError] tecnicas → [archivo] data does not match collection schema.
+```
 
-1. **Import:** `import { getCollection } from 'astro:content';`
-2. **Const:** `const tecnicas = (await getCollection('tecnicas')).filter(t => t.data.marca === filtro.marca && t.data.productoSlug === filtro.slug);`
-3. **Bloque condicional** antes del bloque de Amazon con el botón y el contador.
+**Solución:** alargar la descripción 2-3 palabras hasta llegar a 120. Verificar antes del build con:
 
-**Cuándo se muestra:** solo si `tecnicas.length > 0`. Las marcas sin artículos técnicos (LG, GE, Bosch, Frigidaire, Whirlpool por ahora) no muestran la sección vacía.
-
-**Verificación local:**
 ```powershell
-$f = "dist\filtro-agua\samsung\da97-17376b\index.html"
-$html = Get-Content -LiteralPath $f -Encoding UTF8 -Raw
-if ($html -match "Ver guías técnicas") { "OK - boton visible" } else { "REVISAR" }
-if ($html -match "2 artículos técnicos") { "OK - contador = 2" } else { "REVISAR" }
+$content = Get-Content -LiteralPath $f -Encoding UTF8 -Raw
+$fm = ($content -split '---')[1]
+$desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
+"Descripcion: $($desc.Length) chars (schema: 120-160)"
+```
+
+**Causa raíz:** los artículos generados por IA a veces producen descripciones de 115-119 caracteres. Siempre verificar antes de meter.
+
+### 7.14 Patrón de errores de los artículos generados por IA — NUEVO
+Los artículos que produce la herramienta (o ChatGPT/Claude directamente) tienen **4 patrones de error recurrentes** que hay que corregir antes de publicar:
+
+**A) Cifras sin fuente verificable:**
+- ❌ "caudal nominal de 1,9 L/min", "0,5 GPM", "30-125 PSI", "2,5 galones"
+- ✅ "caudal notablemente reducido", "aproximadamente cinco minutos"
+- **Por qué:** el fabricante no publica esas cifras en la ficha del producto. Google penaliza datos inventados.
+- **Cómo detectar:** `-match "L/min|GPM|PSI|galones"` + revisar si tienen fuente.
+
+**B) Atribuciones vagas:**
+- ❌ "el manual de Samsung indica", "la guía del fabricante describe", "las instrucciones de instalación indican"
+- ✅ "el criterio práctico es", "la vida útil de referencia es"
+- **Por qué:** no puedes citar la página exacta del manual. Es una atribución inventada.
+- **Cómo detectar:** `-match "manual de Samsung|guía de Samsung|documentación del fabricante|instrucciones de instalación"`.
+
+**C) Códigos de pieza no verificados:**
+- ❌ "DA97-08006C", "HAF-CU1" (no están en `repuestos.json`)
+- ✅ Solo los alias confirmados: `HAF-QIN`, `HAF-QIN/EXP`
+- **Por qué:** introducir códigos que no existen rompe la credibilidad y puede confundir al usuario.
+- **Cómo detectar:** `-match "DA97-08006C|HAF-CU1"` o comparar con `repuestos.json`.
+
+**D) Datos contradictorios con el sitio:**
+- ❌ "316 galones / 1.196 litros" cuando el sitio dice "300 galones / 1.136 litros"
+- ✅ Coherencia total con `repuestos.json`
+- **Por qué:** contradice tu propia ficha del producto y el resto de artículos.
+- **Cómo detectar:** `-match "1\.196 litros|316 galones"` (debe ser `1.136 litros|300 galones`).
+
+**Regla:** aplicar el checklist 5.6 a todo artículo generado por IA antes del build.
+
+### 7.15 Canibalización de keywords entre guías y artículos técnicos — NUEVO
+**Síntoma:** el artículo se genera bien, pero Google lo ve como competencia de una guía existente y ninguno de los dos posiciona.
+
+**Ejemplos de canibalización detectados en esta sesión:**
+
+| Guía existente | Artículo propuesto | ¿Canibaliza? |
+|---|---|---|
+| `/no-encaja/` | `no-se-asienta-o-no-gira` | **SÍ** — misma intención ("el filtro no encaja") |
+| `/como-reiniciar-luz/` | `luz-no-se-apaga-despues-de-cambiar` | **SÍ** — misma intención ("apagar la luz") |
+| `/flujo-debil-o-poca-agua/` | `jarra-autollenado` | **NO** — dispensador vs sistemas automáticos |
+| `/goteo-tras-cambiar/` | `gotea-solo-al-dispensar` | **NO** — goteo continuo vs goteo al dispensar |
+
+**Cómo detectar canibalización:**
+1. Lee la guía existente. ¿Cuál es la intención del usuario?
+2. Lee el artículo propuesto. ¿Cuál es la intención?
+3. Si la intención es **la misma**, hay canibalización.
+4. Si la intención es **distinta**, no la hay.
+
+**Soluciones:**
+- **A) Cambiar el ángulo del artículo** para que la intención sea distinta. Ej: `luz-sigue-encendida-despues-de-reset` (la guía es "cómo hacer el reset", el artículo es "por qué el reset falla").
+- **B) Elegir otro tema** que no solape.
+- **C) No crear el artículo** y mejorar la guía existente.
+
+**Verificación antes de crear un artículo:**
+
+```powershell
+# Listar guías existentes del producto
+Get-ChildItem -LiteralPath "src\pages\filtro-agua\[marca]\[slug]" -Filter *.astro | Select-Object -ExpandProperty Name
+```
+
+Si el tema del artículo propuesto se parece a una de esas guías, cambiar el ángulo.
+
+### 7.16 El template de `[tema].astro` inyecta los CTAs automáticamente — NUEVO
+El template `tecnicas/[tema].astro` inyecta **2 CTAs al producto** en el HTML final:
+
+- **CTA 1** (después del 3.er o 4.º H2): "¿Ya sabes que este es tu filtro? Ver ficha completa del [Marca] [Código] →"
+- **CTA 2** (antes de la FAQ): "Guía relacionada: Ficha completa del [Marca] [Código] — compatibilidad, todas las guías paso a paso."
+
+**El `.md` NO debe incluir estos CTAs.** Si los incluyes, se duplican.
+
+**Verificación:**
+```powershell
+$html = Get-Content -LiteralPath "dist\filtro-agua\...\tecnicas\[tema]\index.html" -Encoding UTF8 -Raw
+$ctaCount = ([regex]::Matches($html, "Ver ficha completa del|Ficha completa del")).Count
+# Debe ser 2 (uno por CTA), no 4
+```
+
+---
 
 ## 8. Comandos útiles
 
@@ -349,12 +410,6 @@ if ($html -match "2 artículos técnicos") { "OK - contador = 2" } else { "REVIS
 cd C:\Users\mvx55\proyectos\repuestoseletro
 npm run dev                                     # servidor de desarrollo
 npm run build                                   # build de producción
-```
-
-Verificar JSON:
-```powershell
-$r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
-"Total: $($r.Count)"
 ```
 
 Verificar total de páginas:
@@ -371,7 +426,7 @@ Get-ChildItem -Recurse -LiteralPath "dist\filtro-agua" -Filter index.html |
 
 Verificar un artículo en producción:
 ```powershell
-$html = (Invoke-WebRequest -Uri "https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/goteo-tras-cambiar/" -UseBasicParsing).Content
+$html = (Invoke-WebRequest -Uri "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/tecnicas/[tema]/" -UseBasicParsing).Content
 if ($html -match "amazon\.com") { "REVISAR - contiene Amazon" } else { "OK - cero Amazon" }
 if ($html -match "FAQPage") { "OK - schema FAQPage" } else { "REVISAR - FAQPage" }
 ```
@@ -387,26 +442,81 @@ foreach ($m in $marcas) {
 }
 ```
 
----
-
-## 9. Próximos pasos
-
-1. **Replicar `cuanto-dura` a los otros 5 productos** (LG, GE, Bosch, Frigidaire, Whirlpool). Mismo `tema`, mismo `tipo: mantenimiento`, cambia `marca`, `productoSlug`, `keyword`. 5 artículos nuevos.
-2. **Añadir `goteo-tras-cambiar` a los otros 5 productos** (mismo `tema`, `tipo: diagnostico`). 5 artículos nuevos.
-3. **Implementar schema `HowTo`** para los tipos `instalacion`, `diagnostico` y `mantenimiento` en `[tema].astro` (actualmente emite `Article` siempre).
-4. **Verificar en Search Console** que las URLs nuevas (`/tecnicas/` + 2 artículos) se indexan.
-5. **Enviar el sitemap actualizado** desde Search Console.
-6. **Revisar Lighthouse** en la ficha de un producto y en un artículo técnico.
-7. **Valorar AdSense** (con 61 páginas ya cumples de sobra el mínimo).
-8. **Considerar Clarity** (Microsoft) como alternativa a Statcounter.
+Verificar longitud de `descripcion` de un `.md`:
+```powershell
+$content = Get-Content -LiteralPath "src\content\tecnicas\[archivo].md" -Encoding UTF8 -Raw
+$fm = ($content -split '---')[1]
+$desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
+"Descripcion: $($desc.Length) chars (schema: 120-160)"
 ```
 
 ---
 
-**Guarda el archivo** y dime si quieres:
+## 9. Próximos pasos
 
-- **Verificar** que se guardó bien (comando de PowerShell).
-- **Commit + push** directamente.
-- **Pasar al siguiente paso** (replicar `cuanto-dura` a los 5 productos restantes).
+**Samsung DA97-17376B tiene 6 artículos técnicos publicados.** El cluster de diagnóstico/mantenimiento está completo.
 
-¿Qué hacemos?
+**Temas pendientes por marca:**
+
+| Marca | Temas sugeridos | Prioridad |
+|---|---|---|
+| Samsung | `que-pasa-si-no-cambio-el-filtro` (mantenimiento) | Baja |
+| Samsung | `como-guardar-el-filtro-de-repuesto` (mantenimiento) | Baja |
+| Samsung | `luz-sigue-encendida-despues-de-reset` (instalacion, ángulo diferenciado) | Media |
+| LG | Replicar los 6 de Samsung con datos de LG | **Alta** |
+| GE | Replicar los 6 con datos de GE (chip RFID) | Media |
+| Bosch | Replicar los 6 | Media |
+| Frigidaire | Replicar los 6 | Media |
+| Whirlpool | Replicar los 6 | Media |
+
+**Plan sugerido:**
+
+1. **Replicar el cluster completo de Samsung a LG** (6 artículos, ~2 horas). Valida que el flujo escala a otra marca.
+2. **Replicar a GE** (6 artículos). GE tiene la particularidad del chip RFID, que hace los artículos de autenticidad y reset más interesantes.
+3. **Replicar a Bosch, Frigidaire y Whirlpool** (18 artículos, ~6 horas). Cobertura completa de las 6 marcas.
+4. **Añadir los 2 de mantenimiento a Samsung** cuando el cluster esté replicado.
+5. **Evaluar AdSense** con 65+ páginas.
+
+**Nota:** no crear todos los artículos de golpe. Validar cada lote de 6 con el checklist 5.6 antes de pasar al siguiente.
+
+---
+
+## 10. Historial de sesiones
+
+| Fecha | Qué se hizo | Páginas resultantes |
+|---|---|---|
+| Sesión 1 | Infraestructura `/tecnicas/` + 2 artículos Samsung | 61 |
+| Sesión 2 | 4 artículos Samsung más | 65 |
+| Sesión 3 (pendiente) | Replicar a LG | ~71 |
+```
+
+---
+
+## Guárdalo y hacemos commit
+
+1. **Abre `SISTEMA.md`** en VS Code.
+2. **Ctrl+A** (seleccionar todo) → **Supr** (borrar).
+3. **Pega** el bloque de arriba.
+4. **Ctrl+S** (guardar).
+
+**Verifica** que se guardó bien:
+
+```powershell
+$file = Join-Path (Get-Location).Path "SISTEMA.md"
+$content = Get-Content -LiteralPath $file -Encoding UTF8 -Raw
+
+if ($content -match "## 10\. Historial de sesiones") { "OK - historial presente" } else { "FALTA - historial" }
+if ($content -match "### 7\.16 El template de") { "OK - aprendizaje 7.16" } else { "FALTA - 7.16" }
+if ($content -match "### 7\.15 Canibalización") { "OK - aprendizaje 7.15" } else { "FALTA - 7.15" }
+if ($content -match "### 7\.14 Patrón de errores") { "OK - aprendizaje 7.14" } else { "FALTA - 7.14" }
+if ($content -match "### 7\.13 ") { "OK - aprendizaje 7.13" } else { "FALTA - 7.13" }
+if ($content -match "65 page\(s\) built|65 páginas") { "OK - 65 paginas" } else { "FALTA - 65 paginas" }
+if ($content -match "jarra-autollenado-o-maquina-hielo-falla") { "OK - articulo 6 listado" } else { "FALTA - articulo 6" }
+
+$bytes = [System.IO.File]::ReadAllBytes($file)
+if ($bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF) { "AVISO - BOM" } else { "OK - UTF-8 sin BOM" }
+```
+
+**Deben salir 8 OK.**
+
+**Pégame la salida.** Si todo está bien, hacemos commit y cerramos la sesión.
