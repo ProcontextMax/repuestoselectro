@@ -1,7 +1,11 @@
+## Vamos con C — Documentar `SISTEMA.md`
+
+Aquí tienes el `SISTEMA.md` completo actualizado. **Borra todo el actual y pega esto** (un solo bloque).
+
 ```markdown
 # Sistema de productos — repuestoselectro.lat
 
-Documento de referencia para añadir un producto nuevo. Se sigue al pie de la letra.
+Documento de referencia para añadir un producto nuevo o un artículo técnico. Se sigue al pie de la letra.
 
 **Última actualización:** noviembre de 2026.
 
@@ -9,23 +13,23 @@ Documento de referencia para añadir un producto nuevo. Se sigue al pie de la le
 
 ## 1. Estado actual del proyecto
 
-**Stack:** Astro (export estático) + `repuestos.json` + Cloudflare Pages + GitHub.
+**Stack:** Astro 5 + Content Layer + `repuestos.json` + Cloudflare Pages + GitHub.
 **Dominio:** `repuestoselectro.lat` (Cloudflare Pages, deploy automático desde `main`).
 **Tag de afiliado:** `qqo-20`.
 
 **Productos publicados:**
 
-| Marca | Producto | ASIN | Ficha | Guías |
-|---|---|---|---|---|
-| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 |
-| LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 |
-| GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 |
-| Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 |
-| Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 |
-| Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 |
+| Marca | Producto | ASIN | Ficha | Guías | Técnicas |
+|---|---|---|---|---|---|
+| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 1 |
+| LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 0 |
+| GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
+| Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 0 |
+| Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
+| Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 0 |
 
-**Total:** 53 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 3 legales) + 1 `404.html` estático = 54 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `53 page(s) built`.*
+**Total:** 60 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 1 artículo técnico, 3 legales) + 1 `404.html` estático = 61 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `60 page(s) built`.*
 
 ---
 
@@ -33,21 +37,25 @@ Documento de referencia para añadir un producto nuevo. Se sigue al pie de la le
 
 ```
 src/
+├── content.config.ts                     ← NUEVO: schema de colecciones (raíz de src/)
+├── content/
+│   └── tecnicas/                         ← NUEVO: 1 .md por artículo técnico
+│       └── samsung-da97-17376b-goteo-tras-cambiar.md
 ├── data/
 │   └── repuestos.json                    ← todos los productos
 ├── components/
-│   ├── Header.astro                      ← logo + navegación
-│   ├── MigasPan.astro                    ← migas de pan (recibe niveles[])
-│   └── SelectorNevera.astro              ← desplegable marca → modelo
+│   ├── Header.astro
+│   ├── MigasPan.astro
+│   └── SelectorNevera.astro
 └── pages/
-    ├── index.astro                       ← home (selector + tarjetas de categorías)
+    ├── index.astro
     ├── afiliados/index.astro
     ├── privacidad/index.astro
     ├── aviso-legal/index.astro
     └── filtro-agua/
-        ├── index.astro                   ← categoría (lista de marcas)
+        ├── index.astro
         └── [marca]/
-            ├── index.astro               ← marca (lista de productos)
+            ├── index.astro
             └── [slug]/
                 ├── index.astro               ← FICHA DEL PRODUCTO (pilar)
                 ├── como-saber-si-es-original.astro
@@ -55,24 +63,13 @@ src/
                 ├── original-vs-generico.astro
                 ├── como-reiniciar-luz.astro
                 ├── como-cambiar.astro
-                └── por-que-gotea.astro
+                ├── por-que-gotea.astro
+                └── tecnicas/                  ← NUEVO
+                    ├── index.astro            ← listado de técnicas del producto
+                    └── [tema].astro           ← template del artículo técnico
 ```
 
-**Archivos en `public/`:**
-
-```
-public/
-├── favicon.svg                    ← "R" naranja (#c2410c)
-├── favicon.ico
-├── robots.txt                     ← permite búsqueda, bloquea bots de entrenamiento IA
-├── llms.txt                       ← mapa del sitio para agentes de IA
-├── 404.html                       ← desactiva el SPA fallback de Cloudflare
-├── _headers                       ← HSTS, CSP, COOP, XFO, Permissions-Policy
-├── _redirects                     ← regla para servir .well-known
-└── .well-known/
-    ├── ai-catalog.json            ← manifiesto ARD
-    └── ard.json                   ← copia del manifiesto (ubicación recomendada)
-```
+**Archivos en `public/`:** `favicon.svg`, `favicon.ico`, `robots.txt`, `llms.txt`, `404.html`, `_headers`, `_redirects`, `.well-known/ai-catalog.json`, `.well-known/ard.json`.
 
 **`SISTEMA.md`** (este archivo) en la raíz del proyecto.
 
@@ -91,6 +88,8 @@ public/
 /filtro-agua/[marca]/[slug]/como-reiniciar-luz/
 /filtro-agua/[marca]/[slug]/como-cambiar/
 /filtro-agua/[marca]/[slug]/por-que-gotea/
+/filtro-agua/[marca]/[slug]/tecnicas/               NUEVO: listado de técnicas
+/filtro-agua/[marca]/[slug]/tecnicas/[tema]/        NUEVO: artículo técnico
 /afiliados/  /privacidad/  /aviso-legal/
 /.well-known/ai-catalog.json  /.well-known/ard.json
 /llms.txt  /robots.txt  /sitemap-index.xml  /sitemap-0.xml
@@ -98,383 +97,270 @@ public/
 
 ---
 
-## 4. Esquema del JSON por producto
+## 4. Esquema del JSON por producto (`repuestos.json`)
 
-Cada producto es un objeto en `repuestos.json`. Los campos con `*` son obligatorios.
+Sin cambios respecto a la versión anterior. Ver sección 4 del histórico: `categoria`, `marca`, `slug`, `titulo`, `tituloSeo`, `numeroPieza`, `esOriginal`, `modelosCompatibles`, `compatibilidad`, `contraindicaciones`, `sintomas`, `comoSaberModelo`, `guiaCambioDetalle` (obligatorio), `guiaFugas` (obligatorio), `guiaResetLuz`, `guiaOriginal`, `guiaNoEncaja`, `guiaVsGenerico`, `textoOriginal`, `faqs`, `enlaceAfiliado`, `imagenSchema`, `asin`.
 
-```json
-{
-  "categoria": "filtro-agua",
-  "categoriaNombre": "Filtros de agua para nevera",
-  "marca": "samsung",
-  "marcaNombre": "Samsung",
-  "slug": "da97-17376b",
-  "titulo": "Filtro Samsung DA97-17376B — Original",
-  "tituloSeo": "...",
-  "numeroPieza": "DA97-17376B",
-  "alias": ["HAF-QIN", "HAF-QIN/EXP"],
-  "esOriginal": true,
-  "fabricante": "Samsung",
-  "tipoFiltro": "Cuadrado (bloque de carbón)",
-  "modelosCompatibles": ["..."],
-  "compatibilidad": {
-    "familias": [
-      { "nombre": "Familia 1", "modelos": ["..."] }
-    ]
-  },
-  "contraindicaciones": ["..."],
-  "sintomas": ["..."],
-  "comoSaberModelo": "...",
-  "guiaCambio": ["paso 1", "paso 2"],              // legacy opcional
-  "guiaReset": ["método 1", "método 2"],
-  "guiaProblemas": [                                // legacy opcional
-    { "pregunta": "...", "respuesta": "..." }
-  ],
-  "guiaCambioDetalle": {                            // OBLIGATORIO
-    "intro": "...",
-    "pasos": [
-      { "titulo": "...", "detalle": "..." }
-    ],
-    "errorComun": "..."
-  },
-  "guiaFugas": {                                    // OBLIGATORIO
-    "intro": "...",
-    "causas": [
-      { "titulo": "...", "detalle": "..." }
-    ],
-    "prevencion": "..."
-  },
-  "guiaResetLuz": {
-    "intro": "...",
-    "metodos": [
-      { "modelo": "...", "pasos": "..." }
-    ],
-    "errorComun": "..."
-  },
-  "guiaOriginal": {
-    "intro": "...",
-    "pasos": ["..."],
-    "senales": ["..."],
-    "queHacer": "..."
-  },
-  "guiaNoEncaja": {
-    "intro": "...",
-    "causas": [
-      { "titulo": "...", "texto": "..." }
-    ],
-    "gotea": "..."
-  },
-  "guiaVsGenerico": {
-    "intro": "...",
-    "originalNoPerfecto": "...",
-    "riesgosGenerico": ["..."],
-    "tabla": [
-      { "opcion": "...", "precio": "~$XX", "certificacion": "NSF ..." }
-    ],
-    "recomendacion": ["..."]
-  },
-  "textoOriginal": "...",
-  "faqs": [
-    { "q": "...", "a": "..." }
-  ],
-  "enlaceAfiliado": "https://www.amazon.com/dp/[ASIN]?tag=qqo-20",
-  "imagenSchema": "https://m.media-amazon.com/images/I/...",
-  "asin": "[ASIN]"
-}
-```
-
-**Nota sobre imágenes:** la `imagenSchema` debe ser la URL original del CDN de Amazon (`m.media-amazon.com`). No se descarga ni se altera. Solo se enlaza.
-
-**Nota sobre `guiaCambio` vs `guiaCambioDetalle`:** `guiaCambio` (array de strings) y `guiaProblemas` (array de `{pregunta, respuesta}`) son legado. La versión nueva y rica es `guiaCambioDetalle` (objeto con `intro`/`pasos`/`errorComun`) y `guiaFugas` (objeto con `intro`/`causas`/`prevencion`). Se mantienen ambos porque la ficha del producto aún consume los viejos; las páginas nuevas `/como-cambiar/` y `/por-que-gotea/` consumen los nuevos.
+**Campos legacy:** `guiaCambio` (array) y `guiaProblemas` (array) se mantienen porque la ficha los consume; las páginas `/como-cambiar/` y `/por-que-gotea/` consumen los nuevos.
 
 ---
 
-## 5. Checklist para añadir un producto
+## 5. Artículos técnicos (`src/content/tecnicas/*.md`) — NUEVO
 
-### Fase A — Verificación (manual, en Amazon.com)
+Los artículos técnicos son piezas de contenido profundo por producto. No son fichas ni guías estructuradas: son artículos tipo blog técnico, de 1.200 a 1.800 palabras, con tabla de verificaciones y FAQ.
 
-- [ ] Es **original** (marca del fabricante, no tercero).
-- [ ] Está disponible en **Amazon.com** (no `.mx`, no `.ca`, no `.es`).
-- [ ] Tiene **stock estable**.
-- [ ] El vendedor es **Amazon** o el **fabricante**.
-- [ ] Anoto el **ASIN** de la URL (10 caracteres después de `/dp/`).
-- [ ] Anoto la **lista de modelos compatibles** (de la ficha oficial del fabricante).
-- [ ] Anoto el **precio actual** (para la tabla comparativa).
-- [ ] Copio la **URL de la imagen** (clic derecho → "Copiar dirección de imagen", debe empezar por `m.media-amazon.com`).
-- [ ] Reviso las **reseñas** para extraer defectos reales, problemas de autenticación y patrones de instalación.
+### 5.1 Frontmatter obligatorio
 
-### Fase B — JSON
+```yaml
+---
+titulo: "H1 del artículo"                                  # 50-65 caracteres
+tituloSeo: "Título para Google y pestaña"                  # máx. 65 caracteres
+descripcion: "Meta description"                            # 120-160 caracteres
+marca: "samsung"                                           # debe coincidir con repuestos.json
+slug: "da97-17376b"                                        # debe coincidir con repuestos.json
+tema: "goteo-tras-cambiar"                                 # URL slug del artículo
+tipo: "diagnostico"                                        # ver tabla 5.2
+keyword: "goteo filtro samsung da97-17376b"
+fecha: 2026-11-11                                          # YYYY-MM-DD
+autor: "Equipo editorial de repuestoselectro.lat"          # opcional, tiene default
+revisor: "Revisión técnica pendiente"                      # opcional, tiene default
+faqs:                                                       # opcional, 5-8 recomendado
+  - q: "¿Pregunta?"
+    a: "Respuesta."
+---
+```
 
-- [ ] Crear el objeto completo en `repuestos.json`.
-- [ ] `titulo` (H1) con número de pieza.
-- [ ] `tituloSeo` (<title>) sin número de pieza, con diferencial.
-- [ ] `modelosCompatibles` (lista plana, sin duplicados).
-- [ ] `compatibilidad.familias` (agrupada).
-- [ ] `guiaCambioDetalle`, `guiaFugas`, `guiaResetLuz` **específicos** del producto.
-- [ ] `guiaOriginal`, `guiaNoEncaja`, `guiaVsGenerico` **específicos** del producto.
-- [ ] `textoOriginal` 150-300 palabras, redactado desde cero.
-- [ ] `faqs` 3 preguntas.
-- [ ] `enlaceAfiliado` con `?tag=qqo-20`.
-- [ ] `imagenSchema` con URL del CDN de Amazon.
-- [ ] Verificar JSON:
-  ```powershell
-  $r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
-  "Total: $($r.Count)"
-  "$($r[N].marca) / $($r[N].slug)"
-  "$($r[N].guiaCambioDetalle.intro)"
-  "$($r[N].guiaFugas.intro)"
-  ```
+### 5.2 Tipos y schema estructurado
 
-### Fase C — Verificación local
+El schema (`Article` vs `HowTo`) se decide por el campo `tipo`:
 
-- [ ] `npm run build` sin errores. El número de páginas debe ser **53 con 6 productos**. La fórmula es `5 + 8N` (home + categoría + 3 legales = 5; ficha + marca + 6 guías = 8 por producto). Con cada producto nuevo se suman **8 páginas**. **Confirmar siempre con el log del build.**
-- [ ] Verificar que las 8 páginas del producto nuevo se generan:
-  ```powershell
-  Get-ChildItem -Recurse -LiteralPath "dist\filtro-agua\[marca]" -Filter *.html | Select-Object FullName
-  ```
-- [ ] Verificar el sitemap:
-  ```powershell
-  Get-Content dist\sitemap-0.xml
-  ```
-- [ ] Verificar que las guías del producto nuevo muestran **su** contenido, no el de otro producto (especialmente `como-cambiar` y `por-que-gotea`):
-  ```powershell
-  Select-String -LiteralPath "dist\filtro-agua\[marca]\[slug]\por-que-gotea\index.html" -Pattern "filtro [Marca] gotea" -Quiet
-  ```
-- [ ] Verificar que el interlinking funciona: cada guía enlaza a las otras cinco del mismo producto.
-- [ ] Verificar que la **ficha del producto** enlaza a las **6 guías** en el bloque "Guías sobre este filtro" (ver 7.8):
-  ```powershell
-  $html = Get-Content "dist\filtro-agua\[marca]\[slug]\index.html" -Raw
-  ([regex]::Matches($html, "como-saber-si-es-original|no-encaja|original-vs-generico|como-reiniciar-luz|como-cambiar|por-que-gotea")).Count
-  ```
-  Debe devolver al menos **6** (idealmente 6, uno por guía).
-- [ ] Verificar que el selector incluye los modelos del producto nuevo.
-- [ ] Verificar que la pestaña del navegador muestra `tituloSeo` y el H1 muestra `titulo`.
+| `tipo` | Schema principal | Cuándo usarlo |
+|---|---|---|
+| `instalacion` | HowTo + FAQPage | Más del 60% es procedimental (pasos de instalación) |
+| `diagnostico` | HowTo + FAQPage | Troubleshooting con verificaciones paso a paso |
+| `mantenimiento` | HowTo + FAQPage | Calendario + verificaciones periódicas |
+| `autenticidad` | Article + FAQPage | Análisis, no procedimiento |
+| `compatibilidad` | Article + FAQPage | Tablas de referencia, no procedimiento |
+| `comparativa` | Article + FAQPage | Comparación entre opciones |
 
-### Fase D — Despliegue
+**Implementación actual:** el template `[tema].astro` emite siempre `Article` + `FAQPage`. Cuando se añada el soporte para `HowTo`, se hará en el template leyendo `tipo`. No requiere cambios en los `.md` ya escritos.
 
-- [ ] `git add .`
-- [ ] `git commit -m "Añadir filtro [Marca] [Modelo] con sus 6 guías"`
-- [ ] `git push`
-- [ ] Esperar 1–2 minutos a que Cloudflare reconstruya.
-- [ ] Verificar en producción las 8 URLs del producto nuevo (ficha, marca, 6 guías):
-  ```powershell
-  $urls = @(
-    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/",
-    "https://repuestoselectro.lat/filtro-agua/[marca]/",
-    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/como-saber-si-es-original/",
-    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/no-encaja/",
-    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/original-vs-generico/",
-    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/como-reiniciar-luz/",
-    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/como-cambiar/",
-    "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/por-que-gotea/"
-  )
-  foreach ($u in $urls) {
-    try { $code = (Invoke-WebRequest -Uri $u -Method Head -UseBasicParsing -TimeoutSec 15).StatusCode }
-    catch { $code = $_.Exception.Response.StatusCode.value__ }
-    "{0}  {1}" -f $code, $u
-  }
-  ```
-  Todas deben devolver `200`.
-- [ ] Verificar el sitemap en producción:
-  ```powershell
-  (Invoke-WebRequest -Uri "https://repuestoselectro.lat/sitemap-0.xml" -UseBasicParsing).Content -split "`n" | Select-String "como-cambiar|por-que-gotea" | Measure-Object | Select-Object -ExpandProperty Count
-  ```
-  Debe devolver `2 × N` (con 6 productos, `12`).
-- [ ] En Search Console, "Inspección de URLs" → "Solicitar indexación" para la ficha del producto nuevo y para las 2 guías nuevas.
+### 5.3 Reglas de autoría del cuerpo
+
+El **cuerpo** del `.md` (después del frontmatter `---`) cumple:
+
+- **NO** lleva H1 (va en `titulo` del frontmatter).
+- **NO** lleva bloque E-E-A-T (el template lo renderiza desde `autor`, `revisor`, `fecha`).
+- **NO** lleva FAQ (van en `faqs[]` del frontmatter).
+- **NO** lleva enlaces al producto (los inyecta el template automáticamente: CTA 1 tras el 3.er H2, CTA 2 antes de FAQ).
+- **NO** lleva enlaces a Amazon ni a plataformas de compra.
+- **NO** cita reseñas de terceros ni las parafrasea.
+- **NO** menciona precios.
+- **SÍ** incluye el código de pieza literal en el primer párrafo y al menos 5 veces más.
+- **SÍ** empieza con un bloque LLM (40-80 palabras, primera oración con sujeto de causa técnica).
+- **SÍ** tiene al menos 3 H2 (para que el CTA 1 del medio quede bien ubicado).
+- **SÍ** respeta las reglas del prompt del Módulo 2 (extensión, tabla con N°, decisión sin advertencias mezcladas, FAQ tercera persona, cero imperativos fuera de secciones permitidas).
+
+### 5.4 Reglas del `tituloSeo`
+
+**Excepción a la regla general de la ficha.** Para técnicas, el `tituloSeo` **sí incluye el número de pieza**, porque la búsqueda del usuario es específica ("goteo filtro samsung da97-17376b"). Reglas:
+
+1. **50-60 caracteres** (más corto que el H1, para que no se trunque en Google).
+2. **Keyword principal al principio**.
+3. **Número de pieza literal** si el artículo es específico de un producto.
+4. **Sin clickbait ni imperativos**.
+5. **Diferente del H1**, aunque compartan keywords.
+
+Ejemplo válido:
+- H1: `"Goteo tras cambiar DA97-17376B: diagnóstico de fuga"` (52)
+- SEO: `"Por qué gotea el filtro Samsung DA97-17376B al cambiarlo"` (55)
+
+### 5.5 Flujo de autoría (checklist)
+
+- [ ] Elegir producto y tema (`tema` = slug de URL, en kebab-case).
+- [ ] Generar el artículo con la herramienta (o escribirlo desde cero).
+- [ ] Convertirlo al formato `.md` con frontmatter (sin H1, sin E-E-A-T, sin FAQ, sin CTAs, sin enlaces a Amazon).
+- [ ] Verificar el `tituloSeo` (50-60 chars, keyword-first, código literal).
+- [ ] Verificar `descripcion` (120-160 chars).
+- [ ] Guardar el `.md` como `src/content/tecnicas/[marca]-[slug]-[tema].md`.
+- [ ] `npm run build` → el número total de páginas sube en 1.
+- [ ] Verificar en local `/tecnicas/[tema]/` responde 200.
+- [ ] Verificar que el CTA 1 está entre el primer y el último H2.
+- [ ] Verificar que no hay `amazon.com` en el HTML.
+- [ ] Verificar que el schema FAQPage está presente.
+- [ ] Commit + push.
+- [ ] Verificar en producción (200 + 4 verificaciones OK).
 
 ---
 
 ## 6. Reglas fijas
 
 1. **Solo originales verificados.** Si no hay original con stock y vendedor Amazon/fabricante, no se añade.
-2. **El `<title>` no repite el número de pieza.** Ya está en la URL. Usa el espacio para el diferencial.
-3. **El `<h1>` sí lleva el número de pieza.** Es la confirmación visual para el usuario.
-4. **Guías específicas por producto.** No se comparten entre productos.
-5. **Contenido redactado desde cero.** Nunca copiar de Google, de reseñas ni de la ficha de Amazon. Se extraen los datos y se reescriben.
-6. **Sin precio ni envío en la ficha.** Eso lo muestra Amazon. En tablas comparativas, siempre con aviso "precios indicativos".
+2. **El `<title>` de la ficha no repite el número de pieza.** Ya está en la URL. **Excepción:** los artículos técnicos sí lo llevan (ver 5.4).
+3. **El `<h1>` sí lleva el número de pieza.** Confirmación visual para el usuario.
+4. **Guías y técnicas específicas por producto.** No se comparten entre productos.
+5. **Contenido redactado desde cero.** Nunca copiar de Google, reseñas o ficha de Amazon.
+6. **Sin precio ni envío en la ficha.** En tablas comparativas, siempre "precios indicativos".
 7. **Favicon con `?v=3`** en todas las páginas.
-8. **Enlaces de afiliado con `rel="sponsored nofollow noopener noreferrer"`** y aviso "As an Amazon Associate..." cerca.
+8. **Enlaces de afiliado con `rel="sponsored nofollow noopener noreferrer"`** y aviso cerca.
 9. **Migas de pan en todas las páginas internas.**
-10. **El bloque "Guías sobre este filtro"** existe en la ficha del producto y enlaza a las 6 guías (ver 7.8). No existe en las guías.
+10. **El bloque "Guías sobre este filtro"** existe en la ficha del producto y enlaza a las 6 guías (ver 7.8).
 11. **Interlinking entre guías:** cada guía enlaza a las otras cinco del mismo producto.
-12. **Selector con texto de ayuda de todas las marcas.** Cuando se añade una marca nueva, se añade una línea al `<ul>` del desplegable "¿Cómo saber el modelo de mi nevera?".
-13. **`guiaCambioDetalle` y `guiaFugas` son obligatorios** en cada producto. Si falta uno, Astro explota al generar `como-cambiar/` o `por-que-gotea/` para ese producto (ver 7.7).
+12. **Selector con texto de ayuda de todas las marcas.**
+13. **`guiaCambioDetalle` y `guiaFugas` son obligatorios** en cada producto (ver 7.7).
 14. **Cuando se añade una guía nueva al producto**, hay que añadir también su `<li>` en el bloque manual "Guías sobre este filtro" de la ficha (ver 7.8).
+15. **Los artículos técnicos NO llevan enlaces a Amazon** ni CTAs de afiliado. Solo los 2 CTAs al producto que inyecta el template.
+16. **El cuerpo del `.md` técnico NO lleva H1, ni E-E-A-T, ni FAQ, ni CTAs** — todo eso lo renderiza el template.
 
 ---
 
 ## 7. Aprendizajes técnicos (para no repetir errores)
 
 ### 7.1 Corchetes en PowerShell
-
-Los archivos y carpetas con corchetes (`[marca]`, `[slug]`) son problemáticos en PowerShell. `Test-Path`, `Remove-Item`, `Get-Content` interpretan `[...]` como patrón de globbing.
-
-**Solución:** usar siempre `-LiteralPath`:
-
-```powershell
-Test-Path -LiteralPath "src\pages\filtro-agua\[marca]"
-Remove-Item -Recurse -Force -LiteralPath "src\pages\filtro-agua\[marca]\modelo"
-Get-ChildItem -LiteralPath "src\pages\filtro-agua\[marca]"
-```
-
-Y para escribir en archivos con corchetes en la ruta, usar `(Resolve-Path -LiteralPath $file).Path` en lugar de `(Resolve-Path $file)`.
+Usar siempre `-LiteralPath`. Para escribir con `[System.IO.File]::WriteAllText` en rutas con corchetes, usar `(Resolve-Path -LiteralPath $file).Path` o `[System.IO.Directory]::CreateDirectory` (que ignora el globbing de PowerShell).
 
 ### 7.2 Rutas de importación en Astro
-
-El número de `../` es igual al número de carpetas entre el archivo y `src/`:
-
-| Ubicación del archivo | Import |
-|---|---|
-| `src/pages/index.astro` | `../data/repuestos.json` |
-| `src/pages/filtro-agua/index.astro` | `../../data/repuestos.json` |
-| `src/pages/filtro-agua/[marca]/index.astro` | `../../../data/repuestos.json` |
-| `src/pages/filtro-agua/[marca]/[slug]/index.astro` | `../../../../data/repuestos.json` |
-| `src/pages/filtro-agua/[marca]/[slug]/como-cambiar.astro` | `../../../../data/repuestos.json` |
-| `src/pages/filtro-agua/[marca]/[slug]/por-que-gotea.astro` | `../../../../data/repuestos.json` |
+El número de `../` es igual al número de carpetas entre el archivo y `src/`. En `tecnicas/index.astro` y `tecnicas/[tema].astro` son **5 niveles** (`../../../../../`).
 
 ### 7.3 Codificación UTF-8
-
-Los archivos `.astro` y `.json` deben guardarse en **UTF-8** (sin BOM). El Bloc de notas clásico de Windows 10 guarda en ANSI, lo cual rompe los acentos. **Usar siempre VS Code** (guarda en UTF-8 por defecto).
-
-Verificar acentos:
-```powershell
-Select-String -LiteralPath "src\data\repuestos.json" -Pattern "número|síntomas" | Select-Object -First 2
-```
+Los `.astro`, `.json` y `.md` en **UTF-8 sin BOM**. `Get-Content -Raw` sin `-Encoding UTF8` lee con ANSI y rompe los `-match` con tildes. **Siempre** `Get-Content -Encoding UTF8 -Raw`.
 
 ### 7.4 Cloudflare Pages y `.well-known`
-
-Cloudflare Pages, si no encuentra un `404.html` en la raíz del build, activa un modo "SPA fallback" que devuelve `index.html` con estado 200 para cualquier URL no encontrada. Eso rompe el `ai-catalog.json` de `.well-known`.
-
-**Solución:** tener `public/404.html` con un 404 real. Eso desactiva el fallback y permite que `.well-known` se sirva correctamente.
-
-**Nota sobre el conteo de `.html` en `dist`:** el build de Astro dice `53 page(s) built`, pero en `dist` hay `54` archivos `.html` porque el `404.html` viene de `public/` y se copia tal cual. No es un error.
+Si no hay `404.html`, Cloudflare activa SPA fallback y rompe `.well-known`. Tener siempre `public/404.html`.
 
 ### 7.5 La CSP y Cloudflare Web Analytics
-
-Cloudflare inyecta su beacon de analíticas (`static.cloudflareinsights.com`) en el HTML. Si la CSP no lo permite, el script se bloquea y la consola muestra un error.
-
-**Solución:** añadir `https://static.cloudflareinsights.com` a `script-src` y `https://cloudflareinsights.com` a `connect-src` en `_headers`.
+`https://static.cloudflareinsights.com` en `script-src` y `https://cloudflareinsights.com` en `connect-src`.
 
 ### 7.6 El problema del "modelo" duplicado
-
-Las 50 páginas de modelo (`/modelo/[modelo]/`) eran contenido duplicado: todas mostraban la misma tarjeta del mismo filtro. Google las trata como duplicadas y no aportan valor.
-
-**Solución:** eliminar la carpeta `modelo`, hacer que los chips de la tabla de compatibilidad sean texto plano (no enlaces), y hacer que el selector navegue directamente a la ficha del producto.
+No crear páginas `/modelo/[modelo]/` que solo cambien una tarjeta. Google las trata como duplicadas.
 
 ### 7.7 Campos nuevos rompen el build en productos sin rellenar
-
-Si añades un campo nuevo al schema (por ejemplo `guiaCambioDetalle` o `guiaFugas`) y solo lo rellenas en un producto, Astro falla al generar las páginas de los demás: `guiaCambioDetalle.intro` es `undefined` y la plantilla explota. El error típico es `Cannot read properties of undefined (reading 'intro')`.
-
-**Solución:** cada vez que añadas un campo al schema, rellénalo en **todos** los productos del JSON antes de hacer `npm run build`. Verifica con:
-
+Si añades un campo al schema y solo lo rellenas en un producto, Astro explota al generar las páginas de los demás. Rellenar en **todos** antes del `npm run build`. Verificar:
 ```powershell
 $r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
 $r | ForEach-Object { "$($_.marca): cambio=$([bool]$_.guiaCambioDetalle) fugas=$([bool]$_.guiaFugas)" }
 ```
 
-Todos deben salir con `cambio=True fugas=True`.
-
 ### 7.8 El bloque "Guías sobre este filtro" de la ficha es manual
-
-La ficha (`src/pages/filtro-agua/[marca]/[slug]/index.astro`) tiene el bloque "Guías sobre este filtro" con los enlaces a las guías **escritos a mano** (no generados desde el JSON). Cuando añadas una guía nueva al producto (crear el `.astro` correspondiente), también hay que añadir su `<li>` en ese bloque.
-
-**Síntoma:** la guía nueva se genera correctamente (`dist/filtro-agua/[marca]/[slug]/[nueva-guia]/index.html` existe y responde 200), pero la ficha del producto no la enlaza. Solo aparecen las que estaban en el HTML original (típicamente 3).
-
-**Solución:** añadir el `<li>` con el `href` y los textos antes del `</ul>` del bloque, o refactorizar el bloque para que consuma un array `guias` compartido.
+La ficha (`src/pages/filtro-agua/[marca]/[slug]/index.astro`) tiene el bloque "Guías sobre este filtro" con los enlaces **escritos a mano**. Cuando añadas una guía nueva, también hay que añadir su `<li>` en ese bloque.
 
 **Verificación local:**
 ```powershell
-$html = Get-Content "dist\filtro-agua\[marca]\[slug]\index.html" -Raw
+$html = Get-Content "dist\filtro-agua\[marca]\[slug]\index.html" -Raw -Encoding UTF8
 ([regex]::Matches($html, "como-saber-si-es-original|no-encaja|original-vs-generico|como-reiniciar-luz|como-cambiar|por-que-gotea")).Count
 ```
-Debe devolver **6** (uno por cada guía) o más si las guías se mencionan varias veces.
+Debe devolver **6**.
 
-**Verificación en producción:**
-```powershell
-$html = (Invoke-WebRequest -Uri "https://repuestoselectro.lat/filtro-agua/[marca]/[slug]/" -UseBasicParsing).Content
-([regex]::Matches($html, "como-reiniciar-luz|como-cambiar|por-que-gotea")).Count
+**Nota importante:** el HTML generado por Astro está minificado en una sola línea. `Select-String | Measure-Object` cuenta **líneas**, no coincidencias. Para contar coincidencias reales usar `[regex]::Matches(...)`.
+
+### 7.9 Content Layer de Astro 5+: config en `src/content.config.ts`, no en `src/content/config.ts`
+**Astro 5** cambió la API de Content Collections. Si pones la config en `src/content/config.ts`, el build falla con:
+
 ```
-Debe devolver 3 (o el número de guías nuevas que existan).
+[LegacyContentConfigError] Found legacy content config file in "src\content\config.ts".
+Please move this file to "src/content.config.ts" and ensure each collection has a loader defined.
+```
 
-**Importante:** el HTML generado por Astro está minificado en una sola línea. `Select-String | Measure-Object` cuenta **líneas**, no coincidencias, así que devuelve `1` aunque haya 3 guías. Para contar coincidencias reales hay que usar `[regex]::Matches(...)`.
+**Solución correcta:**
+
+1. Mover el archivo a **`src/content.config.ts`** (raíz de `src/`, no dentro de `content/`).
+2. Cada colección debe tener un **`loader`**:
+   ```typescript
+   import { defineCollection, z } from 'astro:content';
+   import { glob } from 'astro/loaders';
+
+   const tecnicas = defineCollection({
+     loader: glob({ pattern: '**/*.md', base: './src/content/tecnicas' }),
+     schema: z.object({ /* ... */ }),
+   });
+
+   export const collections = { tecnicas };
+   ```
+
+**Sin el `loader`,** Astro no lee los `.md` y `getCollection('tecnicas')` devuelve array vacío → el `getStaticPaths` de `[tema].astro` no genera rutas → el build dice `0 page(s) built` para esa sección.
+
+**Verificar el síntoma:** si el build da 59 páginas (con los 6 índices vacíos pero sin el artículo), el problema es el loader.
+
+### 7.10 `build.log` se commitea por error
+El `Tee-Object` y `Out-File` de PowerShell crean `build.log` en la raíz del proyecto. Ese archivo **no debe estar en el repo**. Solución:
+
+```powershell
+Add-Content -LiteralPath ".gitignore" -Value "build.log" -Encoding UTF8
+git rm --cached build.log
+git add .gitignore
+git commit -m "Sacar build.log del repo y anadirlo a .gitignore"
+git push
+```
+
+Si ya está commiteado, `git rm --cached` lo saca del tracking sin borrarlo del disco. El `.gitignore` evita que vuelva a entrar.
+
+**Alternativa más limpia:** no usar `Tee-Object` ni `Out-File`. Hacer `npm run build` directamente y ver el output en la terminal.
 
 ---
 
 ## 8. Comandos útiles
 
 ```powershell
-cd C:\Users\mvx55\proyectos\repuestoseletro    # ir al proyecto
+cd C:\Users\mvx55\proyectos\repuestoseletro
 npm run dev                                     # servidor de desarrollo
 npm run build                                   # build de producción
-Get-Content dist\sitemap-0.xml                  # ver el sitemap
 ```
 
 Verificar JSON:
 ```powershell
 $r = Get-Content src\data\repuestos.json -Raw -Encoding UTF8 | ConvertFrom-Json
 "Total: $($r.Count)"
-$r | ForEach-Object { "$($_.marca) / $($_.slug)" }
 $r | ForEach-Object { "$($_.marca): cambio=$([bool]$_.guiaCambioDetalle) fugas=$([bool]$_.guiaFugas)" }
 ```
 
-Verificar páginas generadas:
+Verificar total de páginas:
 ```powershell
-Get-ChildItem -Recurse dist\filtro-agua -Filter index.html | Select-Object FullName
+npm run build 2>&1 | Select-String "page\(s\) built"
+```
+
+Verificar técnicas generadas:
+```powershell
 Get-ChildItem -Recurse -LiteralPath "dist\filtro-agua" -Filter index.html |
-  Where-Object { $_.FullName -match 'como-cambiar|por-que-gotea' } |
+  Where-Object { $_.FullName -match 'tecnicas' } |
   Select-Object -ExpandProperty FullName
 ```
 
-Contar `.html` en `dist` (debe ser `page(s) built` + 1 por el `404.html`):
+Verificar un artículo en producción:
 ```powershell
-(Get-ChildItem -Recurse -LiteralPath "dist" -Filter *.html | Measure-Object).Count
+$html = (Invoke-WebRequest -Uri "https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/goteo-tras-cambiar/" -UseBasicParsing).Content
+if ($html -match "amazon\.com") { "REVISAR - contiene Amazon" } else { "OK - cero Amazon" }
+if ($html -match "FAQPage") { "OK - schema FAQPage" } else { "REVISAR - FAQPage" }
 ```
 
-Buscar en archivos con corchetes:
+Verificar los 6 índices `/tecnicas/`:
 ```powershell
-Select-String -LiteralPath "src\pages\filtro-agua\[marca]\[slug]\index.astro" -Pattern "guiaOriginal"
-Select-String -LiteralPath "dist\filtro-agua\lg\lt1000p\por-que-gotea\index.html" -Pattern "filtro LG gotea" -Quiet
-```
-
-Verificar producción:
-```powershell
-$urls = @(
-  "https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-cambiar/",
-  "https://repuestoselectro.lat/filtro-agua/lg/lt1000p/por-que-gotea/"
-)
-foreach ($u in $urls) {
+$marcas = @("samsung/da97-17376b","lg/lt1000p","ge/xwfe","bosch/ultraclarity-pro","frigidaire/eptwfu01","whirlpool/everydrop-1")
+foreach ($m in $marcas) {
+  $u = "https://repuestoselectro.lat/filtro-agua/$m/tecnicas/"
   try { $code = (Invoke-WebRequest -Uri $u -Method Head -UseBasicParsing -TimeoutSec 15).StatusCode }
-  catch { $code = $_.Exception.Response.StatusCode.value__ }
+  catch { $code = "ERROR" }
   "{0}  {1}" -f $code, $u
 }
 ```
 
 ---
 
-## 9. Próximos pasos (cuando se retome)
+## 9. Próximos pasos
 
-1. **Verificar en Search Console** que las 12 URLs nuevas (`como-cambiar/` y `por-que-gotea/`) se indexan (tarda unos días).
-2. **Enviar el sitemap actualizado** desde Search Console (Sitemaps → `sitemap-index.xml` → "Enviar").
-3. **Esperar datos de Search Console** (2–4 semanas) para ver qué marcas, modelos y guías traen más impresiones.
-4. **Revisar Lighthouse** en la ficha de un producto (por si el peso de la imagen del schema afecta al LCP).
-5. **Lote 1 de páginas transversales** (3 páginas, reutilizan datos del JSON, no necesitan contenido nuevo):
-   - `/filtro-agua/cuando-cambiar-filtro/` → `sintomas`, `faqs`, `guiaProblemas` de los 6 productos.
-   - `/filtro-agua/como-detectar-filtro-falso/` → `guiaOriginal` de los 6 productos.
-   - `/filtro-agua/como-saber-modelo-nevera/` → `comoSaberModelo` de los 6 productos.
-6. **Lote 2 de páginas por producto** (12 páginas, solo si el Lote 1 trae tráfico):
-   - `por-que-sabe-a-plastico/` y `cuanto-dura-el-filtro/` por cada producto.
-7. **Valorar AdSense** (con 53 páginas ya cumples de sobra el mínimo de contenido).
-8. **Considerar Clarity** (Microsoft) como alternativa a Statcounter (sin cookies problemáticas).
+1. **Añadir el segundo artículo técnico a Samsung** para validar que el flujo se repite sin problemas (`instalacion`, `mantenimiento` u otro `tipo`).
+2. **Replicar el piloto a los otros 5 productos** (`cuanto-dura` o similar, un artículo por producto).
+3. **Implementar schema `HowTo`** para los tipos `instalacion`, `diagnostico` y `mantenimiento` en `[tema].astro` (actualmente emite `Article` siempre).
+4. **Verificar en Search Console** que las URLs nuevas (`/tecnicas/` + artículos) se indexan.
+5. **Enviar el sitemap actualizado** desde Search Console.
+6. **Revisar Lighthouse** en la ficha de un producto y en un artículo técnico.
+7. **Valorar AdSense** (con 60 páginas ya cumples de sobra el mínimo).
+8. **Considerar Clarity** (Microsoft) como alternativa a Statcounter.
 ```
 
 ---
 
-**Guárdalo** sobrescribiendo `SISTEMA.md`, y cuando quieras lo commiteamos:
+**Guárdalo** sobrescribiendo `SISTEMA.md`. Cuando lo tengas, dime si quieres:
 
-```powershell
-git add SISTEMA.md
-git commit -m "Actualizar SISTEMA.md: aprendizaje 7.8 y plan de paginas transversales"
-git push
-```
-
-Pégame la salida del `git push` cuando lo hagas y cerramos esta sesión.
+- **Verificar** que se guardó bien (un comando de PowerShell).
+- **Commit + push** directamente.
+- **Pasar a la opción B** (replicar a los otros 5 productos).
