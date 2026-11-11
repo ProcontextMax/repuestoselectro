@@ -322,6 +322,26 @@ Si `Total tecnicas` es menor que el número de `.md` en disco, es colisión de `
 **Regla preventiva:** nunca llamar `slug` a un campo del frontmatter de Content Layer si puede repetirse entre archivos. Usar nombres específicos (`productoSlug`, `categoriaSlug`, `temaSlug`).
 
 ---
+### 7.12 La sección de técnicas en la ficha es condicional pero manual
+
+La ficha (`src/pages/filtro-agua/[marca]/[slug]/index.astro`) tiene un bloque `{tecnicas.length > 0 && (...)}` que muestra el botón "Ver guías técnicas →" solo si el producto tiene al menos 1 artículo técnico. **El bloque está escrito a mano** (no se genera desde una lista compartida), igual que el bloque "Guías sobre este filtro" (ver 7.8).
+
+**Síntoma:** la página `/tecnicas/` existe y responde 200, pero es huérfana (no se llega a ella desde la ficha). El usuario solo puede llegar escribiendo la URL a mano. Google la indexa pero no recibe autoridad interna.
+
+**Solución:** añadir el bloque `{tecnicas.length > 0 && (...)}` antes del bloque de Amazon en la ficha. Requiere tres cambios en `index.astro`:
+
+1. **Import:** `import { getCollection } from 'astro:content';`
+2. **Const:** `const tecnicas = (await getCollection('tecnicas')).filter(t => t.data.marca === filtro.marca && t.data.productoSlug === filtro.slug);`
+3. **Bloque condicional** antes del bloque de Amazon con el botón y el contador.
+
+**Cuándo se muestra:** solo si `tecnicas.length > 0`. Las marcas sin artículos técnicos (LG, GE, Bosch, Frigidaire, Whirlpool por ahora) no muestran la sección vacía.
+
+**Verificación local:**
+```powershell
+$f = "dist\filtro-agua\samsung\da97-17376b\index.html"
+$html = Get-Content -LiteralPath $f -Encoding UTF8 -Raw
+if ($html -match "Ver guías técnicas") { "OK - boton visible" } else { "REVISAR" }
+if ($html -match "2 artículos técnicos") { "OK - contador = 2" } else { "REVISAR" }
 
 ## 8. Comandos útiles
 
