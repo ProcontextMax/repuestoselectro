@@ -21,15 +21,15 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 
 | Marca | Producto | ASIN | Ficha | Guías | Técnicas |
 |---|---|---|---|---|---|
-| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 7 |
+| Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 8 |
 | LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 0 |
 | GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 0 |
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 0 |
 
-**Total:** 66 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 7 artículos técnicos, 3 legales) + 1 `404.html` estático = 67 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `66 page(s) built`.*
+**Total:** 67 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 8 artículos técnicos, 3 legales) + 1 `404.html` estático = 68 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `67 page(s) built`.*
 
 **Artículos técnicos publicados (Samsung DA97-17376B):**
 
@@ -42,6 +42,7 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | 5 | `ruido-silbido-despues-de-instalar` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/ruido-silbido-despues-de-instalar/` |
 | 6 | `jarra-autollenado-o-maquina-hielo-falla` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/jarra-autollenado-o-maquina-hielo-falla/` |
 | 7 | `sabor-a-plastico-despues-de-cambiar` | diagnostico | `/filtro-agua/samsung/da97-17376b/tecnicas/sabor-a-plastico-despues-de-cambiar/` |
+| 8 | `empaque-clamshell-dificil-de-abrir` | instalacion | `/filtro-agua/samsung/da97-17376b/tecnicas/empaque-clamshell-dificil-de-abrir/` |
 
 ---
 
@@ -58,7 +59,8 @@ src/
 │       ├── samsung-da97-17376b-flujo-debil-o-poca-agua.md
 │       ├── samsung-da97-17376b-ruido-silbido-despues-de-instalar.md
 │       ├── samsung-da97-17376b-jarra-autollenado-o-maquina-hielo-falla.md
-│       └── samsung-da97-17376b-sabor-a-plastico-despues-de-cambiar.md
+│       ├── samsung-da97-17376b-sabor-a-plastico-despues-de-cambiar.md
+│       └── samsung-da97-17376b-empaque-clamshell-dificil-de-abrir.md
 ├── data/
 │   └── repuestos.json                    ← todos los productos
 ├── components/
@@ -456,7 +458,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 
 ## 9. Próximos pasos
 
-**Samsung DA97-17376B tiene 7 artículos técnicos publicados.** El cluster de diagnóstico/mantenimiento está completo.
+**Samsung DA97-17376B tiene 8 artículos técnicos publicados.** El cluster de diagnóstico/mantenimiento está completo.
 
 **Temas pendientes por marca:**
 
@@ -489,6 +491,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 |---|---|---|
 | Sesión 1 | Infraestructura `/tecnicas/` + 2 artículos Samsung | 61 |
 | Sesión 2 | 4 artículos Samsung más | 65 |
+| Sesión 3 | 3 artículos Samsung más (sabor, empaque, fix) | 67 |
 | Sesión 3 (pendiente) | Replicar a LG | ~71 |
 ```
 
