@@ -23,8 +23,8 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 1 |
 
-**Total:** 69 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 10 artículos técnicos, 3 legales) + 1 `404.html` estático = 70 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `69 page(s) built`.*
+**Total:** 70 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 11 artículos técnicos, 3 legales) + 1 `404.html` estático = 71 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `70 page(s) built`.*
 
 **Artículos técnicos publicados (Samsung DA97-17376B):**
 
@@ -45,6 +45,7 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | # | Tema | Tipo | URL |
 |---|---|---|---|
 | 1 | `cada-cuanto-cambiar-filtro` | mantenimiento | `/filtro-agua/whirlpool/everydrop-1/tecnicas/cada-cuanto-cambiar-filtro/` |
+| 2 | `presion-baja-o-hielo-hueco` | diagnostico | `/filtro-agua/whirlpool/everydrop-1/tecnicas/presion-baja-o-hielo-hueco/` |
 ---
 
 ## 2. Estructura de archivos
@@ -475,7 +476,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Frigidaire | Replicar los 6 | Media |
 | Whirlpool | ✅ `cada-cuanto-cambiar-filtro` (publicado esta sesión) | Hecho |
 | Whirlpool | `sabor-a-cloro-regresa-antes` (saturación de carbón) | Media |
-| Whirlpool | `presion-baja-o-hielo-hueco` (verificar vs `guiaResetLuz`) | Media |
+| Whirlpool | OK `presion-baja-o-hielo-hueco` (publicado esta sesion) | Hecho |
 | Whirlpool | `tapon-de-bypass` (requiere verificar número de parte) | Baja |
 
 **Plan sugerido:**
@@ -499,6 +500,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Sesión 3 | 4 artículos Samsung más (sabor, empaque, dispensador) | 68 |
 | Sesión 3 (pendiente) | Replicar a LG | ~71 |
 | Sesión 4 | 1 artículo técnico Whirlpool (`cada-cuanto-cambiar-filtro`) + auditoría canibalización §7.15 + SISTEMA.md §1/§9/§10 | 69 |
+| Sesión 5 | 1 artículo técnico Whirlpool (`presion-baja-o-hielo-hueco`) + SISTEMA.md §1/§9/§10 + llms.txt | 70 |
 
 ---
 
