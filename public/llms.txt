@@ -26,6 +26,7 @@
 - [Silbido tras instalar DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/ruido-silbido-despues-de-instalar/): Ruido por aire atrapado o sellado incompleto, purga.
 - [Jarra o máquina de hielo no llena](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/jarra-autollenado-o-maquina-hielo-falla/): Diagnóstico de autollenado, sensor y válvula.
 - [Sabor a plástico tras cambiar DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/sabor-a-plastico-despues-de-cambiar/): Diagnóstico de sabor anómalo, purga y autenticidad del cartucho.
+- [Cómo abrir el empaque del DA97-17376B](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/tecnicas/empaque-clamshell-dificil-de-abrir/): Apertura segura, verificación de integridad y residuos del film.
 - [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
 - [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/como-cambiar/): Instalación paso a paso, sin herramientas.
 - [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/samsung/da97-17376b/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
