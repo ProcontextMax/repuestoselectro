@@ -589,7 +589,7 @@ if ($content -match "### 7\.16 El template de") { "OK - aprendizaje 7.16" } else
 if ($content -match "### 7\.15 Canibalización") { "OK - aprendizaje 7.15" } else { "FALTA - 7.15" }
 if ($content -match "### 7\.14 Patrón de errores") { "OK - aprendizaje 7.14" } else { "FALTA - 7.14" }
 if ($content -match "### 7\.13 ") { "OK - aprendizaje 7.13" } else { "FALTA - 7.13" }
-if ($content -match "65 page\(s\) built|65 páginas") { "OK - 65 paginas" } else { "FALTA - 65 paginas" }
+if ($content -match "76 page\(s\) built|76 páginas") { "OK - 76 paginas" } else { "FALTA - 76 paginas" }
 if ($content -match "jarra-autollenado-o-maquina-hielo-falla") { "OK - articulo 6 listado" } else { "FALTA - articulo 6" }
 
 $bytes = [System.IO.File]::ReadAllBytes($file)

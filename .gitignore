@@ -25,3 +25,4 @@ pnpm-debug.log*
 build.log
 src/data/*.bak
 Scrape/
+*.bak
