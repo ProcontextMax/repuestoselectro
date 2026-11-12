@@ -23,8 +23,8 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 2 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 1 |
 
-**Total:** 75 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 16 artículos técnicos, 3 legales) + 1 `404.html` estático = 76 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `75 page(s) built`.*
+**Total:** 76 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 17 artículos técnicos, 3 legales) + 1 `404.html` estático = 77 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `76 page(s) built`.*
 
 **Artículos técnicos publicados (Samsung DA97-17376B):**
 
@@ -46,6 +46,7 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 |---|---|---|---|
 | 1 | `cada-cuanto-cambiar-filtro` | mantenimiento | `/filtro-agua/whirlpool/everydrop-1/tecnicas/cada-cuanto-cambiar-filtro/` |
 | 2 | `presion-baja-o-hielo-hueco` | diagnostico | `/filtro-agua/whirlpool/everydrop-1/tecnicas/presion-baja-o-hielo-hueco/` |
+| 3 | `w10295370a-reemplazo` | compatibilidad | `/filtro-agua/whirlpool/everydrop-1/tecnicas/w10295370a-reemplazo/` |
 
 **Artículos técnicos publicados (LG LT1000P):**
 
@@ -566,6 +567,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Sesión 8 | 1 artículo técnico Frigidaire (`chorro-aire-primer-uso`) + SISTEMA.md §1/§9/§10 | 73 |
 | Sesión 9 | 1 artículo técnico Frigidaire (`compatible-con-otras-marcas`) + SISTEMA.md §1/§10 | 74 |
 | Sesión 10 | 1 artículo técnico LG (`variantes-lt1000p`) + SISTEMA.md §1/§10 | 75 |
+| Sesión 11 | 1 artículo técnico Whirlpool (`w10295370a-reemplazo`) + SISTEMA.md §1/§10 | 76 |
 
 ---
 
