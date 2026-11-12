@@ -38,6 +38,8 @@
 - [¿Es original o una réplica?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-saber-si-es-original/): Cómo verificar el empaque.
 - [¿Por qué no encaja?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/no-encaja/): LT1000P vs LT700P.
 - [Original vs genérico](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/original-vs-generico/): Comparativa.
+- [Guías técnicas del LG LT1000P](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/tecnicas/): Índice de artículos técnicos del producto.
+- [Obstrucción precoz del LT1000P en agua dura](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/tecnicas/obstruccion-precoz-agua-dura/): Diagnóstico del filtro tapado antes de tiempo, dureza del agua y prueba de bypass.
 - [Cómo reiniciar la luz](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-reiniciar-luz/): Apaga la alerta tras cambiar el filtro.
 - [Cómo cambiar el filtro](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/como-cambiar/): Instalación paso a paso, sin herramientas.
 - [¿Por qué gotea?](https://repuestoselectro.lat/filtro-agua/lg/lt1000p/por-que-gotea/): Las causas reales de las fugas y cómo evitarlas.
