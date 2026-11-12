@@ -20,11 +20,11 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 1 |
 | GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 1 |
-| Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
+| Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 1 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 1 |
 
-**Total:** 72 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 13 artículos técnicos, 3 legales) + 1 `404.html` estático = 73 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `72 page(s) built`.*
+**Total:** 73 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 14 artículos técnicos, 3 legales) + 1 `404.html` estático = 74 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `73 page(s) built`.*
 
 **Artículos técnicos publicados (Samsung DA97-17376B):**
 
@@ -58,6 +58,12 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | # | Tema | Tipo | URL |
 |---|---|---|---|
 | 1 | `sabor-persistente-tras-purga` | diagnostico | `/filtro-agua/bosch/ultraclarity-pro/tecnicas/sabor-persistente-tras-purga/` |
+
+**Artículos técnicos publicados (Frigidaire EPTWFU01):**
+
+| # | Tema | Tipo | URL |
+|---|---|---|---|
+| 1 | `chorro-aire-primer-uso` | diagnostico | `/filtro-agua/frigidaire/eptwfu01/tecnicas/chorro-aire-primer-uso/` |
 ---
 
 ## 2. Estructura de archivos
@@ -525,7 +531,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | LG | ✅ `obstruccion-precoz-agua-dura` (publicado esta sesion) | Hecho |
 | GE | Replicar los 6 con datos de GE (chip RFID) | Media |
 | Bosch | OK `sabor-persistente-tras-purga` (publicado esta sesion) | Hecho |
-| Frigidaire | Replicar los 6 | Media |
+| Frigidaire | OK `chorro-aire-primer-uso` (publicado esta sesion) | Hecho |
 | Whirlpool | ✅ `cada-cuanto-cambiar-filtro` (publicado esta sesión) | Hecho |
 | Whirlpool | `sabor-a-cloro-regresa-antes` (saturación de carbón) | Media |
 | Whirlpool | OK `presion-baja-o-hielo-hueco` (publicado esta sesion) | Hecho |
@@ -555,6 +561,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Sesión 5 | 1 artículo técnico Whirlpool (`presion-baja-o-hielo-hueco`) + SISTEMA.md §1/§9/§10 + llms.txt | 70 |
 | Sesión 6 | 1 artículo técnico LG (`obstruccion-precoz-agua-dura`) + fix SEO trailingSlash + hrefs legales | 71 |
 | Sesión 7 | 1 artículo técnico Bosch (`sabor-persistente-tras-purga`) + SISTEMA.md §1/§9/§10 | 72 |
+| Sesión 8 | 1 artículo técnico Frigidaire (`chorro-aire-primer-uso`) + SISTEMA.md §1/§9/§10 | 73 |
 
 ---
 
