@@ -19,12 +19,12 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 9 |
 | LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 1 |
 | GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
-| Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 0 |
+| Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 1 |
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 0 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 1 |
 
-**Total:** 71 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 12 artículos técnicos, 3 legales) + 1 `404.html` estático = 72 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `71 page(s) built`.*
+**Total:** 72 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 13 artículos técnicos, 3 legales) + 1 `404.html` estático = 73 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `72 page(s) built`.*
 
 **Artículos técnicos publicados (Samsung DA97-17376B):**
 
@@ -52,6 +52,12 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | # | Tema | Tipo | URL |
 |---|---|---|---|
 | 1 | `obstruccion-precoz-agua-dura` | diagnostico | `/filtro-agua/lg/lt1000p/tecnicas/obstruccion-precoz-agua-dura/` |
+
+**Artículos técnicos publicados (Bosch UltraClarity Pro):**
+
+| # | Tema | Tipo | URL |
+|---|---|---|---|
+| 1 | `sabor-persistente-tras-purga` | diagnostico | `/filtro-agua/bosch/ultraclarity-pro/tecnicas/sabor-persistente-tras-purga/` |
 ---
 
 ## 2. Estructura de archivos
@@ -518,7 +524,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Samsung | `luz-sigue-encendida-despues-de-reset` (instalacion, ángulo diferenciado) | Media |
 | LG | ✅ `obstruccion-precoz-agua-dura` (publicado esta sesion) | Hecho |
 | GE | Replicar los 6 con datos de GE (chip RFID) | Media |
-| Bosch | Replicar los 6 | Media |
+| Bosch | OK `sabor-persistente-tras-purga` (publicado esta sesion) | Hecho |
 | Frigidaire | Replicar los 6 | Media |
 | Whirlpool | ✅ `cada-cuanto-cambiar-filtro` (publicado esta sesión) | Hecho |
 | Whirlpool | `sabor-a-cloro-regresa-antes` (saturación de carbón) | Media |
@@ -548,6 +554,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Sesión 4 | 1 artículo técnico Whirlpool (`cada-cuanto-cambiar-filtro`) + auditoría canibalización §7.15 + SISTEMA.md §1/§9/§10 | 69 |
 | Sesión 5 | 1 artículo técnico Whirlpool (`presion-baja-o-hielo-hueco`) + SISTEMA.md §1/§9/§10 + llms.txt | 70 |
 | Sesión 6 | 1 artículo técnico LG (`obstruccion-precoz-agua-dura`) + fix SEO trailingSlash + hrefs legales | 71 |
+| Sesión 7 | 1 artículo técnico Bosch (`sabor-persistente-tras-purga`) + SISTEMA.md §1/§9/§10 | 72 |
 
 ---
 
