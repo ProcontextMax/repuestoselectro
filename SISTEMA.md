@@ -17,14 +17,14 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | Marca | Producto | ASIN | Ficha | Guías | Técnicas |
 |---|---|---|---|---|---|
 | Samsung | DA97-17376B | `B071NFVVNG` | ✅ | 6/6 | 9 |
-| LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 1 |
+| LG | LT1000P | `B074HLRXMP` | ✅ | 6/6 | 2 |
 | GE | XWFE | `B0882ZJ48W` | ✅ | 6/6 | 0 |
 | Bosch | UltraClarity Pro | `B0973NDZTN` | ✅ | 6/6 | 1 |
 | Frigidaire | EPTWFU01 | `B01BKWSHHE` | ✅ | 6/6 | 2 |
 | Whirlpool | EveryDrop 1 | `B00UXG4WR8` | ✅ | 6/6 | 1 |
 
-**Total:** 74 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 15 artículos técnicos, 3 legales) + 1 `404.html` estático = 75 archivos `.html` en `dist`.
-*Verificado con `npm run build`: `74 page(s) built`.*
+**Total:** 75 páginas generadas por Astro (home, categoría, 6 marcas, 6 fichas, 36 guías, 6 índices `/tecnicas/`, 16 artículos técnicos, 3 legales) + 1 `404.html` estático = 76 archivos `.html` en `dist`.
+*Verificado con `npm run build`: `75 page(s) built`.*
 
 **Artículos técnicos publicados (Samsung DA97-17376B):**
 
@@ -52,6 +52,7 @@ Documento de referencia para añadir un producto nuevo o un artículo técnico. 
 | # | Tema | Tipo | URL |
 |---|---|---|---|
 | 1 | `obstruccion-precoz-agua-dura` | diagnostico | `/filtro-agua/lg/lt1000p/tecnicas/obstruccion-precoz-agua-dura/` |
+| 2 | `variantes-lt1000p` | compatibilidad | `/filtro-agua/lg/lt1000p/tecnicas/variantes-lt1000p/` |
 
 **Artículos técnicos publicados (Bosch UltraClarity Pro):**
 
@@ -564,6 +565,7 @@ $desc = [regex]::Match($fm, 'descripcion:\s*"(.*?)"').Groups[1].Value
 | Sesión 7 | 1 artículo técnico Bosch (`sabor-persistente-tras-purga`) + SISTEMA.md §1/§9/§10 | 72 |
 | Sesión 8 | 1 artículo técnico Frigidaire (`chorro-aire-primer-uso`) + SISTEMA.md §1/§9/§10 | 73 |
 | Sesión 9 | 1 artículo técnico Frigidaire (`compatible-con-otras-marcas`) + SISTEMA.md §1/§10 | 74 |
+| Sesión 10 | 1 artículo técnico LG (`variantes-lt1000p`) + SISTEMA.md §1/§10 | 75 |
 
 ---
 
