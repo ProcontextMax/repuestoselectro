@@ -408,6 +408,46 @@ El template `tecnicas/[tema].astro` inyecta **2 CTAs al producto** en el HTML fi
 
 **El `.md` NO debe incluir estos CTAs.** Si los incluyes, se duplican.
 
+### 7.17 El split con guiones triples rompe tablas markdown
+
+**Sintoma:** al auditar el frontmatter de un markdown con split por guiones triples, los checks de H2 y H3 fallan aunque el archivo este correcto.
+
+**Causa:** las tablas markdown usan separadores de columna con guiones triples. El split parte el contenido ahi, no solo por el frontmatter.
+
+**Solucion:** extraer el frontmatter con regex de inicio y fin del archivo.
+
+**Regla:** nunca usar el split por guiones triples en archivos markdown con tablas.
+
+### 7.18 Out-String trunca el output en consola
+
+**Sintoma:** al volcar un objeto de repuestos.json con Out-String, el output se corta con puntos suspensivos.
+
+**Causa:** Out-String respeta el ancho de la consola y trunca strings largos.
+
+**Solucion:** usar ConvertTo-Json con profundidad 5 para objetos anidados, o Out-String con Width 200 para tablas.
+
+### 7.19 Here-string puede colar caracteres al final
+
+**Sintoma:** al insertar filas en SISTEMA.md con here-string, la fila queda con caracteres extra o con el cierre literal incluido.
+
+**Causa:** el cierre del here-string se confunde con el contenido si no esta en linea separada, o el paste se corta al haber backticks triples dentro.
+
+**Solucion:** usar Replace con strings literales para inserciones, o escribir linea por linea con Add-Content.
+
+**Verificacion:** revisar los ultimos 10 caracteres de la fila insertada.
+
+### 7.20 Verificar paridad de fences markdown
+
+**Sintoma:** el SISTEMA.md tenia un numero impar de fences de codigo, señal de un fence huerfano que rompia el renderizado.
+
+**Causa:** al copiar o pegar bloques markdown, el fence de apertura o cierre puede quedar fuera.
+
+**Solucion:** contar los fences con regex despues de cualquier cambio estructural y verificar que el numero sea par.
+
+**Regla:** todo markdown con bloques de codigo debe tener numero par de fences.
+
+
+
 **Verificación:**
 ```powershell
 $html = Get-Content -LiteralPath "dist\filtro-agua\...\tecnicas\[tema]\index.html" -Encoding UTF8 -Raw
